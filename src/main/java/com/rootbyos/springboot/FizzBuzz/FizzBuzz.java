@@ -29,4 +29,7 @@ package com.rootbyos.springboot.FizzBuzz;
  * ]
  */
 public class FizzBuzz {
+
+
+    
 }
