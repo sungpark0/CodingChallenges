@@ -1,5 +1,8 @@
 package com.rootbyos.springboot.StringReversal;
 
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -23,6 +26,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 // shift + cmd + T - create a new test
 class StringReversalTest {
+    @ParameterizedTest
+    @ValueSource(strings = {"hello"})
+    void positiveTest(String str) {
+        String s = "olleh";
+        char[] e = s.toCharArray();
+        char[] expected = {'o', 'l', 'l', 'e', 'h'};
+        assertEquals(String.valueOf(expected), String.valueOf(StringReversal.reverseString(str.toCharArray())));
+    }
 
+
+    @ParameterizedTest
+    @ValueSource(strings = {"hello"})
+    void negativeTest(String str) {
+        char[] expected = {'o', 'l', 'l', 'e', 'h'};
+        assertTrue(expected!=expected, String.valueOf(StringReversal.reverseString(str.toCharArray())));
+    }
+
+    private void assertTrue(boolean b, String valueOf) {
+    }
+    /** EXAMPLE OF A NEGATIVE TEST */
+    @ParameterizedTest
+    @ValueSource (strings = {"IamWrong"})
+    void negativeTest2 (String str){
+        assertNotEquals( "olleh", String.valueOf(StringReversal.reverseString(str.toCharArray())));
+    }
 
 }
