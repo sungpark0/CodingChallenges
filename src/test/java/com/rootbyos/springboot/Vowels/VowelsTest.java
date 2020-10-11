@@ -10,12 +10,12 @@ class VowelsTest {
     @ParameterizedTest
     @ValueSource(strings = {"ab", "eb", "ib", "ob", "bu"})
     void positiveTest(String str) {
-        assertEquals(1, Vowels.countVowels(str));
+        assertEquals(1, Vowels.vowels(str));
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"bz", "b!", "b-", "bb", "bz"})
     void negativeTest(String str) {
-        assertEquals(0, Vowels.countVowels(str));
+        assertEquals(0, Vowels.vowels(str));
     }
 }

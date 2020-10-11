@@ -38,7 +38,9 @@ public class FizzBuzz {
     }
 
     public static String fizzBuzz(int n) {
-        List<String> numbers = new ArrayList<String>();
+        //List<String> numbers = new ArrayList<String>();
+        List<String> numbers = new ArrayList<>(n);
+
         for (int i = 1; i <= n; i++) {
             if (i % 3 == 0 && i % 5 == 0) {
                 numbers.add( "FizzBuzz" );

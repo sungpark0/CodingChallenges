@@ -13,9 +13,28 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Vowels {
-    public static long countVowels(String sentence) {
-        List<String> vowels = List.of("a", "e", "i", "o", "u");
 
-        return Arrays.stream(sentence.split("")).filter(vowels::contains).count();
+    public static void main(String[] args) {
+        System.out.println(vowels("Pope Is pope"));
+    }
+    public static int vowels(String str) {
+
+        String vowelList = str.toLowerCase();
+        int count = 0;
+        for (int i = 0; i < vowelList.length(); i++)
+        {
+            if (vowelList.charAt(i) == 'a' || vowelList.charAt(i) == 'e' || vowelList.charAt(i) == 'i'
+                    || vowelList.charAt(i) == 'o' || vowelList.charAt(i) == 'u')
+            {
+                count++;
+            }
+        }
+        return count;
     }
 }
+
+//    public static long countVowels(String sentence) {
+//        List<String> vowels = List.of("a", "e", "i", "o", "u");
+//
+//        return Arrays.stream(sentence.split("")).filter(vowels::contains).count();
+//    }
