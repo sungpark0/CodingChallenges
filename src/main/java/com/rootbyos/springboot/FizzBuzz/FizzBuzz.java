@@ -1,5 +1,8 @@
 package com.rootbyos.springboot.FizzBuzz;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Write a program that outputs the string representation of numbers from 1 to n.
  *
@@ -30,6 +33,26 @@ package com.rootbyos.springboot.FizzBuzz;
  */
 public class FizzBuzz {
 
+    public static void main(String[] args) {
+        System.out.println(fizzBuzz(15));
+    }
 
+    public static String fizzBuzz(int n) {
+        List<String> numbers = new ArrayList<String>();
+        for (int i = 1; i <= n; i++) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                numbers.add( "FizzBuzz" );
+            } else if (i % 5 == 0) {
+                numbers.add( "Buzz" );
+            } else if (i % 3 == 0 ) {
+                numbers.add( "Fizz" );
+            } else {
+                numbers.add( Integer.toString( i ) );
+            }
+
+        }
+        String listString = numbers.toString();
+        return listString;
+    }
     
 }
