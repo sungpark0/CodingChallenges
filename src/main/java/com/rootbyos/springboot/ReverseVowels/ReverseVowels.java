@@ -48,3 +48,36 @@ public class ReverseVowels {
         return new String(vowels);
     }
 }
+// List<Character> vowels = List.of('a', 'e', 'i', 'o', 'u');
+//        // placeholder for vowels
+//        Stack<Character> stack = new Stack<>();
+//        char[] arr = str.toCharArray();
+//        // hello
+//        // 01234
+//        int i = 0;
+//        while (i < arr.length) {
+//            if (vowels.contains(arr[i])) {
+//                // [e,o]
+//                stack.push(arr[i]);
+//            }
+//            i++;
+//        }
+//
+//        int j = 0;
+//        while (j < arr.length) {
+//            // hello
+//            // 01234
+//            // [e,o]
+//            if (vowels.contains(arr[j])) {
+//                // stack = []
+//                // vowel = e
+//                char vowel = stack.pop();
+//                //arr[j] = e
+//                // hello -> holle
+//                arr[j] = vowel;
+//            }
+//            j++;
+//        }
+//
+//        return String.valueOf(arr);
+//    }
