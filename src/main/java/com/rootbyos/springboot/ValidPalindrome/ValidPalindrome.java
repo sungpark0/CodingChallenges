@@ -21,7 +21,6 @@ package com.rootbyos.springboot.ValidPalindrome;
  * s consists only of printable ASCII characters.
  */
 
-import java.util.*;
 import java.lang.*;
 
 public class ValidPalindrome {
@@ -31,20 +30,34 @@ public class ValidPalindrome {
 
     public static void main(String[] args) {
 
-        isPalindrome(original);
+        isPalindrome( original );
+        isPalindromeRecursion( original );
     }
 
     public static boolean isPalindrome(String s) {
-        original = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase(); //erasing whitespace
+        original = s.replaceAll( "[^a-zA-Z0-9]", "" ).toLowerCase(); //erasing whitespace
 
         int start = 0;
-        int end = original.length() -1;
+        int end = original.length() - 1;
         while (start < end) {
-            if (original.charAt(start++) != original.charAt(end--)) { // check palindrome
+            if (original.charAt( start++ ) != original.charAt( end-- )) { // check palindrome
                 return false;
             }
         }
         return true;
+    }
+
+    public static boolean isPalindromeRecursion(String s) {
+        String noSpace = s.replaceAll( "[^a-zA-Z0-9]", "" ).toLowerCase();
+
+        if (noSpace.length() == 0 || noSpace.length() == 1) {
+            return true;
+        }
+        if (noSpace.charAt( 0 ) == noSpace.charAt( s.length() - 1 )) {
+            return isPalindromeRecursion( noSpace.substring( 1, noSpace.length() - 1 ) );
+        } else {
+            return false;
+        }
     }
 }
 
