@@ -25,11 +25,7 @@ package com.rootbyos.springboot.ReverseInteger;
 import org.yaml.snakeyaml.util.ArrayUtils;
 
 import java.lang.*;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class ReverseInteger {
     public static void main(String[] args) {
