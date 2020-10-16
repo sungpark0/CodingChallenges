@@ -20,5 +20,16 @@ class ReverseIntegerTest {
         assertNotEquals(214, ReverseInteger.reverse(testNum)); //Not sure about this negative test.
     }
 
+    @ParameterizedTest
+    @ValueSource (ints = 1234567 )
+    void positiveTestStack (int num){
+        assertEquals(7654321, ReverseInteger.reverseIntegerStack( num )  );
+    }
+
+    @ParameterizedTest
+    @ValueSource (ints = 1534236469)
+        void negativeTestStack (int num){
+        assertNotEquals( 1534236469, ReverseInteger.reverseIntegerStack( num ) );
+    }
 }
 
