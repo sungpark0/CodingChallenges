@@ -26,6 +26,7 @@ public class TwoSum {
         for (int i = 0; i < nums.length; i++) {
             int difference = target - nums[i]; // to find the 2nd num in the array
             if (hash.containsKey( difference )) { //looking thru if 2nd num exist in the hashmap
+
                 return new int[]{hash.get( difference ), i};
             }
             hash.put( nums[i], i );
