@@ -9,14 +9,26 @@ class FibonacciNumberTest {
 
     @ParameterizedTest
     @ValueSource(ints = 3)
-    void positiveTest(int f) {
+    void positiveTestRecursion(int f) {
         assertEquals( 2, FibonacciNumber.fibRecursion( f ) );
     }
 
     @ParameterizedTest
     @ValueSource(ints = 4)
-    void negativeTest(int f) {
+    void negativeTestRecursion(int f) {
         assertNotEquals( 2, FibonacciNumber.fibRecursion( f ) );
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = 4)
+    void positiveTest(int f) {
+        assertEquals( 3, FibonacciNumber.fib( f ) );
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = 4)
+    void negativeTest(int f) {
+        assertNotEquals( 0, FibonacciNumber.fib( f ) );
     }
 
 }

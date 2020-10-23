@@ -20,7 +20,6 @@ public class FibonacciNumber {
         if (N == 0) {
             return N;
         }
-
         f[1] = 1; //so we dont go below 0.
 
         for (int i = 2; i <= N; i++) { //covering 0 and 1 with above methods so here we just need to sum 2 and above
