@@ -7,7 +7,8 @@ public class FlippingAnImage {
     public static void main(String[] args) {
         int[][] test = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
 
-        flipAndInvertImage( test );
+        System.out.println( Arrays.deepToString( flipAndInvertImage( test ) ) );
+        System.out.println(Arrays.deepToString( flippingAnImage( test ) ));
     }
 
 
@@ -32,13 +33,12 @@ public class FlippingAnImage {
                 }
             }
         }
-//        System.out.println( Arrays.deepToString( A ) );
+//      System.out.println( Arrays.deepToString( A ) );
         //Without Arrays.deepToString Java will automatically convert to string form and output
         //error message such as [[TO@3041a79c. In order to control this situation we can use deepToString method
         //to display object
         return A;
     }
-
 
 //    public static int[][] flipAndInvertImageTwo(int[][] A) { //Using Ternary operator and with more "shortcuts".
 //
@@ -52,11 +52,22 @@ public class FlippingAnImage {
 //                A[i][start] = A[i][end - 1] == 0 ? 1 : 0;
 //                A[i][end - 1] = temp == 0 ? 1 : 0;
 //
-//                end—;
+//                end--;
 //                start++;
 //            }
 //        }
 //
 //        return A;
 //    }
+
+    public static int[][] flippingAnImage(int[][] B) {
+        int[][] temp = new int[B.length][B.length]; // declaring the new array to same size as array B
+
+        for (int i = 0; i < B.length; i++) {
+            for (int j = 0; j < B[i].length; j++)
+                temp[i][j] = (B[i][B[i].length - 1 - j] == 1) ? 0 : 1;
+        }
+
+        return temp;
+    }
 }

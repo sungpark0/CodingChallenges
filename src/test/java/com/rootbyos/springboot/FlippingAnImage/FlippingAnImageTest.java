@@ -21,4 +21,18 @@ class FlippingAnImageTest {
         int[][] shouldBe = {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}};
         assertNotEquals( Arrays.deepToString( shouldBe ), Arrays.deepToString( FlippingAnImage.flipAndInvertImage( test ) ) );
     }
+
+    @Test
+    void positiveTestTwo() {
+        int[][] input = {{1, 1, 0, 0}, {1, 0, 0, 1}, {0, 1, 1, 1}, {1, 0, 1, 0}};
+        int[][] answer = {{1, 1, 0, 0}, {0, 1, 1, 0}, {0, 0, 0, 1}, {1, 0, 1, 0}};
+        assertEquals( Arrays.deepToString( answer ), Arrays.deepToString( FlippingAnImage.flippingAnImage( input ) ) );
+    }
+
+    @Test
+    void negativeTestTwo() {
+        int[][] input = {{1, 1, 0, 0}, {1, 0, 0, 1}, {0, 1, 1, 1}, {1, 0, 1, 0}};
+        int[][] answer = {{0, 0, 0, 0}, {0, 1, 1, 0}, {1, 1, 1, 1}, {0, 0, 0, 1}};
+        assertNotEquals( Arrays.deepToString( answer ), Arrays.deepToString( FlippingAnImage.flippingAnImage( input ) ) );
+    }
 }
