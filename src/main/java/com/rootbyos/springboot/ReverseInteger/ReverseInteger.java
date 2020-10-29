@@ -31,7 +31,7 @@ public class ReverseInteger {
     public static void main(String[] args) {
 
         System.out.println( reverse( 1534236469 ) );
-        System.out.println( reverseIntegerStack( 1534236469 ) );
+        System.out.println( reverseIntegerStack( 156487669 ) );
 //        System.out.println( reverseIntegerQueue( 123 ) );
 
     }

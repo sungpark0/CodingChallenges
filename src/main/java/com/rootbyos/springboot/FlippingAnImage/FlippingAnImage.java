@@ -8,8 +8,8 @@ public class FlippingAnImage {
         int[][] test = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
         int[][] testTwo = {{1, 1, 0, 0}, {1, 0, 0, 1}, {0, 0, 0, 1}, {1, 0, 1, 0}};
 
-        System.out.println( ( Arrays.deepToString( flipAndInvertImage( test ) ) ));
-        System.out.println( ( Arrays.deepToString( flipAndInvertImage( testTwo ) ) ));
+        System.out.println( (Arrays.deepToString( flipAndInvertImage( test ) )) );
+        System.out.println( (Arrays.deepToString( flipAndInvertImage( testTwo ) )) );
         System.out.println( Arrays.deepToString( flippingAnImage( test ) ) );
     }
 
@@ -54,9 +54,10 @@ public class FlippingAnImage {
             }
         }
 
-        System.out.println( Arrays.deepToString( B ));
+        System.out.println( Arrays.deepToString( B ) );
         return B;
     }
+}
 
 //    public static int[][] flippingAnImageThree(int[][] B) {
 //        int[][] temp = new int[B.length][B.length];
@@ -66,7 +67,6 @@ public class FlippingAnImage {
 //        }
 //        return temp;
 //    }
-}
 //    public static int[][] flipAndInvertImageTwo(int[][] A) { //Using Ternary operator and with more "shortcuts".
 //
 //        for (int i = 0; i < A.length; i++) {
