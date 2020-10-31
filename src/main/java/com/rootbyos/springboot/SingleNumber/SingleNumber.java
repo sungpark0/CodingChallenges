@@ -12,27 +12,40 @@ public class SingleNumber {
 //        System.out.println( singleNumber( y ) + " " + " 1 " );
 
 //        System.out.println( singleNumberON( x ) + " : " + " 4 " );
-        System.out.println( singleNumberNoExtraMemory( y ) + " : " + " 1 " );
+        System.out.println( singleNumberSecondWeek( x ) );
 
 
     }
 
+    public static int singleNumberSecondWeek(int[] nums) {
+
+        Arrays.sort( nums );
+        for (int i = 0; i < nums.length - 1; i += 2) {
+            if (nums[i] != nums[i + 1]) {
+                return nums[i];
+            }
+        }
+
+        return nums[nums.length - 1];
+    }
+
+
     public static int singleNumberNoExtraMemory(int[] nums) {
         if (nums.length == 1) return nums[0];
 
-        Arrays.sort(nums);
+        Arrays.sort( nums );
 
 //        [1,1,2,2,4]
 //        [2,2,5,7,7,8,8]
 
 
-        for(int i = 0; i < nums.length - 1; i+=2) {
-            if (nums[i] != nums[i+1]) {
+        for (int i = 0; i < nums.length - 1; i += 2) {
+            if (nums[i] != nums[i + 1]) {
                 return nums[i];
             }
         }
 
-        return nums[nums.length-1];
+        return nums[nums.length - 1];
     }
 
     //Time Complexity: O(N^2)
