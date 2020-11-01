@@ -29,4 +29,18 @@ class StringMatchingInAnArrayTest {
         List<String> result = Arrays.asList(  "et", "code" );
         assertEquals( result, StringMatchingInAnArray.stringMatching( test ) );
     }
+
+    @Test
+    void positiveTestTwo(){
+        String[] test = {"hello", "ell", "care", "are"};
+        List<String> result = Arrays.asList( "are","ell");
+        assertEquals( result,StringMatchingInAnArray.stringMatchingTwo( test ) );
+    }
+
+    @Test
+    void negativeTestTwo(){
+        String[] test = {"hello", "ell", "care", "are"};
+        List<String> result = Arrays.asList( "blue");
+        assertNotEquals( result,StringMatchingInAnArray.stringMatchingTwo( test ) );
+    }
 }
