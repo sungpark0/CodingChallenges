@@ -3,6 +3,7 @@ package com.rootbyos.springboot.StringMatchingInAnArray;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,7 +41,7 @@ class StringMatchingInAnArrayTest {
     @Test
     void negativeTestTwo(){
         String[] test = {"hello", "ell", "care", "are"};
-        List<String> result = Arrays.asList( "blue");
+        List<String> result = Collections.singletonList( "blue" );
         assertNotEquals( result,StringMatchingInAnArray.stringMatchingTwo( test ) );
     }
 }

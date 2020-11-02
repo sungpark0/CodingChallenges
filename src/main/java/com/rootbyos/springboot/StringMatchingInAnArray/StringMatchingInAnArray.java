@@ -38,42 +38,50 @@ public class StringMatchingInAnArray {
             }
         }
 
-        Collections.sort( answer );
-
-        for (String i : answer) {
-            if (temp.isEmpty()) {
-                temp.add( i );
-            } else {
-                if (temp.lastElement().equals( i )) {
-                    temp.add( i );
-                    temp.pop();
-                } else {
-                    temp.add( i );
-                }
-            }
-        }
-
-        return new ArrayList<>( temp );
-
-//        Stack <String> practice = new Stack<>();
-//        Arrays.sort(words);
-//        for(String a : words){
-//            for(String b: words){
-//                if(!a.equals(b) && a.contains(b) ){
-//                    practice.add(b);
-//                }
-//                if(practice.isEmpty()){
-//                    int dump =0;
-//                    dump++;
-//                }
-//                else if(practice.lastElement()==a){
-//                    practice.pop();
-//                    practice.add(b);
+//        for (String i : answer) {
+//            if (temp.isEmpty()) {
+//                temp.add( i );
+//            } else {
+//                if (temp.lastElement().equals( i )) {
+//                    temp.add( i );
+//                    temp.pop();
+//                } else {
+//                    temp.add( i );
 //                }
 //            }
-//
 //        }
-//                return new ArrayList<>( practice );
 
+        return answer.stream().distinct().collect(Collectors.toList()); //distinct
+    }
+
+    public static List<String> stringMatchingThree(String[] words) {
+//        String[] test = {"mass", "as", "as", "hero", "superhero"};
+
+        Map<String, List<String>> map = new HashMap<>();
+
+        Arrays.sort(words, (a, b) -> Integer.compare(b.length(), a.length()));
+        // superhero mass hero as as
+
+        for (String word : words) {
+            List<String> list = new ArrayList<>();
+            map.put(word, list);
+
+
+            map.forEach((k, v) -> {
+                if (k.length() > word.length() && k.contains(word)) {
+                    v.add(word);
+                    map.put(k, v);
+                    // superhero hero
+                }
+            });
+
+        }
+
+        return map.values().stream()
+                .flatMap(Collection::stream)
+                .distinct()
+                .collect(Collectors.toList());
     }
 }
+
+
