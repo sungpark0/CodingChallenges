@@ -12,24 +12,42 @@ public class MoveZeroes {
 
     public static void moveZeroes(int[] nums) {
 
-        int count = 0;
+        List<Integer> list = new ArrayList<>();
+
+//        int count = 0;
+//        for (int num : nums) {
+//            if (num == 0) {
+//                count++;
+//            }
+//        }
+//
+//        for (int i = 0; i < nums.length; i++) {
+//            if (nums[i] != 0) {
+//                list.add( nums[i] );
+//            }
+//        }
+//
+//        while (count > 0) {
+//            list.add( 0 );
+//            count--;
+//        }
+//
+//        for (int i = 0; i < list.size(); i++) {
+//            nums[i] = list.get( i );
+//        }
         for (int num : nums) {
-            if (num == 0) {
-                count++;
+            if (num != 0) {
+                list.add(num);
             }
         }
+
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0) {
-                nums[i] = nums[i+count];
+            if (i >= list.size()) {
+                nums[i] = 0;
+            } else {
+                nums[i] = list.get( i );
             }
         }
-        for (int i = nums.length - count; i < nums.length; i++) {
-            nums[i] = 0;
-        }
-
-
-        System.out.println( Arrays.toString( nums ) );
 
     }
-
 }
