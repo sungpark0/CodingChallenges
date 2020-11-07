@@ -117,7 +117,6 @@ public class SingleNumberIII {
                     list.add( num );
                 }
             }
-
         }
 
         return list.stream().mapToInt( i -> i ).toArray();
