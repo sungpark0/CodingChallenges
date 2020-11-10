@@ -26,4 +26,20 @@ class MinimumAbsoluteDifferenceTest {
         assertNotEquals( shouldBe, MinimumAbsoluteDifference.minimumAbsDifference( test ) );
     }
 
+    @Test
+    void positiveTestII() {
+        int[] test = {1, 3, 6, 10, 15};
+        List<List<Integer>> shouldBe = new ArrayList<>();
+        shouldBe.add( Arrays.asList( 1, 3 ) );
+        assertEquals( shouldBe, MinimumAbsoluteDifference.minimumAbsDifferenceII( test ) );
+    }
+
+    @Test
+    void negativeTestII() {
+        int[] test = {1, 2, 3, 4, 5, 6, 7, 10};
+        List<List<Integer>> shouldBe = new ArrayList<>();
+        shouldBe.add( Arrays.asList( 1, 4 ) );
+        assertNotEquals( shouldBe, MinimumAbsoluteDifference.minimumAbsDifferenceII( test ) );
+    }
+
 }
