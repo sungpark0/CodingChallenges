@@ -39,4 +39,9 @@ public class MajorityElement {
 
         return nums[length];
     }
+
+    public static int majorityElementThree(int[] nums){
+        Arrays.sort(nums);
+        return nums[nums.length/2];
+    }
 }
