@@ -12,6 +12,7 @@ public class ContainDuplicateII {
         System.out.println(containNearbyDuplicateII(test, 3));
         System.out.println(containsNearbyDuplicate(new int[]{1, 0, 1, 1}, 1));
         System.out.println(containsNearbyDuplicate(new int[]{1, 2, 3, 1}, 3));
+        System.out.println(containsNearbyDuplicateTwo(new int[]{1, 2, 3, 1}, 3));
         List<Integer> integers = Arrays.asList(1, 2, 3, 4, 5, 6, 6);
         integers.stream()
                 .filter(x -> x > 2)
@@ -32,8 +33,6 @@ public class ContainDuplicateII {
         }
         return false;
     }
-
-
 
 
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
