@@ -7,7 +7,7 @@ public class LongestPalindrome {
 
     public static void main(String[] args) {
 
-        String str = "aaabaaaa";
+        String str = "bananas";
         System.out.println( longestPalindrome( str ) );
     }
 
