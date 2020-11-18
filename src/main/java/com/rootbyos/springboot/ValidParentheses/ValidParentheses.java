@@ -13,37 +13,52 @@ public class ValidParentheses {
     }
 
     public static boolean isValid(String s) {
-
-//        for(int i =0; i<s.length()-1; i++){
-//            if(s.charAt(i)=='('){
-//                for(int j=i; j<s.length()-1; j++){
-//                    if(s.charAt(j)!=')'){
-//                        return false;
-//                    }
-//                }
-//            }
-//        }
         Stack<Character> stack = new Stack<>();
-        for (char ch : s.toCharArray()) {
-            if (ch == '(' || ch == '[' || ch == '{')
-                stack.push(ch);
-            else {
-                if (stack.isEmpty())
+        char[] sArr = s.toCharArray();
+        Map<Character, Character> map = Map.of(
+                '(', ')',
+                '{', '}',
+                '[', ']'
+        );
+
+        for (char ch : sArr) {
+            if (map.containsKey(ch)) {
+                stack.push(map.get(ch));
+            } else if (stack.isEmpty() || stack.pop() != ch) {
+                return false;
+            }
+        }
+
+        return stack.isEmpty();
+    }
+
+    public static boolean isValidII(String s) {
+        Stack<Character> stack = new Stack<>();
+        Map<Character, Character> map = Map.of(
+                '}', '{',
+                ')', '(',
+                ']', '['
+        );
+
+        for (Character ch : s.toCharArray()) {
+            if (stack.isEmpty()) {
+                if (!map.containsKey(ch)) {
+                    stack.push(ch);
+                } else {
                     return false;
-                if (ch == ')') {
-                    if ('(' != stack.pop())
-                        return false;
-                } else if (ch == ']') {
-                    if ('[' != stack.pop())
-                        return false;
-                } else if (ch == '}') {
-                    if ('{' != stack.pop())
-                        return false;
+                }
+            } else {
+                if (stack.lastElement() == map.get(ch)) {
+                    stack.pop();
+                } else if (!map.containsKey(ch)) {
+                    stack.push(ch);
+                } else {
+                    return false;
                 }
             }
         }
-        return stack.isEmpty();
 
+        return stack.isEmpty();
     }
 }
 
