@@ -22,6 +22,7 @@ public class SortingOddNumbers {
     public static void main(String[] args) {
 
         int[] arr = new int[]{5, 3, 2, 8, 1, 4};
+        System.out.println(Arrays.toString(sortOdds(arr)));
 
 
         Arrays.stream(sortOdds(arr)).forEach(v -> System.out.print(v));
@@ -30,7 +31,7 @@ public class SortingOddNumbers {
 
     public static int[] sortOdds(int[] arr) {
         if (arr.length == 0) {
-            return new int[] {};
+            return new int[]{};
         }
 //        int[] placeHolder = new int[]{1,2,3,4}; //
 
@@ -46,7 +47,7 @@ public class SortingOddNumbers {
             }
         }
 
-        List<Integer> sorted = placeHolder.stream().sorted().collect( Collectors.toList()); //sorting odd numbers in order nlogn
+        List<Integer> sorted = placeHolder.stream().sorted().collect(Collectors.toList()); //sorting odd numbers in order nlogn
 
 //        sorted = [1, 3, 5]
         for (int i = 0; i < indexes.size(); i++) { //replacing odd numbers
