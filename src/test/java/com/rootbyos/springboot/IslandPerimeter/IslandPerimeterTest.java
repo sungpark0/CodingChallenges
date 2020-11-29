@@ -19,4 +19,16 @@ class IslandPerimeterTest {
         int[][]test = {{1, 1, 1, 1}, {0, 1, 1, 0}, {0, 1, 1, 1}, {1, 1, 0, 1}};
         assertNotEquals(14, IslandPerimeter.islandPerimeter(test));
     }
+
+    @Test
+    void positiveTestII(){
+        int[][]test = {{1,0}};
+        assertEquals(4, IslandPerimeter.islandPerimeterIII(test));
+    }
+
+    @Test
+    void negativeTestII(){
+        int[][]test = {{1}};
+        assertNotEquals(0, IslandPerimeter.islandPerimeterIII(test));
+    }
 }

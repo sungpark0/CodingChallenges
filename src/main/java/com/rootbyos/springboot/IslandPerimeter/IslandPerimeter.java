@@ -5,8 +5,35 @@ public class IslandPerimeter {
 
         int[][] test = {{0, 1, 0, 0}, {1, 1, 1, 0}, {0, 1, 0, 0}, {1, 1, 0, 0}};
         System.out.println(islandPerimeter(test));
-        System.out.println(islandPerimeterII(test));
+//        System.out.println(islandPerimeterII(test));
+        System.out.println(islandPerimeterIII(test));
     }
+
+    public static int islandPerimeterIII(int[][] grid) {
+        int result = 0;
+
+        for (int row = 0; row < grid.length; row++) {
+            for (int column = 0; column < grid[0].length; column++) {
+                if (grid[row][column] == 1) {
+                    result += 4;
+
+                    if (row - 1 >= 0 && grid[row - 1][column] == 1)
+                        result--;
+                    if (row + 1 < grid.length && grid[row + 1][column] == 1)
+                        result--;
+
+                    if (column - 1 >= 0 && grid[row][column - 1] == 1)
+                        result--;
+                    if (column + 1 < grid[0].length && grid[row][column + 1] == 1)
+                        result--;
+
+                }
+            }
+        }
+
+        return result;
+    }
+
 
     public static int islandPerimeter(int[][] grid) {
         int perimeter = 0;
