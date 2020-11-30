@@ -1,5 +1,6 @@
 package com.rootbyos.springboot.RemoveOutermostParentheses;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -17,6 +18,18 @@ class RemoveOutermostParenthesesTest {
     @ValueSource(strings = "()()")
     void negativeTest(String str) {
         assertNotEquals("()", RemoveOutermostParentheses.removeOuterParentheses(str));
+    }
+
+    @Test
+    void positiveTestII(){
+        String test = "()()";
+        assertEquals("", RemoveOutermostParentheses.removeOuterParenthesesII(test));
+    }
+
+    @Test
+    void negativeTest(){
+        String test = "(())(())";
+        assertNotEquals("(())()", RemoveOutermostParentheses.removeOuterParenthesesII(test));
     }
 
 }
