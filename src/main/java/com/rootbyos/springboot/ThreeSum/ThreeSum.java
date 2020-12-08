@@ -1,13 +1,54 @@
 package com.rootbyos.springboot.ThreeSum;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ThreeSum {
 
     public static void main(String[] args) {
         int[] arr = {-1, 0, 1, 2, -1, -4};
-        System.out.println(threeSum(arr));
+//        System.out.println(threeSum(arr));
+//        System.out.println(threeSumII(arr));
+
+        System.out.println(threeSumII(new int[]{-2, 0, 0, 2, 2}));
     }
+
+    //   [-4, -1, -1, 0, 1, 2]
+    public static List<List<Integer>> threeSumII(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            int j = i + 1;
+            int k = nums.length - 1;
+            int num1 = nums[i];
+
+            if (i > 0 && num1 == nums[i - 1]) continue;
+
+            while (j < k) {
+                int num2 = nums[j];
+                int num3 = nums[k];
+                if (j > i + 1 && nums[j - 1] == nums[j]) {
+                    j++;
+                    continue;
+                }
+                if (num1 + num2 + num3 == 0) {
+                    result.add(List.of(num1, num2, num3));
+                    j++;
+                    k--;
+
+                } else if (0 < num1 + num2 + num3) {
+                    k--;
+                } else if (0 > num1 + num2 + num3) {
+                    j++;
+                }
+            }
+        }
+
+
+        return result;
+    }
+
 
     public static List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
