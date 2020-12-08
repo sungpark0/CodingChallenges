@@ -1,23 +1,61 @@
 package com.rootbyos.springboot.SpiralMatrix;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class SpiralMatrix {
     public static void main(String[] args) {
 
-        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+//        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int[][] arrTwo = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}};
         int[][] arrThree = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-        int[][] arrFour = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}};
-        System.out.println(temp(arr) + "\n[1, 2, 3, 6, 9, 8, 7, 4, 5]");
-        System.out.println(spiralOrder(arr) + "\n[1, 2, 3, 6, 9, 8, 7, 4, 5]");
-        System.out.println(temp(arrTwo) + "\n[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]");
-        System.out.println(spiralOrder(arrTwo) + "\n[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]");
-        System.out.println(temp(arrThree) + "\n[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]");
-        System.out.println(spiralOrder(arrThree) + "\n[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]");
-        System.out.println(temp(arrFour) + "\n[1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8]");
-        System.out.println(spiralOrder(arrFour) + "\n[1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8]");
+//        int[][] arrFour = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}};
+//        System.out.println(spiralOrderII(arr) + "\n[1, 2, 3, 6, 9, 8, 7, 4, 5]");
+//        System.out.println(spiralOrder(arr) + "\n[1, 2, 3, 6, 9, 8, 7, 4, 5]");
+//        System.out.println(spiralOrderII(arrTwo) + "\n[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]");
+//        System.out.println(spiralOrder(arrTwo) + "\n[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]");
+//        System.out.println(spiralOrderII(arrThree) + "\n[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]");
+//        System.out.println(spiralOrder(arrThree) + "\n[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]");
+//        System.out.println(spiralOrderII(arrFour) + "\n[1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8]");
+//        System.out.println(spiralOrder(arrFour) + "\n[1, 2, 3, 6, 9, 12, 11, 10, 7, 4, 5, 8]");
+        System.out.println(spiralOrderIII(arrTwo) + "\n[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]");
+//        System.out.println(spiralOrderIII(arrThree) + "\n[1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10]");
+
+    }
+
+
+    public static List<Integer> spiralOrderIII(int[][] matrix) {
+        List<Integer> result = new ArrayList<>();
+        int leftToRight = 0;
+        int topToBottom = 0;
+        int rightToLeft = matrix[0].length - 1;
+        int bottomToTop = matrix.length - 1;
+        while (leftToRight <= bottomToTop && topToBottom <= rightToLeft) {
+
+            for (int i = leftToRight; i <= rightToLeft; i++) {
+                result.add(matrix[topToBottom][i]);
+            }
+            topToBottom++;
+
+            if (topToBottom > bottomToTop) break;
+            for (int i = topToBottom; i <= bottomToTop; i++) {
+                result.add(matrix[i][rightToLeft]);
+            }
+            rightToLeft--;
+
+            if (leftToRight > rightToLeft) break;
+            for (int i = rightToLeft; i >= leftToRight; i--) {
+                result.add(matrix[bottomToTop][i]);
+            }
+            bottomToTop--;
+
+            for (int i = bottomToTop; i >= topToBottom; i--) {
+                result.add(matrix[i][leftToRight]);
+            }
+            leftToRight++;
+
+        }
+
+        return result;
     }
 
     public static List<Integer> spiralOrder(int[][] matrix) {
@@ -57,7 +95,7 @@ public class SpiralMatrix {
 
     }
 
-    public static List<Integer> temp(int[][] matrix) {
+    public static List<Integer> spiralOrderII(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
         int totalSize = matrix.length * matrix[0].length;
         int leftToRight = 0;
