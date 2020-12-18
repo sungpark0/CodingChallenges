@@ -3,17 +3,21 @@ package com.rootbyos.springboot.MaximumRepeatingSubstring;
 public class MaximumRepeatingSubstring {
     public static void main(String[] args) {
 
+        String c = "ababc";
+        String d = "ab";
+        System.out.println(maxRepeating(c, d));
     }
 
-    public static int maxRepeating(String sequence, String word){
-        int counter =0;
-        char[] seqChar =sequence.toCharArray();
-        char[] wordChar = word.toCharArray();
-        int k= wordChar.length;
+    public static int maxRepeating(String sequence, String word) {
+        int counter = 0;
+        StringBuilder sb = new StringBuilder();
 
-        for(int i =0; i<seqChar.length; i+=k){
+        while (sequence.contains(sb)) {
+            sb.append(word);
+            counter++;
         }
 
-        return counter;
+        return counter - 1;
     }
+
 }
