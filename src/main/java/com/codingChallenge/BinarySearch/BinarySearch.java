@@ -26,22 +26,22 @@ public class BinarySearch {
 }
 
 
-class Solution {
-    public int[] searchRange(int[] nums, int target) {
-        int firstIndex = findFirstIndex();
-        int lastIndex = findLastIndex();
-
-
-        return new int[] {firstIndex, lastIndex};
-
-    }
-
-
-    public static int findFirstIndex() {
-        
-    }
-
-    public static int findLastIndex() {
-
-    }
-}
+//class Solution {
+//    public int[] searchRange(int[] nums, int target) {
+//        int firstIndex = findFirstIndex();
+//        int lastIndex = findLastIndex();
+//
+//
+//        return new int[] {firstIndex, lastIndex};
+//
+//    }
+//
+//
+//    public static int findFirstIndex() {
+//
+//    }
+//
+//    public static int findLastIndex() {
+//
+//    }
+//}
