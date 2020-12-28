@@ -35,7 +35,6 @@ public class MinimumRemoveToMakeValidParentheses {
             }
             left++;
         }
-        System.out.println(possibleDelete);
 
         while (right >= 0) { //right to left
             if (sChar[right] == ')') {
@@ -52,10 +51,10 @@ public class MinimumRemoveToMakeValidParentheses {
         }
 
         for (int j : possibleDelete) {
-            sChar[j] = '[';
+            sChar[j] = '0';
         }
         for (char ch : sChar) {
-            if (ch != '[') {
+            if (ch != '0') {
                 result.append(ch);
             }
         }

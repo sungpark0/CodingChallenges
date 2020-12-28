@@ -19,8 +19,6 @@ public class ScoreOfParentheses {
                 score = 0;
             } else {
                 score = stack.peek() + Math.max(2 * score, 1);
-                //everytime we see a new opening bracket we push 0
-                //once we see ')' (closing) its going to be worth 1
                 stack.pop();
             }
         }
