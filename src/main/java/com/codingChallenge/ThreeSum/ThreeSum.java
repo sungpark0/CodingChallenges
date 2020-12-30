@@ -13,7 +13,6 @@ public class ThreeSum {
         System.out.println(threeSumII(new int[]{-2, 0, 0, 2, 2}));
     }
 
-    //   [-4, -1, -1, 0, 1, 2]
     public static List<List<Integer>> threeSumII(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
@@ -44,56 +43,54 @@ public class ThreeSum {
                 }
             }
         }
-
-
-        return result;
-    }
-
-
-    public static List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (nums.length < 3) {
-            return result;
-        }
-
-        Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length; i++) {
-            int j = i + 1;
-            int k = nums.length - 1;
-
-            if (i > 0 && nums[i - 1] == nums[i]) {
-                continue;
-            }
-
-            if (nums[i] <= 0) {
-                while (j < k) {
-                    if (nums[i] + nums[j] > 0) break;
-
-                    if (j > i + 1 && nums[j - 1] == nums[j]) {
-                        j++;
-                        continue;
-                    }
-
-                    int sum = nums[i] + nums[j] + nums[k];
-
-                    if (sum == 0) {
-                        result.add(Arrays.asList(nums[i], nums[j], nums[k]));
-                        j++;
-                        k--;
-                    } else if (sum > 0) {
-                        k--;
-                    } else {
-                        j++;
-                    }
-                }
-            }
-
-        }
-
         return result;
     }
 }
+//
+//
+//    public static List<List<Integer>> threeSum(int[] nums) {
+//        List<List<Integer>> result = new ArrayList<>();
+//        if (nums.length < 3) {
+//            return result;
+//        }
+//
+//        Arrays.sort(nums);
+//
+//        for (int i = 0; i < nums.length; i++) {
+//            int j = i + 1;
+//            int k = nums.length - 1;
+//
+//            if (i > 0 && nums[i - 1] == nums[i]) {
+//                continue;
+//            }
+//
+//            if (nums[i] <= 0) {
+//                while (j < k) {
+//                    if (nums[i] + nums[j] > 0) break;
+//
+//                    if (j > i + 1 && nums[j - 1] == nums[j]) {
+//                        j++;
+//                        continue;
+//                    }
+//
+//                    int sum = nums[i] + nums[j] + nums[k];
+//
+//                    if (sum == 0) {
+//                        result.add(Arrays.asList(nums[i], nums[j], nums[k]));
+//                        j++;
+//                        k--;
+//                    } else if (sum > 0) {
+//                        k--;
+//                    } else {
+//                        j++;
+//                    }
+//                }
+//            }
+//
+//        }
+//
+//        return result;
+//    }
 // public static List<List<Integer>> threeSum(int[] nums){
 //        List<List<Integer>> result = new ArrayList<>();
 //        Arrays.sort(nums);
