@@ -5,9 +5,9 @@ public class SinglyLinkedList {
     private Node head;
     private int size;
 
-    public SinglyLinkedList(){
+    public SinglyLinkedList() {
         this.head = null;
-        this.size=0;
+        this.size = 0;
     }
 
     private static class Node {
@@ -24,13 +24,13 @@ public class SinglyLinkedList {
         return size;
     }
 
-    public void insertAtHead(int data){
+    public void insertAtHead(int data) {
         Node currentNode = new Node(data);
 
         if (head != null) {
             currentNode.next = head;
         }
-        head= currentNode;
+        head = currentNode;
         size++;
     }
 
@@ -39,6 +39,7 @@ public class SinglyLinkedList {
         SinglyLinkedList test = new SinglyLinkedList();
 
         test.insertAtHead(5);
+        test.insertAtHead(6);
         test.insertAtHead(3);
 
         Node current = test.head;
