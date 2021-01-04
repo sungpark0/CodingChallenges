@@ -18,7 +18,8 @@ public class SinglyLinkedListTail {
             val = value;
             next = null;
         }
-        public ListNode(){
+
+        public ListNode() {
         }
     }
 
@@ -35,74 +36,77 @@ public class SinglyLinkedListTail {
         head = currentNode;
         size++;
     }
-    public void deleteAtHead(){
+
+    public void deleteAtHead() {
         ListNode temp = head.next;
-        if(temp ==null){
-            head=null;
-            return;
+        if (temp == null) {
+            head = null;
         }
         head = temp;
         size--;
-
     }
 
+
     public void insertAtEnd(int value) {
-        ListNode node = new ListNode();
-        node.val = value;
-        ListNode currentNode = head;
-        if(currentNode.next !=null){
-            currentNode = currentNode.next;
+        ListNode node = new ListNode(value);
+        if (head == null) {
+            head = node;
+        } else {
+            ListNode currentNode = head;
+            while (currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = node;
         }
-        currentNode.next = node;
         size++;
     }
 
-    public void insertAfter(int value, int previous){
+    public void insertAfter(int value, int previous) {
         ListNode temp = head;
 
-        while(temp!= null){
+        while (temp != null) {
             int nodeVal = temp.val;
-            if(nodeVal==previous){
+            if (nodeVal == previous) {
                 ListNode newNode = new ListNode();
                 newNode.val = value;
                 newNode.next = temp.next;
 
-                temp.next=newNode;
+                temp.next = newNode;
             }
             temp = temp.next;
         }
         size++;
     }
 
-    public void deleteByValue(int value){
-        if(size ==0){
+    public void deleteByValue(int value) {
+        if (size == 0) {
             return;
         }
 
-        if(head.val == value){
+        if (head.val == value) {
             deleteAtHead();
             size--;
             return;
         }
 
-        ListNode currentNode =head;
+        ListNode currentNode = head;
         ListNode dummyNode = null;
-        while(currentNode!= null){
-            if(currentNode.val==value){
+        while (currentNode != null) {
+            if (currentNode.val == value) {
                 if (dummyNode != null) {
                     dummyNode.next = currentNode.next;
                 }
             }
-            dummyNode=currentNode;
-            currentNode=currentNode.next;
+            dummyNode = currentNode;
+            currentNode = currentNode.next;
         }
         size--;
     }
 
-    public void searchNode(int value){
+    public void searchNode(int value) {
         boolean exist = false;
         ListNode node = head;
-        while(node != null){
+        while (node != null) {
             if (node.val == value) {
                 exist = true;
                 break;
@@ -115,20 +119,21 @@ public class SinglyLinkedListTail {
     public static void main(String[] args) {
         SinglyLinkedListTail test = new SinglyLinkedListTail();
 
+        test.insertAtEnd(2);
+        test.insertAtEnd(3);
+        test.insertAtEnd(4);
         test.insertAtHead(1);
         test.insertAtHead(2);
         test.insertAtHead(3);
         test.insertAtHead(4);
         test.insertAtHead(5);
-        test.insertAfter(9,2);
+        test.insertAfter(9, 2);
         test.deleteAtHead();
         test.deleteByValue(2);
         test.searchNode(10);
 
 
-
-
-        int i = 0 ;
+        int i = 0;
         ListNode current = test.head;
         while (i < test.size) {
 
