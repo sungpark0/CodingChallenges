@@ -115,8 +115,8 @@ public class DoublyLinkedList {
         test.insertAtTail(1);
         test.insertAtTail(2);
         test.insertAtTail(3);
-        test.insertAtIndex(0, 999);
-        test.deleteAtIndex(2);
+        test.insertAtIndex(1, 999);
+        test.deleteAtIndex(1);
 
         ListNode current = test.head;
         for (int i = 0; i < test.size(); i++) {
