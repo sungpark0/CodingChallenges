@@ -5,115 +5,96 @@ public class SinglyLinkedListTail {
     int size;
     ListNode head;
 
-    public SinglyLinkedListTail() {
-        head = null;
-        size = 0;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int value) {
-            val = value;
-            next = null;
-        }
-
-        public ListNode() {
-        }
-    }
-
     public int size() {
         return size;
     }
 
-    public void insertAtHead(int value) {
-        ListNode currentNode = new ListNode(value);
+    public SinglyLinkedListTail() {
+        this.size = 0;
+        this.head = null;
+    }
 
-        if (head != null) {
-            currentNode.next = head;
+    public void insertAtHead(int value) {
+        ListNode newValue = new ListNode(value);
+        newValue.next = head;
+        head = newValue;
+        size++;
+    }
+
+    public void insertAtEnd(int value) {
+        ListNode newValue = new ListNode(value);
+        if (head == null) {
+            head = newValue;
         }
-        head = currentNode;
+        ListNode temp = head;
+        for (int i = 0; i < size - 1; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = newValue;
+        size++;
+    }
+
+    public void insertAfter(int value, int index) {
+        ListNode newValue = new ListNode(value);
+        ListNode temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        newValue.next = temp.next;
+        temp.next = newValue;
         size++;
     }
 
     public void deleteAtHead() {
-        ListNode temp = head.next;
-        if (temp == null) {
-            head = null;
-        }
-        head = temp;
+        head = head.next;
         size--;
     }
 
-
-    public void insertAtEnd(int value) {
-        ListNode node = new ListNode(value);
-        if (head == null) {
-            head = node;
-        } else {
-            ListNode currentNode = head;
-            while (currentNode.next != null) {
-                currentNode = currentNode.next;
-            }
-            currentNode.next = node;
-        }
-        size++;
-    }
-
-    public void insertAfter(int value, int previous) {
-        ListNode temp = head;
-
-        while (temp != null) {
-            int nodeVal = temp.val;
-            if (nodeVal == previous) {
-                ListNode newNode = new ListNode();
-                newNode.val = value;
-                newNode.next = temp.next;
-
-                temp.next = newNode;
-            }
-            temp = temp.next;
-        }
-        size++;
-    }
-
     public void deleteByValue(int value) {
-        if (size == 0) {
-            return;
-        }
-
-        if (head.val == value) {
+        if (size == 0) return;
+        if (head.data == value) {
             deleteAtHead();
             size--;
             return;
         }
 
-        ListNode currentNode = head;
-        ListNode dummyNode = null;
-        while (currentNode != null) {
-            if (currentNode.val == value) {
-                if (dummyNode != null) {
-                    dummyNode.next = currentNode.next;
-                }
+        ListNode temp = head;
+        ListNode dummyNode = new ListNode();
+        while (temp != null) {
+            if (temp.data == value) {
+                dummyNode.next = temp.next;
             }
-            dummyNode = currentNode;
-            currentNode = currentNode.next;
+            dummyNode = temp;
+            temp = temp.next;
         }
         size--;
     }
 
     public void searchNode(int value) {
-        boolean exist = false;
-        ListNode node = head;
-        while (node != null) {
-            if (node.val == value) {
-                exist = true;
+        boolean check = false;
+        ListNode temp = head;
+        for (int i = 0; i < size; i++) {
+            if (temp.data == value) {
+                check = true;
                 break;
             }
-            node = node.next;
+            temp = temp.next;
         }
-        System.out.println(exist);
+        System.out.println(check);
+    }
+
+    public static class ListNode {
+        int data;
+        ListNode next;
+
+        public ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+
+        public ListNode() {
+        }
     }
 
     public static void main(String[] args) {
@@ -125,23 +106,21 @@ public class SinglyLinkedListTail {
         test.insertAtHead(1);
         test.insertAtHead(2);
         test.insertAtHead(3);
-        test.insertAtHead(4);
-        test.insertAtHead(5);
-        test.insertAfter(9, 2);
+//        test.insertAtHead(4);
+//        test.insertAtHead(5);
+        test.insertAfter(90, 1);
         test.deleteAtHead();
-        test.deleteByValue(2);
-        test.searchNode(10);
-
-
-        int i = 0;
+        test.deleteByValue(4);
+        test.searchNode(3);
+//
         ListNode current = test.head;
-        while (i < test.size) {
-
-            System.out.println(current.val);
-
-            i++;
+        for (int i = 0; i < test.size; i++) {
+            System.out.println(current.data);
             current = current.next;
+
+
         }
+
     }
 
 }
