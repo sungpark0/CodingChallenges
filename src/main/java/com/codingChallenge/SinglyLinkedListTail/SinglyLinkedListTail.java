@@ -1,5 +1,7 @@
 package com.codingChallenge.SinglyLinkedListTail;
 
+import java.util.List;
+
 public class SinglyLinkedListTail {
 
     int size;
@@ -100,27 +102,26 @@ public class SinglyLinkedListTail {
     public static void main(String[] args) {
         SinglyLinkedListTail test = new SinglyLinkedListTail();
 
+        test.insertAtEnd(1);
         test.insertAtEnd(2);
         test.insertAtEnd(3);
         test.insertAtEnd(4);
-        test.insertAtHead(1);
-        test.insertAtHead(2);
-        test.insertAtHead(3);
+        test.insertAtEnd(5);
+//        test.insertAtHead(1);
+//        test.insertAtHead(2);
+//        test.insertAtHead(3);
 //        test.insertAtHead(4);
 //        test.insertAtHead(5);
-        test.insertAfter(90, 1);
-        test.deleteAtHead();
-        test.deleteByValue(4);
-        test.searchNode(3);
-//
+//        test.insertAfter(90, 1);
+//        test.deleteAtHead();
+//        test.deleteByValue(4);
+//        test.searchNode(3);
         ListNode current = test.head;
+
         for (int i = 0; i < test.size; i++) {
             System.out.println(current.data);
             current = current.next;
-
-
         }
-
     }
 
 }

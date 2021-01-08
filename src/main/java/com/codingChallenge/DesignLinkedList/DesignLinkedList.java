@@ -89,7 +89,7 @@ public class DesignLinkedList {
         ListNode prev;
         int value;
 
-        public ListNode(int value) {
+        private ListNode(int value) {
             this.value = value;
             this.next = null;
             this.prev = null;
