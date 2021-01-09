@@ -1,10 +1,10 @@
-package com.codingChallenge.DesignLinkedList;
+package com.codingChallenge.LinkedList;
 
-public class DesignLinkedList {
+public class DesignLinkedList implements LinkedListInterface{
 
     int size;
-    ListNode head;
-    ListNode tail;
+    DoublyNode head;
+    DoublyNode tail;
 
     public DesignLinkedList() {
         this.size = 0;
@@ -15,15 +15,16 @@ public class DesignLinkedList {
     public int get(int index) {
         if (index < 0 || index >= size) return -1;
 
-        ListNode temp = head;
+        DoublyNode temp = head;
         for (int i = 0; i < index; i++) {
             temp = temp.next;
         }
         return temp.value;
     }
 
-    public void addAtHead(int val) {
-        ListNode newValue = new ListNode(val);
+    @Override
+    public void insertAtHead(int val) {
+        DoublyNode newValue = new DoublyNode(val);
         if (size == 0) {
             head = newValue;
             tail = newValue;
@@ -35,8 +36,9 @@ public class DesignLinkedList {
         size++;
     }
 
-    public void addAtTail(int val) {
-        ListNode newValue = new ListNode(val);
+    @Override
+    public void insertAtTail(int val) {
+        DoublyNode newValue = new DoublyNode(val);
         if (size == 0) { //if linked list is empty then we point head and tail to the newValue
             head = newValue;
         } else {
@@ -49,12 +51,12 @@ public class DesignLinkedList {
 
     public void addAtIndex(int index, int val) {
         if (index == 0) {
-            addAtHead(val);
+            insertAtHead(val);
         } else if (index == size) {
-            addAtTail(val);
+            insertAtTail(val);
         } else if (index > 0 && index < size) {
-            ListNode temp = head;
-            ListNode newValue = new ListNode(val);
+            DoublyNode temp = head;
+            DoublyNode newValue = new DoublyNode(val);
             for (int i = 0; i < index; i++) {
                 temp = temp.next;
             }
@@ -74,7 +76,7 @@ public class DesignLinkedList {
             tail = tail.prev;
             size--;
         } else if (index >= 0 && index < size) {
-            ListNode temp = head;
+            DoublyNode temp = head;
             for (int i = 0; i < index; i++) {
                 temp = temp.next;
             }
@@ -84,32 +86,20 @@ public class DesignLinkedList {
         }
     }
 
-    static class ListNode {
-        ListNode next;
-        ListNode prev;
-        int value;
-
-        private ListNode(int value) {
-            this.value = value;
-            this.next = null;
-            this.prev = null;
-        }
-    }
-
     public static void main(String[] args) {
 
         DesignLinkedList test = new DesignLinkedList();
 
-        test.addAtHead(1);
-        test.addAtHead(2);
-        test.addAtHead(3);
-//        test.addAtTail(1);
-//        test.addAtTail(2);
-//        test.addAtTail(3);
+        test.insertAtHead(1);
+        test.insertAtHead(2);
+        test.insertAtHead(3);
+//        test.insertAtTail(1);
+//        test.insertAtTail(2);
+//        test.insertAtTail(3);
         test.deleteAtIndex(2);
 //        System.out.println(test.get(1));
 
-        ListNode temp = test.head;
+        DoublyNode temp = test.head;
         for (int i = 0; i < test.size; i++) {
             System.out.println(temp.value);
             temp = temp.next;

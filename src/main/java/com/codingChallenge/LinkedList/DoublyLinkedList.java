@@ -1,12 +1,10 @@
-package com.codingChallenge.DoublyLinkedList;
+package com.codingChallenge.LinkedList;
 
-import com.codingChallenge.SinglyLinkedListTail.SinglyLinkedListTail;
-
-public class DoublyLinkedList {
+public class DoublyLinkedList implements LinkedListInterface {
 
     int size;
-    ListNode head;
-    ListNode tail;
+    DoublyNode head;
+    DoublyNode tail;
 
     public DoublyLinkedList() {
         head = null;
@@ -14,44 +12,31 @@ public class DoublyLinkedList {
         size = 0;
     }
 
-    class ListNode {
-        int data;
-        ListNode next;
-        ListNode previous;
-
-        public ListNode(int value) {
-            data = value;
-            next = null;
-            previous = null;
-        }
-
-        public ListNode() {
-        }
-    }
-
     public int size() {
         return size;
     }
 
+    @Override
     public void insertAtHead(int value) {
-        ListNode currentNode = new ListNode(value);
+        DoublyNode currentNode = new DoublyNode(value);
         if (head == null) {
             head = currentNode;
             tail = currentNode;
         } else {
             currentNode.next = head;
-            currentNode.previous = currentNode;
+            currentNode.prev = currentNode;
             head = currentNode;
         }
         size++;
     }
 
+    @Override
     public void insertAtTail(int value) {
-        ListNode currentNode = new ListNode(value);
+        DoublyNode currentNode = new DoublyNode(value);
         if (head == null) { //if its empty
             head = currentNode;
         } else {
-            currentNode.previous = tail; // tail and previous go hand and hand together
+            currentNode.prev = tail; // tail and previous go hand and hand together
             tail.next = currentNode;//
         }
 
@@ -61,8 +46,8 @@ public class DoublyLinkedList {
     }
 
     public void insertAtIndex(int index, int value) {
-        ListNode newValue = new ListNode(value);
-        ListNode temp = head;
+        DoublyNode newValue = new DoublyNode(value);
+        DoublyNode temp = head;
         if (index < 0 || index > size) {
             System.out.println("Out of Bound");
         } else if (index == 0) {
@@ -76,10 +61,10 @@ public class DoublyLinkedList {
                 temp = temp.next;
             }
             temp=temp.next;
-            newValue.previous = temp.previous;
+            newValue.prev = temp.prev;
             newValue.next = temp;
-            temp.previous = newValue;
-            newValue.previous.next = newValue;
+            temp.prev = newValue;
+            newValue.prev.next = newValue;
         }
         size++;
     }
@@ -89,19 +74,19 @@ public class DoublyLinkedList {
             System.out.println("Out of Bound");
         } else if (index == 0) { //index at head
             head = head.next;
-            head.previous = null;
+            head.prev = null;
             size--;
         } else if (index == size - 1) { //index at the tail. Extra if statement to take care tail.next = null
-            tail = tail.previous;
+            tail = tail.prev;
             tail.next = null;
             size--;
         } else {
-            ListNode itr = head;
+            DoublyNode itr = head;
             for (int i = 0; i < index; i++) {
                 itr = itr.next;
             }
-            itr.previous.next = itr.next; //if to not use .previous.next or next.previous we can make two temporary variables
-            itr.next.previous = itr.previous;
+            itr.prev.next = itr.next; //if to not use .prev.next or next.prev we can make two temporary variables
+            itr.next.prev = itr.prev;
             size--;
         }
     }
@@ -118,9 +103,9 @@ public class DoublyLinkedList {
         test.insertAtIndex(1, 999);
         test.deleteAtIndex(1);
 
-        ListNode current = test.head;
+        DoublyNode current = test.head;
         for (int i = 0; i < test.size(); i++) {
-            System.out.println(current.data);
+            System.out.println(current.value);
             current = current.next;
         }
     }
