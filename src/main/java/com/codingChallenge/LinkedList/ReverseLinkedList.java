@@ -58,11 +58,11 @@ public class ReverseLinkedList extends SinglyLinkedList{
         return list;
     }
 
-    public static void main(String[] args) {
-
-        ReverseLinkedList list = listNodeOfI(1, 2, 3, 4, 5);
-
-
-        System.out.println(listNodeOfI(1, 2, 3).size);
-    }
+//    public static void main(String[] args) {
+//
+//        ReverseLinkedList list = listNodeOfI(1, 2, 3, 4, 5);
+//
+//
+//        System.out.println(listNodeOfI(1, 2, 3).size);
+//    }
 }

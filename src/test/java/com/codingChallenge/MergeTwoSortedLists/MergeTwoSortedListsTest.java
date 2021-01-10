@@ -14,6 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MergeTwoSortedListsTest {
     MergeTwoSortedLists l1 = new MergeTwoSortedLists();
     MergeTwoSortedLists l2 = new MergeTwoSortedLists();
+
     @Test
     void positiveTest(){
         l1.insertAtHead(1);
@@ -22,20 +23,14 @@ class MergeTwoSortedListsTest {
         l2.insertAtHead(1);
         l2.insertAtTail(3);
         l2.insertAtTail(4);
-        SinglyNode test = MergeTwoSortedLists.mergeTwoLists(l1.head,l2.head);
-        List<Integer> testList = makeList(test.hea);
-    }
+        SinglyNode temp = MergeTwoSortedLists.mergeTwoLists(l1.head,l2.head);
+        List<Integer> test = new ArrayList<>();
 
-    public static List<Integer> makeList(ReverseLinkedList linkedList) {
-        List<Integer> list = new ArrayList<>();
-
-        SinglyNode temp = linkedList.head;
-        while (temp != null) {
-            list.add(temp.val);
-            temp = temp.next;
+        while(temp != null){
+            test.add(temp.val);
+            temp=temp.next;
         }
-
-        return list;
+        assertEquals(List.of(1,1,2,3,4,4) , test);
     }
 
 }
