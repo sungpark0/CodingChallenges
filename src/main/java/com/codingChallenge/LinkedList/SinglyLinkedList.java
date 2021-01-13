@@ -55,11 +55,11 @@ public class SinglyLinkedList implements LinkedListInterface {
 
     public void deleteByValue(int value) {
         if (size == 0) return;
-        if (head.val == value) {
-            deleteAtHead();
-            size--;
-            return;
-        }
+//        if (head.val == value) {
+//            deleteAtHead();
+//            size--;
+//            return;
+//        }
 
         SinglyNode temp = head;
         SinglyNode dummyNode = new SinglyNode();
@@ -98,16 +98,19 @@ public class SinglyLinkedList implements LinkedListInterface {
         test.insertAtHead(2);
         test.insertAtHead(3);
         test.insertAtHead(4);
+        test.insertAtHead(3);
         test.insertAtHead(5);
+        test.insertAtTail(3);
+        test.insertAtHead(3);
 //        test.insertAfter(90, 1);
 //        test.deleteAtHead();
-//        test.deleteByValue(4);
+        test.deleteByValue(3);
 //        test.searchNode(3);
         SinglyNode current = test.head;
 
-        for (int i = 0; i < test.size; i++) {
+        while(current!=null){
             System.out.println(current.val);
-            current = current.next;
+            current=current.next;
         }
     }
 
