@@ -1,9 +1,5 @@
 package com.codingChallenge.LinkedList;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-
 public class LinkedListCycleII extends SinglyLinkedList {
 
     public static SinglyNode detectCycleII(SinglyNode head) {
@@ -31,8 +27,7 @@ public class LinkedListCycleII extends SinglyLinkedList {
             }
             return result;
         }
-
-        return head;
+        return null;
     }
 
     public static void main(String[] args) {
