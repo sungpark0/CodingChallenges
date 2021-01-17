@@ -30,6 +30,7 @@ public class PalindromeLinkedList extends SinglyLinkedList {
         }
         return true;
     }
+
     public static int getLength(SinglyNode head) {
         SinglyNode temp = head;
         int length = 0;
