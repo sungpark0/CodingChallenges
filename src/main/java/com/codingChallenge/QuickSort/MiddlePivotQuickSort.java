@@ -3,10 +3,7 @@ package com.codingChallenge.QuickSort;
 import java.util.Arrays;
 
 public class MiddlePivotQuickSort {
-
-    /**
-     * Middle pivot point QuickSort below
-     */
+    
     public static void quickSortMiddlePivot(int[] nums, int low, int high) {
         if (low < high) {
             int pivotIndex = partitionMiddle(nums, low, high);
