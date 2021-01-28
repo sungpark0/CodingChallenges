@@ -2,14 +2,14 @@ package com.codingChallenge.Tree;
 
 import com.sun.source.tree.Tree;
 
-public class BinarySearchTree extends TreeNode{
+public class BinarySearchTree extends TreeNode {
 
     public TreeNode root;
 
     /**
      * Insert using recursion
      */
-    public void insertRecursion(int val) {
+    public void insertRecursion(int val) { // for the root
         root = insertRecursion(root, val);
     }
 
@@ -22,6 +22,21 @@ public class BinarySearchTree extends TreeNode{
             node.right = insertRecursion(node.right, val);
         }
 
+        return node;
+    }
+
+    public void insertRecursionII(int val) {
+        root = insertRecursionII(root, val);
+    }
+
+    public TreeNode insertRecursionII(TreeNode node, int val) {
+        if (node == null) return new TreeNode(val);
+
+        if (val < node.val) {
+            node.left = insertRecursionII(node.left, val);
+        } else if (val > node.val) {
+            node.right = insertRecursionII(node.right, val);
+        }
         return node;
     }
 
@@ -54,14 +69,14 @@ public class BinarySearchTree extends TreeNode{
         }
     }
 
-    public void preOrderPrint(TreeNode node){
+    public void preOrderPrint(TreeNode node) {
         if (node == null) return;
 
         System.out.println(node.val);
         preOrderPrint(node.left);
         preOrderPrint(node.right);
     }
-    
+
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
 
