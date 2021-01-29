@@ -40,6 +40,22 @@ public class BinarySearchTree extends TreeNode {
         return node;
     }
 
+    public void insertRecursionIII(int val) {
+        root = insertRecursionIII(root, val);
+    }
+
+    public TreeNode insertRecursionIII(TreeNode node, int val) {
+        if (node == null) return new TreeNode(val);
+
+        if (val < node.val) {
+            node.left = insertRecursionIII(node.left, val);
+        } else if (val > node.val) {
+            node.right = insertRecursionIII(node.right, val);
+        }
+
+        return node;
+    }
+
     /**
      * Insert using iteration
      */
@@ -77,8 +93,25 @@ public class BinarySearchTree extends TreeNode {
         preOrderPrint(node.right);
     }
 
+    public void InOrderPrint(TreeNode node) {
+        if (node == null) return;
+
+        InOrderPrint(node.left);
+        System.out.println(node.val);
+        InOrderPrint(node.right);
+    }
+
+    public void postOrderPrint(TreeNode node) {
+        if (node == null) return;
+
+        postOrderPrint(node.left);
+        postOrderPrint(node.right);
+        System.out.println(node.val);
+    }
+
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
+        BinarySearchTree treeTwo = new BinarySearchTree();
 
         tree.insertIteration(4);
         tree.insertIteration(2);
@@ -88,6 +121,15 @@ public class BinarySearchTree extends TreeNode {
         tree.insertIteration(8);
 
         tree.preOrderPrint(tree.root);
+
+        treeTwo.insertRecursionIII(4);
+        treeTwo.insertRecursionIII(2);
+        treeTwo.insertRecursionIII(3);
+        treeTwo.insertRecursionIII(6);
+        treeTwo.insertRecursionIII(5);
+        treeTwo.insertRecursionIII(8);
+
+        treeTwo.preOrderPrint(treeTwo.root);
     }
 
 }
