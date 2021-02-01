@@ -19,12 +19,12 @@ public class BalancedBinaryTree extends BinarySearchTree {
         return 1 + Math.max(left, right);
     }
 
-    public static boolean isBalncedII(TreeNode root) {
+    public static boolean isBalancedII(TreeNode root) {
         if (root == null) return true;
 
         if (Math.abs(LengthII(root.left) - LengthII(root.right)) > 1) return false;
 
-        return isBalncedII(root.left) && isBalncedII(root.right);
+        return isBalancedII(root.left) && isBalancedII(root.right);
     }
 
     public static int LengthII(TreeNode node) {

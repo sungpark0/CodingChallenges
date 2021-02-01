@@ -1,0 +1,35 @@
+package com.codingChallenge.Tree;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ValidateBinarySearchTree extends BinarySearchTree {
+
+    public boolean isValidBST(TreeNode root) {
+
+        if (root == null) return true;
+
+        List<Integer> result = new ArrayList<>();
+
+        InOrderList(root, result);
+
+        for (int i = 0; i < result.size() - 1; i++) {
+            if (result.get(i) >= result.get(i + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void InOrderList(TreeNode node, List<Integer> list) {
+
+        if (node.left != null) InOrderList(node.left, list);
+        list.add(node.val);
+        if (node.right != null) InOrderList(node.right, list);
+    }
+
+
+    public static void main(String[] args) {
+
+    }
+}
