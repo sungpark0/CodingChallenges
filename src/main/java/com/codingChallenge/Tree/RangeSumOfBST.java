@@ -1,8 +1,8 @@
 package com.codingChallenge.Tree;
 
-public class RangeSumOfBST {
+public class RangeSumOfBST extends BinarySearchTree {
 
-    // int sum = 0;
+     static int sum = 0;
     // List<Integer> list = new ArrayList<>();
     public int rangeSumBST(TreeNode node, int low, int high) {
         return recurse(node, low, high);
@@ -30,5 +30,20 @@ public class RangeSumOfBST {
 
 //        System.out.println("Final rootValue is " + rootValue + " left Value is "+ left + " right Value is " + right);
         return rootValue + left + right;
+    }
+
+    public static int rangeSumBSTII(TreeNode node, int low, int high){
+        if(node.val >= low && node.val <=high){
+            sum+=node.val;
+        }
+
+        if(node.left != null) rangeSumBSTII(node.left, low, high);
+        if(node.right != null) rangeSumBSTII(node.right, low, high);
+
+        return sum;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
