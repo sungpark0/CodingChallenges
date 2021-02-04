@@ -6,9 +6,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ConvertSortedArrayToBinanrySearchTreeTest {
+class ConvertSortedArrayToBinarySearchTreeTest {
 
-    ConvertSortedArrayToBinanrySearchTree tree = new ConvertSortedArrayToBinanrySearchTree();
+    ConvertSortedArrayToBinarySearchTree tree = new ConvertSortedArrayToBinarySearchTree();
 
     @Test
     void positiveTest() {
@@ -19,7 +19,7 @@ class ConvertSortedArrayToBinanrySearchTreeTest {
         tree.insertRecursion(2);
         List<Integer> test = BinaryTreeInOrderTraversal.inorderTraversal(tree.root);
         int[] arr = new int[]{2, 4, 5, 9, 12};
-        TreeNode result = ConvertSortedArrayToBinanrySearchTree.sortedArrayToBST(arr);
+        TreeNode result = ConvertSortedArrayToBinarySearchTree.sortedArrayToBST(arr);
         List<Integer> temp = BinaryTreeInOrderTraversal.inorderTraversal(result);
 
         assertEquals(test, temp);
@@ -30,13 +30,12 @@ class ConvertSortedArrayToBinanrySearchTreeTest {
         tree.insertRecursion(1);
         tree.insertRecursion(2);
         tree.insertRecursion(3);
+
         List<Integer> test = BinaryTreeInOrderTraversal.inorderTraversal(tree.root);
         int[] arr = new int[]{3, 1, 2};
-        TreeNode result = ConvertSortedArrayToBinanrySearchTree.sortedArrayToBST(arr);
+        TreeNode result = ConvertSortedArrayToBinarySearchTree.sortedArrayToBST(arr);
         List<Integer> temp = BinaryTreeInOrderTraversal.inorderTraversal(result);
 
         assertNotEquals(test, temp);
     }
-
-
 }

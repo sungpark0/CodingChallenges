@@ -2,7 +2,7 @@ package com.codingChallenge.Tree;
 
 import com.codingChallenge.BinarySearch.BinarySearch;
 
-public class ConvertSortedArrayToBinanrySearchTree extends BinaryTreeInOrderTraversal {
+public class ConvertSortedArrayToBinarySearchTree extends BinaryTreeInOrderTraversal {
 
     public static TreeNode sortedArrayToBST(int[] nums) {
         if(nums.length==0) return null;
