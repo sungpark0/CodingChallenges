@@ -23,8 +23,8 @@ public class MinimumDistanceBetweenBSTNodes extends BinarySearchTree{
     public static void InOrderList(TreeNode node, List<Integer> list) {
         if (node == null) return;
 
-        if (node.left != null) InOrderList(node.left, list);
         list.add(node.val);
+        if (node.left != null) InOrderList(node.left, list);
         if (node.right != null) InOrderList(node.right, list);
     }
 
