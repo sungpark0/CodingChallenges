@@ -2,6 +2,24 @@ package com.codingChallenge.Tree;
 
 public class BalancedBinaryTree extends BinarySearchTree {
 
+    public boolean isBalancedOptimalWay(TreeNode root) {
+        if (root == null) return true;
+
+        return recurse(root) != -1;
+    }
+
+    public int recurse(TreeNode node) {
+        if (node == null) return 0;
+
+        int leftHeight = recurse(node.left);
+        int rightHeight = recurse(node.right);
+
+        if (Math.abs(leftHeight - rightHeight) > 1 || leftHeight == -1 || rightHeight == -1) return -1;
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+
     public static boolean isBalanced(TreeNode root) {
         if (root == null) return true;
         int leftChecker = Length(root.left);
