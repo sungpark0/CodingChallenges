@@ -31,4 +31,15 @@ class FibonacciNumberTest {
         assertNotEquals( 0, FibonacciNumber.fib( f ) );
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = 6)
+    void positiveTestMemoization(int num) {
+        assertEquals( 8, FibonacciNumber.fibMemoization( num ) );
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = 5)
+    void negativeTestMemoization(int num) {
+        assertNotEquals(2, FibonacciNumber.fibMemoization(num));
+    }
 }
