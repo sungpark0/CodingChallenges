@@ -16,21 +16,39 @@ class MergeTwoSortedListsTest {
     MergeTwoSortedLists l2 = new MergeTwoSortedLists();
 
     @Test
-    void positiveTest(){
+    void positiveTest() {
         l1.insertAtHead(1);
         l1.insertAtTail(2);
         l1.insertAtTail(4);
         l2.insertAtHead(1);
         l2.insertAtTail(3);
         l2.insertAtTail(4);
-        SinglyNode temp = MergeTwoSortedLists.mergeTwoLists(l1.head,l2.head);
+        SinglyNode temp = MergeTwoSortedLists.mergeTwoLists(l1.head, l2.head);
         List<Integer> test = new ArrayList<>();
 
-        while(temp != null){
+        while (temp != null) {
             test.add(temp.val);
-            temp=temp.next;
+            temp = temp.next;
         }
-        assertEquals(List.of(1,1,2,3,4,4) , test);
+        assertEquals(List.of(1, 1, 2, 3, 4, 4), test);
+    }
+
+    @Test
+    void positiveTestRecursion() {
+        l1.insertAtHead(1);
+        l1.insertAtTail(5);
+        l1.insertAtTail(7);
+        l2.insertAtHead(3);
+        l2.insertAtTail(5);
+        l2.insertAtTail(9);
+        SinglyNode temp = MergeTwoSortedLists.mergeTwoListsRecursion(l1.head, l2.head);
+        List<Integer> test = new ArrayList<>();
+
+        while (temp != null) {
+            test.add(temp.val);
+            temp = temp.next;
+        }
+        assertEquals(List.of(1, 3, 5, 5, 7, 9), test);
     }
 
 }

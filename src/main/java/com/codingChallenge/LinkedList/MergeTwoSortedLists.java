@@ -4,6 +4,23 @@ import java.util.*;
 
 public class MergeTwoSortedLists extends SinglyLinkedList {
 
+    public static SinglyNode mergeTwoListsRecursion(SinglyNode l1, SinglyNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
+
+        SinglyNode dummyNode;
+
+        if (l1.val < l2.val) {
+            dummyNode = l1;
+            dummyNode.next = mergeTwoListsRecursion(l1.next, l2);
+        } else {
+            dummyNode = l2;
+            dummyNode.next = mergeTwoListsRecursion(l1, l2.next);
+        }
+
+        return dummyNode;
+    }
+
     public static SinglyNode mergeTwoLists(SinglyNode l1, SinglyNode l2) {
         SinglyNode temp = new SinglyNode();
         SinglyNode result = temp;
@@ -18,7 +35,7 @@ public class MergeTwoSortedLists extends SinglyLinkedList {
             }
             temp = temp.next;
         }
-        if(l1==null){
+        if (l1 == null) {
             temp.next = l2;
         } else {
             temp.next = l1;
