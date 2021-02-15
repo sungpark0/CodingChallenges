@@ -4,6 +4,7 @@ import com.codingChallenge.LinkedList.MergeTwoSortedLists;
 import com.codingChallenge.LinkedList.ReverseLinkedList;
 import com.codingChallenge.LinkedList.SinglyLinkedList;
 import com.codingChallenge.LinkedList.SinglyNode;
+import com.codingChallenge.MergeSort.MergeSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -49,6 +50,18 @@ class MergeTwoSortedListsTest {
             temp = temp.next;
         }
         assertEquals(List.of(1, 3, 5, 5, 7, 9), test);
+    }
+
+    @Test
+    void positiveTestMergeSort() {
+        int[] test = new int[]{3, 5, 1, 7, 4, 2};
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 7}, MergeSort.sortArrayII(test));
+    }
+
+    @Test
+    void negativeTestMergeSort() {
+        int[] negTest = new int[]{20, 5, 15, 10, 7};
+        assertNotEquals(new int[]{5, 7, 10, 20, 15}, MergeSort.sortArrayII(negTest));
     }
 
 }

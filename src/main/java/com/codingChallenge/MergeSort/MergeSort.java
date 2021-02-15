@@ -81,6 +81,43 @@ public class MergeSort {
         }
     }
 
+    public static int[] sortArrayII(int[] nums) {
+
+        if(nums.length == 1 ) return nums;
+
+        int pivot = nums.length / 2;
+
+        int[] leftArr = sortArrayII(Arrays.copyOfRange(nums, 0, pivot));
+        int[] rightArr = sortArrayII(Arrays.copyOfRange(nums, pivot, nums.length));
+
+        return mergeII(leftArr, rightArr);
+    }
+
+    public static int[] mergeII(int[] leftArr, int[] rightArr){
+        int[] newArr = new int[leftArr.length + rightArr.length];
+        int leftIndex = 0;
+        int rightIndex = 0;
+        int newIndex = 0;
+
+        while(leftIndex < leftArr.length && rightIndex< rightArr.length){
+            if(leftArr[leftIndex] < rightArr[rightIndex]){
+                newArr[newIndex++] = leftArr[leftIndex++];
+            } else{
+                newArr[newIndex++] = rightArr[rightIndex++];
+            }
+        }
+
+        while(leftIndex < leftArr.length){
+            newArr[newIndex++] = leftArr[leftIndex++];
+        }
+
+        while(rightIndex < rightArr.length){
+            newArr[newIndex++] = rightArr[rightIndex++];
+        }
+
+        return newArr;
+    }
+
 
     public static void main(String[] args) {
         MergeSort temp = new MergeSort();
@@ -88,5 +125,6 @@ public class MergeSort {
         temp.mergeSort(nums, 0, nums.length - 1);
         System.out.println(Arrays.toString(nums));
     }
+
 
 }

@@ -25,4 +25,14 @@ class ValidateBinarySearchTreeTest {
         assertTrue(tree.isValidBST(tree.root));
     }
 
+    @Test
+    void positiveTestII(){
+        tree.insertRecursion(15);
+        tree.insertRecursion(10);
+        tree.insertRecursion(5);
+        tree.insertRecursion(17);
+        tree.insertRecursion(20);
+        assertTrue(tree.isValidBSTII(tree.root));
+    }
+    
 }
