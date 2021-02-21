@@ -2,6 +2,9 @@ package com.codingChallenge.Tree;
 
 import com.sun.source.tree.Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinarySearchTree extends TreeNode {
 
     public TreeNode root;
@@ -109,6 +112,36 @@ public class BinarySearchTree extends TreeNode {
         System.out.println(node.val);
     }
 
+
+    public static void printLevelsIteratively(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            queue.stream().forEach(v -> System.out.println(v.val));
+
+            TreeNode node = queue.peek();
+            if (node != null) {
+                System.out.println(node.val + " hi");
+                queue.remove();
+
+
+                if (node.left != null)
+                    queue.add(node.left);
+
+                if (node.right != null)
+                    queue.add(node.right);
+            }
+            System.out.println("===================");
+        }
+
+    }
+
+//                4
+//        2             6
+//             3     5          8
+//
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
         BinarySearchTree treeTwo = new BinarySearchTree();
@@ -120,16 +153,18 @@ public class BinarySearchTree extends TreeNode {
         tree.insertIteration(5);
         tree.insertIteration(8);
 
-        tree.preOrderPrint(tree.root);
+        printLevelsIteratively(tree.root);
 
-        treeTwo.insertRecursionIII(4);
-        treeTwo.insertRecursionIII(2);
-        treeTwo.insertRecursionIII(3);
-        treeTwo.insertRecursionIII(6);
-        treeTwo.insertRecursionIII(5);
-        treeTwo.insertRecursionIII(8);
-
-        treeTwo.preOrderPrint(treeTwo.root);
+//        tree.preOrderPrint(tree.root);
+//
+//        treeTwo.insertRecursionIII(4);
+//        treeTwo.insertRecursionIII(2);
+//        treeTwo.insertRecursionIII(3);
+//        treeTwo.insertRecursionIII(6);
+//        treeTwo.insertRecursionIII(5);
+//        treeTwo.insertRecursionIII(8);
+//
+//        treeTwo.preOrderPrint(treeTwo.root);
     }
 
 }

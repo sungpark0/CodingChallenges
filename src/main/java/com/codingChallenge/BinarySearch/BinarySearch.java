@@ -32,6 +32,7 @@ public class BinarySearch {
 //        else return findPivot(nums, mid + 1, high);
 //    }
 
+
     public static int binarySearch(int[] nums, int start, int end, int target) {
         if (start > end) return -1;
 
