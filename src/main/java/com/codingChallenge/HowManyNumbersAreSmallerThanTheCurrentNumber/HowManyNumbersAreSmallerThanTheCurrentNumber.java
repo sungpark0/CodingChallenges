@@ -27,6 +27,7 @@ public class HowManyNumbersAreSmallerThanTheCurrentNumber {
             }
         }
 
+        
         return ans;
     }
 
