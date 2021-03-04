@@ -31,42 +31,16 @@ public class MoveZeroes {
     }
 
     public static void moveZeroes(int[] nums) {
-
-        List<Integer> list = new ArrayList<>();
-
-//        int count = 0;
-//        for (int num : nums) {
-//            if (num == 0) {
-//                count++;
-//            }
-//        }
-//
-//        for (int i = 0; i < nums.length; i++) {
-//            if (nums[i] != 0) {
-//                list.add( nums[i] );
-//            }
-//        }
-//
-//        while (count > 0) {
-//            list.add( 0 );
-//            count--;
-//        }
-//
-//        for (int i = 0; i < list.size(); i++) {
-//            nums[i] = list.get( i );
-//        }
-        for (int num : nums) {
-            if (num != 0) {
-                list.add(num);
-            }
-        }
+        int counter = 0;
+        int index = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            if (i >= list.size()) {
-                nums[i] = 0;
-            } else {
-                nums[i] = list.get(i);
-            }
+            if (nums[i] == 0) counter++;
+            else nums[index++] = nums[i];
+        }
+
+        for (int i = nums.length - 1; i > nums.length - 1 - counter; i--) {
+            nums[i] = 0;
         }
 
     }
