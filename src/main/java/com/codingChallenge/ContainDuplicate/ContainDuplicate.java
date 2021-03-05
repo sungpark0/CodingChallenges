@@ -6,7 +6,7 @@ public class ContainDuplicate {
     public static void main(String[] args) {
 
         int[] test = {1, 2, 3};
-        containDuplicate( test );
+        containDuplicate(test);
     }
 
     public static boolean containDuplicate(int[] nums) {
@@ -14,11 +14,11 @@ public class ContainDuplicate {
         Map<Integer, Integer> map = new HashMap<>(nums.length);
 
         Arrays.sort(nums);
-        for (int i = 0;i< nums.length;i ++){
-            if (map.containsKey( nums[i] )) {
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(nums[i])) {
                 return true;
             }
-                map.put(nums[i], 1);
+            map.put(nums[i], 1);
         }
 //        for (int num : nums) {
 //            if (!map.containsKey( num )) {
@@ -30,7 +30,6 @@ public class ContainDuplicate {
 
         return false;
     }
-
 
 
 //         Arrays.sort(nums);
