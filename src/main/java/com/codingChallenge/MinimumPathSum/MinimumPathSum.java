@@ -1,5 +1,7 @@
 package com.codingChallenge.MinimumPathSum;
 
+import java.util.Arrays;
+
 public class MinimumPathSum {
 
     public static int minPathSum(int[][] grid) {
@@ -23,11 +25,10 @@ public class MinimumPathSum {
             }
         }
 
-
         return dp[col - 1][row - 1];
     }
 
     public static void main(String[] args) {
-
+        System.out.println(minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
     }
 }
