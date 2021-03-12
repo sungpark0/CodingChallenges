@@ -32,6 +32,12 @@ public class Triangle {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(minimumTotal(
+                List.of(
+                        List.of(2),
+                        List.of(3, 4),
+                        List.of(6, 5, 7),
+                        List.of(4, 1, 8, 3)
+                )));
     }
 }
