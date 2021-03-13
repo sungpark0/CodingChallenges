@@ -29,6 +29,7 @@ public class MinimumPathSum {
     }
 
     public static void main(String[] args) {
-        System.out.println(minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
+//        System.out.println(minPathSum(new int[][]{{1, 3, 1}, {1, 5, 1}, {4, 2, 1}}));
+        System.out.println(minPathSum(new int[][]{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}}));
     }
 }
