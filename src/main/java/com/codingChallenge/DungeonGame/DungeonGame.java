@@ -1,5 +1,7 @@
 package com.codingChallenge.DungeonGame;
 
+import java.util.Arrays;
+
 public class DungeonGame {
 
     public static int calculateMinimumHP(int[][] dungeon) {
@@ -13,7 +15,6 @@ public class DungeonGame {
             int value = dp[i + 1][row - 1] - dungeon[i][row - 1];
             dp[i][row - 1] = Math.max(value, 1);
         }
-
         for (int i = row - 2; i >= 0; i--) {
             int value = dp[col - 1][i + 1] - dungeon[col - 1][i];
             dp[col - 1][i] = Math.max(value, 1);
@@ -78,6 +79,6 @@ public class DungeonGame {
 //         // if(negative.isEmpty()) return 1;
 //         return Math.abs(dp[col-1][row-1]) + 1;
     public static void main(String[] args) {
-
+        System.out.println(calculateMinimumHP(new int[][]{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}}));
     }
 }
