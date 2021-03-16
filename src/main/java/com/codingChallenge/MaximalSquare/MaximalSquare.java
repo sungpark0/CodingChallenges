@@ -1,5 +1,7 @@
 package com.codingChallenge.MaximalSquare;
 
+import java.util.Arrays;
+
 public class MaximalSquare {
 
     public static int maximalSquare(char[][] matrix) {
@@ -21,6 +23,11 @@ public class MaximalSquare {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(maximalSquare(new char[][]{
+                {'1', '0', '1', '0', '0'},
+                {'1', '0', '1', '1', '0'},
+                {'1', '1', '1', '1', '0'},
+                {'1', '0', '0', '1', '0'}
+        }));
     }
 }
