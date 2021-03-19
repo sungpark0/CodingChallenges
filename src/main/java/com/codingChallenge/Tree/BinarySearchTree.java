@@ -146,25 +146,35 @@ public class BinarySearchTree extends TreeNode {
         BinarySearchTree tree = new BinarySearchTree();
         BinarySearchTree treeTwo = new BinarySearchTree();
 
-        tree.insertIteration(4);
-        tree.insertIteration(2);
-        tree.insertIteration(3);
-        tree.insertIteration(6);
-        tree.insertIteration(5);
-        tree.insertIteration(8);
-
-        printLevelsIteratively(tree.root);
-
-//        tree.preOrderPrint(tree.root);
+//        tree.insertIteration(2);
+//        tree.insertIteration(2);
+//        tree.insertIteration(3);
+//        tree.insertIteration(6);
+//        tree.insertIteration(5);
+//        tree.insertIteration(8);
 //
-//        treeTwo.insertRecursionIII(4);
-//        treeTwo.insertRecursionIII(2);
-//        treeTwo.insertRecursionIII(3);
-//        treeTwo.insertRecursionIII(6);
-//        treeTwo.insertRecursionIII(5);
-//        treeTwo.insertRecursionIII(8);
-//
+//        printLevelsIteratively(tree.root);
+
+        tree.preOrderPrint(tree.root);
+
+        treeTwo.insertRecursionIII(12);
+        treeTwo.insertRecursionIII(9);
+        treeTwo.insertRecursionIII(5);
+        treeTwo.insertRecursionIII(3);
+        treeTwo.insertRecursionIII(10);
+        treeTwo.insertRecursionIII(11);
+        treeTwo.insertRecursionIII(14);
+        treeTwo.insertRecursionIII(17);
+        treeTwo.insertRecursionIII(16);
+        treeTwo.insertRecursionIII(19);
+        //     12
+        //   9     14
+        // 5  10      17
+        //3     11   16  19
+
 //        treeTwo.preOrderPrint(treeTwo.root);
+//        treeTwo.postOrderPrint(treeTwo.root);
+        treeTwo.InOrderPrint(treeTwo.root);
     }
 
 }
