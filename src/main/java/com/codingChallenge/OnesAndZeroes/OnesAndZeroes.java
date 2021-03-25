@@ -8,12 +8,10 @@ public class OnesAndZeroes {
         for (String str : strs) {
             int zeroes = 0;
             int ones = 0;
-
             for (int j = 0; j < str.length(); j++) {
                 if (str.charAt(j) == '0') zeroes++;
                 else ones++;
             }
-
             for (int x = m; x >= zeroes; x--) {
                 for (int y = n; y >= ones; y--) {
                     dp[x][y] = Math.max(dp[x][y], dp[x - zeroes][y - ones] + 1);
@@ -25,6 +23,6 @@ public class OnesAndZeroes {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(findMaxForm(new String[]{"10", "0001", "111001", "1", "0"}, 5, 3));
     }
 }
