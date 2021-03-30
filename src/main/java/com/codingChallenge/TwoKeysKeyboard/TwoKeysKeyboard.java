@@ -1,7 +1,5 @@
 package com.codingChallenge.TwoKeysKeyboard;
 
-import java.util.Arrays;
-
 public class TwoKeysKeyboard {
 
     public static int minSteps(int n) {
@@ -23,6 +21,6 @@ public class TwoKeysKeyboard {
     }
 
     public static void main(String[] args) {
-        System.out.println(minSteps(6));
+        System.out.println(minSteps(9));
     }
 }
