@@ -22,6 +22,6 @@ public class MinimumNumberOfRefuelingStops {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(minRefuelStops(100, 10, new int[][]{{10, 60}, {20, 30}, {30, 30}, {60, 40}}));
     }
 }
