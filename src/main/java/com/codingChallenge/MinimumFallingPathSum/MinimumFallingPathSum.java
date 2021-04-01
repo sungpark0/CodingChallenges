@@ -33,6 +33,6 @@ public class MinimumFallingPathSum {
 
 
     public static void main(String[] args) {
-
+        System.out.println(minFallingPathSum(new int[][]{{2, 1, 3}, {6, 5, 4}, {7, 8, 9}}));
     }
 }
