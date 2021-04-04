@@ -2,12 +2,11 @@ package com.codingChallenge.MinimumCostForTickets;
 
 public class MinimumCostForTickets {
 
-    public static int mincostTickets(int[] days, int[] costs) {
+    public static int minCostTickets(int[] days, int[] costs) {
         int n = days[days.length - 1];
         int[] dp = new int[n + 1];
 
         int j = 0;
-
         for (int i = 1; i < dp.length; i++) {
             if (days[j] == i) {
                 int daily = dp[i - 1] + costs[0];
@@ -22,6 +21,6 @@ public class MinimumCostForTickets {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(minCostTickets(new int[]{1, 4, 6, 7, 8, 20}, new int[]{2, 7, 15}));
     }
 }
