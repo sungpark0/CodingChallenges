@@ -27,6 +27,6 @@ public class TilingARectangleWithTheFewestSquares {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(tilingRectangle(3,4));
     }
 }
