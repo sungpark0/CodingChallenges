@@ -14,6 +14,10 @@ public class ClimbingStairs {
         return dp[n];
     }
 
+    public static void main(String[] args) {
+        System.out.println(climbStairsTabulation(6));
+    }
+
     public static int climbStairs(int n) {
         int[] arr = new int[n+1];
 
@@ -30,8 +34,5 @@ public class ClimbingStairs {
 
         return storage[n];
     }
-
-    public static void main(String[] args) {
-
-    }
+    
 }
