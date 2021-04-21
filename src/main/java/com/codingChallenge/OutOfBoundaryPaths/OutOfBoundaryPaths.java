@@ -26,3 +26,4 @@ public class OutOfBoundaryPaths {
         System.out.println(findPaths(2,2,2,0,0));
     }
 }
+
