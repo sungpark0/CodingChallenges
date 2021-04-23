@@ -16,8 +16,8 @@ public class CompareStringsByFrequencyOfTheSmallestCharacter {
 
         for(int i =0; i<queries.length; i++){
             int counter =0;
-            for(int j =0; j< words.length; j++){
-                if(frequency(queries[i]) < frequency(words[j])){
+            for (String word : words) {
+                if (frequency(queries[i]) < frequency(word)) {
                     counter++;
                 }
             }
@@ -32,12 +32,11 @@ public class CompareStringsByFrequencyOfTheSmallestCharacter {
         char smallest = 'z';
         char[] strChar = str.toCharArray();
 
-        for (int i = 0; i < strChar.length; i++) {
-            if (strChar[i] < smallest) {
-                smallest = strChar[i];
+        for (char c : strChar) {
+            if (c < smallest) {
+                smallest = c;
                 counter = 1;
-            }
-            else if (smallest == strChar[i]) {
+            } else if (smallest == c) {
                 counter++;
             }
         }

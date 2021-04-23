@@ -1,6 +1,6 @@
 package com.codingChallenge.NumberOfLongestIncreasingSubsequence;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class NumberOfLongestIncreasingSubsequence {
 
@@ -38,6 +38,6 @@ public class NumberOfLongestIncreasingSubsequence {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(findNumberOfLIS(new int[]{1, 3, 5, 4, 7}));
     }
 }
