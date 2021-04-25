@@ -19,7 +19,6 @@ public class KnightProbabilityInChessboard {
                             int nCol = col + possibleMove[1];
                             if (nRow >= 0 && nRow < N && nCol >= 0 && nCol < N) {
                                 temp[nRow][nCol] += dp[row][col] / factor;
-
                             }
                         }
                     }
@@ -36,6 +35,6 @@ public class KnightProbabilityInChessboard {
     }
 
     public static void main(String[] args) {
-
+        System.out.println(knightProbability(3, 2, 0, 0));
     }
 }
