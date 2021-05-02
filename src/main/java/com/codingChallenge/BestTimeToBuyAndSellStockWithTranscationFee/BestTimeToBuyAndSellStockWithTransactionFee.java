@@ -18,7 +18,7 @@ public class BestTimeToBuyAndSellStockWithTransactionFee {
             }
             profit = Math.max(profit, dp[i]);
         }
-        
+
         return profit;
     }
 

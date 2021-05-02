@@ -1,5 +1,6 @@
 package com.codingChallenge.Tree;
 
+import com.codingChallenge.UniqueBinarySearchTrees.UniqueBinarySearchTrees;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -12,14 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class UniqueBinarySearchTreesIITest {
 
     @ParameterizedTest
-    @ValueSource(ints =  3)
-    void sizePositiveTest(int num){
+    @ValueSource(ints = 3)
+    void sizePositiveTest(int num) {
         assertEquals(5, UniqueBinarySearchTreesII.generateTrees(num).size());
     }
 
     @ParameterizedTest
-    @ValueSource(ints =  2)
-    void sizeNegativeTest(int num){
+    @ValueSource(ints = 2)
+    void sizeNegativeTest(int num) {
         assertNotEquals(1, UniqueBinarySearchTreesII.generateTrees(num).size());
     }
 
@@ -31,4 +32,14 @@ class UniqueBinarySearchTreesIITest {
 //        }
 //        assertEquals(5, UniqueBinarySearchTreesII.generateTrees(3).size());
 //    }
+
+    @Test
+    void positiveTest() {
+        assertEquals(14, UniqueBinarySearchTrees.numTrees(4));
+    }
+
+    @Test
+    void negativeTest(){
+        assertNotEquals(6, UniqueBinarySearchTrees.numTrees(3));
+    }
 }
