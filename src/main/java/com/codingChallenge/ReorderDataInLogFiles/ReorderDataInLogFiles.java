@@ -1,6 +1,7 @@
 package com.codingChallenge.ReorderDataInLogFiles;
 
 import java.util.*;
+import java.util.stream.IntStream;
 
 public class ReorderDataInLogFiles {
     public static void main(String[] args) {
@@ -34,14 +35,10 @@ public class ReorderDataInLogFiles {
         });
 
         //Inputting letSorted and digSorted into String[] result
-        for (int i = 0; i < letWords.size(); i++) {
-            result[i] = letWords.get(i);
-        }
+        IntStream.range(0, letWords.size()).forEach(i -> result[i] = letWords.get(i));
 
-        int k = 0;
-        for (int i = letWords.size(); i < result.length; i++) {
+        for (int i = letWords.size(), k = 0; i < result.length; i++, k++) {
             result[i] = digWords.get(k);
-            k++;
         }
         return result;
     }
@@ -67,56 +64,6 @@ public class ReorderDataInLogFiles {
         });
 
         return logs;
- 
+
     }
-//
-//    public String[] reorderLogFilesII(String[] logs) {
-//        String[] result = new String[logs.length];
-//        List<Integer> indexes = new ArrayList<>();
-//        List<String> digSorted = new ArrayList<>();
-//        List<String> letWords = new ArrayList<>();
-//        List<String> letUnsorted = new ArrayList<>();
-//        List<String> letSorted = new ArrayList<>();
-//
-//        for (String log : logs) { //getting index of 1 after identifier
-//            indexes.add(log.indexOf(" "));
-//        }
-//
-//        //separating letters and digits
-//        for (int i = 0; i < indexes.size(); i++) {
-//            if (Character.isDigit(logs[i].charAt((indexes.get(i) + 1)))) {
-//                digSorted.add(logs[i]);
-//            } else letWords.add(logs[i]);
-//        }
-//
-//        //letter sorting
-//        Collections.sort(letWords);
-//        for (int i = 0; i < letWords.size(); i++) {
-//            letUnsorted.add(letWords.get(i).substring((letWords.get(i).indexOf(" ") + 1), letWords.get(i).length()));
-//        }
-//        Collections.sort(letUnsorted);
-//        indexes.clear();
-//        for (int i = 0; i < letUnsorted.size(); i++) {
-//            for (int j = 0; j < letUnsorted.size(); j++) {
-//                if (letWords.get(j).contains(letUnsorted.get(i))) {
-//                    indexes.add(j);
-//                }
-//            }
-//        }
-//        for (int i = 0; i < indexes.size(); i++) {
-//            letSorted.add(letWords.get(indexes.get(i)));
-//        }
-//
-//        //Inputting letSorted and digSorted into String[] result
-//        for (int i = 0; i < letSorted.size(); i++) {
-//            result[i] = letSorted.get(i);
-//        }
-//        int k = 0;
-//        for (int i = letSorted.size(); i < result.length; i++) {
-//            result[i] = digSorted.get(k);
-//            k++;
-//        }
-//
-//        return result;
-//    }
 }
