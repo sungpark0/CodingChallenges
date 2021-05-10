@@ -10,19 +10,14 @@ public class BaseballGame {
         records.add(Integer.parseInt(ops[0]));
 
         for (int i = 1; i < ops.length; i++) {
-            switch (ops[i]) {
-                case "C":
-                    records.remove(records.size() - 1);
-                    break;
-                case "D":
-                    records.add(records.get(records.size() - 1) * 2);
-                    break;
-                case "+":
-                    records.add(records.get(records.size() - 1) + records.get(records.size() - 2));
-                    break;
-                default:
-                    records.add(Integer.parseInt(ops[i]));
-                    break;
+            if ("C".equals(ops[i])) {
+                records.remove(records.size() - 1);
+            } else if ("D".equals(ops[i])) {
+                records.add(records.get(records.size() - 1) * 2);
+            } else if ("+".equals(ops[i])) {
+                records.add(records.get(records.size() - 1) + records.get(records.size() - 2));
+            } else {
+                records.add(Integer.parseInt(ops[i]));
             }
         }
 
