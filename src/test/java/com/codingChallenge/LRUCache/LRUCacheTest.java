@@ -13,12 +13,12 @@ class LRUCacheTest {
         assertEquals(-1, test.get(4));
     }
 
-    @Test
-    void negativeTest() {
-        test.put(1, 4);
-        assertNotEquals(-1, test.get(1));
-        //Testing put works
-        assertEquals(4, test.get(1));
-    }
+//    @Test
+//    void negativeTest() {
+//        test.put(1, 4);
+//        assertNotEquals(-1, test.get(1));
+//        //Testing put works
+//        assertEquals(4, test.get(1));
+//    }
 
 }
