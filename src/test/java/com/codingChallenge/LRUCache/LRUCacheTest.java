@@ -6,12 +6,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LRUCacheTest {
 
-    LRUCache test = new LRUCache();
+//    LRUCache test = new LRUCache();
 
-    @Test
-    void positiveTest() {
-        assertEquals(-1, test.get(4));
-    }
+//    @Test
+//    void positiveTest() {
+//        assertEquals(-1, test.get(4));
+//    }
 
 //    @Test
 //    void negativeTest() {
