@@ -7,7 +7,6 @@ public class SinglyNode {
 
     public SinglyNode(int value) {
         this.val = value;
-
     }
 
     public SinglyNode() {

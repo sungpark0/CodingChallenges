@@ -6,14 +6,14 @@ public class KClosestPointsToOrigin {
 
     public static int[][] kClosest(int[][] points, int k) {
         int[][] result = new int[k][2];
-        PriorityQueue<int[]> priorityQ = new PriorityQueue<>((a, b) -> (a[0] * a[0] + a[1] * a[1]) - (b[0] * b[0] + b[1] * b[1]));
+        PriorityQueue<int[]> heap = new PriorityQueue<>((a, b) -> (a[0] * a[0] + a[1] * a[1]) - (b[0] * b[0] + b[1] * b[1]));
 
-        Collections.addAll(priorityQ, points);
+        Collections.addAll(heap, points);
 
         int index = 0;
 
-        while(!priorityQ.isEmpty() && index < k){
-            int[] arr = priorityQ.remove();
+        while(!heap.isEmpty() && index < k){
+            int[] arr = heap.remove();
             result[index][0] = arr[0];
             result[index][1] = arr[1];
             index++;
