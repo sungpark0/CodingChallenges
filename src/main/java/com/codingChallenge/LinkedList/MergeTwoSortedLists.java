@@ -44,6 +44,23 @@ public class MergeTwoSortedLists extends SinglyLinkedList {
         return result.next;
     }
 
+    public static SinglyNode mergeTwoListsII(SinglyNode l1, SinglyNode l2) {
+        if(l1 == null) return l2;
+        else if(l2 == null) return l1;
+
+        SinglyNode result = new SinglyNode();
+
+        if(l1.val < l2.val){
+            result = l1;
+            result.next = mergeTwoListsII(l1.next, l2);
+        } else {
+            result = l2;
+            result.next = mergeTwoListsII(l1, l2.next);
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
 ////   l1
 //        SinglyNode one = new SinglyNode(1);

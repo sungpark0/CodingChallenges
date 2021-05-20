@@ -64,4 +64,38 @@ class MergeTwoSortedListsTest {
         assertNotEquals(new int[]{5, 7, 10, 20, 15}, MergeSort.sortArrayII(negTest));
     }
 
+    @Test
+    void positiveTestII() {
+        l1.insertAtHead(1);
+        l1.insertAtTail(2);
+        l1.insertAtTail(4);
+        l2.insertAtHead(1);
+        l2.insertAtTail(3);
+        l2.insertAtTail(4);
+        List<Integer> test = new ArrayList<>();
+        SinglyNode node = MergeTwoSortedLists.mergeTwoListsII(l1.head, l2.head);
+
+        while (node != null) {
+            test.add(node.val);
+            node = node.next;
+        }
+
+        assertEquals(List.of(1, 1, 2, 3, 4, 4), test);
+    }
+
+    @Test
+    void negativeTestII() {
+        l1.insertAtHead(1);
+        l2.insertAtHead(1);
+        List<Integer> negTest = new ArrayList<>();
+        SinglyNode node = MergeTwoSortedLists.mergeTwoListsII(l1.head, l2.head);
+
+        while (node != null) {
+            negTest.add(node.val);
+            node = node.next;
+        }
+
+        assertNotEquals(List.of(1), negTest);
+    }
+
 }
