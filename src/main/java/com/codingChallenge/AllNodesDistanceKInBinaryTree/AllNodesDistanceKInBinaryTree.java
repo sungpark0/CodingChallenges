@@ -12,6 +12,7 @@ public class AllNodesDistanceKInBinaryTree extends BinarySearchTree {
         List<Integer> result = new ArrayList<>();
 
         //Mapping the parent nodes
+        //Filling in the map with <CurrentNode, ParentNode>
         Map<TreeNode, TreeNode> parentsMap = new HashMap<>();
         dfsParentNodes(parentsMap, root, null);
 
@@ -21,12 +22,15 @@ public class AllNodesDistanceKInBinaryTree extends BinarySearchTree {
         queue.add(target);
 
         while (!queue.isEmpty()) {
+            //Fixed size
             int size = queue.size();
+            //Looping
             while (size > 0) {
                 size--;
                 TreeNode node = queue.remove();
 
                 if (!visited.add(node)) continue;
+                //
                 if (k == 0) result.add(node.val);
 
                 else {
@@ -47,7 +51,7 @@ public class AllNodesDistanceKInBinaryTree extends BinarySearchTree {
         List<Integer> result = new ArrayList<>();
         Map<TreeNode, TreeNode> parentsMap = new HashMap<>();
         dfsParentNodes(parentsMap, root, null);
-        
+
         Set<TreeNode> visited = new HashSet<>();
         Deque<TreeNode> queue = new ArrayDeque<>();
         queue.add(target);
