@@ -33,26 +33,23 @@ import java.util.*;
 public class CounterfeitCurrency {
 
     public static int countCounterfeit(List<String> serialNumbers) {
-        List<Integer> amounts = new ArrayList<>();
         int total = 0;
-        Integer[] prices = new Integer[]{10, 20, 50, 100, 200, 500, 1000};
+
+        HashSet<Integer> currencies = generateCurrencyHashSet();
 
         for (String serial : serialNumbers) {
             if (serial.length() >= 10 && serial.length() <= 12) {
                 String letters = serial.substring(0, 3);
                 String year = serial.substring(3, 7);
                 String last = serial.substring(serial.length() - 1, serial.length());
+
                 if (isItLetter(letters) && validYear(year) && (last.charAt(0) >= 'A' && last.charAt(0) <= 'Z')) {
-                    int currency = Integer.parseInt(serial.substring(7, serial.length() - 1));
-                    for (int price : prices) {
-                        if (price == currency) {
-                            amounts.add(price);
-                        }
-                    }
+                    int amount = Integer.parseInt(serial.substring(7, serial.length() - 1));
+
+                    if (currencies.contains(amount)) total += amount;
                 }
             }
         }
-        for (int amount : amounts) total += amount;
 
         return total;
     }
@@ -73,6 +70,61 @@ public class CounterfeitCurrency {
         }
         return true;
     }
+
+    public static HashSet<Integer> generateCurrencyHashSet() {
+        return new HashSet<>() {{
+            add(10);
+            add(20);
+            add(50);
+            add(100);
+            add(200);
+            add(500);
+            add(1000);
+        }};
+    }
+
+
+//    public static int countCounterfeit(List<String> serialNumbers) {
+//        List<Integer> amounts = new ArrayList<>();
+//        int total = 0;
+//        Integer[] prices = new Integer[]{10, 20, 50, 100, 200, 500, 1000};
+//
+//        for (String serial : serialNumbers) {
+//            if (serial.length() >= 10 && serial.length() <= 12) {
+//                String letters = serial.substring(0, 3);
+//                String year = serial.substring(3, 7);
+//                String last = serial.substring(serial.length() - 1, serial.length());
+//                if (isItLetter(letters) && validYear(year) && (last.charAt(0) >= 'A' && last.charAt(0) <= 'Z')) {
+//                    int currency = Integer.parseInt(serial.substring(7, serial.length() - 1));
+//                    for (int price : prices) {
+//                        if (price == currency) {
+//                            amounts.add(price);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        for (int amount : amounts) total += amount;
+//
+//        return total;
+//    }
+//
+//    public static boolean validYear(String year) {
+//        for (char ch : year.toCharArray()) if (!Character.isDigit(ch)) return false;
+//
+//        int yr = Integer.parseInt(year);
+//
+//        return yr >= 1900 && yr <= 2019;
+//    }
+//
+//    public static boolean isItLetter(String letters) {
+//        Set<Character> isDistinct = new HashSet<>();
+//        for (char ch : letters.toCharArray()) {
+//            if ((ch < 'A' || ch > 'Z') || isDistinct.contains(ch)) return false;
+//            else isDistinct.add(ch);
+//        }
+//        return true;
+//    }
 
     public static void main(String[] args) {
         System.out.println(countCounterfeit(List.of(
