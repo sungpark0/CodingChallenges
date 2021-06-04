@@ -23,15 +23,15 @@ import java.util.List;
 public class CustomSortedArray {
 
     public static int moves(List<Integer> arr) {
+        int mid = arr.size() / 2;
         int evens = 0;
         int odds = 0;
-        int mid = arr.size() / 2;
-
         for (int i = 0; i < mid; i++) {
-            if (arr.get(i) % 2 != 0) odds++;
+            if(arr.get(i) % 2 != 0) odds++;
         }
-        for (int i = mid; i < arr.size(); i++) {
-            if (arr.get(i) % 2 == 0) evens++;
+
+        for(int i = mid; i < arr.size(); i++){
+            if(arr.get(i) % 2 == 0) evens++;
         }
 
         return (odds + evens) / 2;
