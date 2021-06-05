@@ -24,9 +24,10 @@ public class CustomSortedArray {
 
     public static int moves(List<Integer> arr) {
         int mid = arr.size() / 2;
-        int evens = 0;
         int odds = 0;
-        for (int i = 0; i < mid; i++) {
+        int evens = 0;
+
+        for(int i = 0; i < mid; i++){
             if(arr.get(i) % 2 != 0) odds++;
         }
 
@@ -34,7 +35,7 @@ public class CustomSortedArray {
             if(arr.get(i) % 2 == 0) evens++;
         }
 
-        return (odds + evens) / 2;
+        return (odds+ evens) / 2;
     }
 
     public static void main(String[] args) {
