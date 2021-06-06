@@ -14,20 +14,34 @@ import java.util.Stack;
 public class TagIdentificationNumber {
 
     public static int numOfIds(String pool) {
-        if (pool.length() < 11) return 0;
+        if(pool.length() < 11) return 0;
 
         Stack<Character> stack = new Stack<>();
 
-        for (char ch : pool.toCharArray()) {
-            if (ch == '8') stack.add(ch);
+        for(char ch : pool.toCharArray()){
+            if(ch == '8') stack.add(ch);
         }
 
-        int leftOverLength = pool.length() / 11;
+        int nonEights = pool.length() / 11;
 
-        if (stack.isEmpty()) return 0;
-        else if (stack.size() > leftOverLength) return leftOverLength;
-
+        if(stack.isEmpty()) return 0;
+        else if(stack.size() > nonEights) return nonEights;
+        
         return stack.size();
+//        if (pool.length() < 11) return 0;
+//
+//        Stack<Character> stack = new Stack<>();
+//
+//        for (char ch : pool.toCharArray()) {
+//            if (ch == '8') stack.add(ch);
+//        }
+//
+//        int leftOverLength = pool.length() / 11;
+//
+//        if (stack.isEmpty()) return 0;
+//        else if (stack.size() > leftOverLength) return leftOverLength;
+//
+//        return stack.size();
     }
 
     public static void main(String[] args) {
