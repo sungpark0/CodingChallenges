@@ -3,57 +3,54 @@ package com.codingChallenge;
 import java.util.*;
 
 /**
- * Given a non-empty list of words, return the k most frequent elements.
- * <p>
- * Your answer should be sorted by frequency from highest to lowest.
- * If two words have the same frequency, then the word with the lower alphabetical order comes first.
+ * You are given an array prices where prices[i] is the price of a given stock on the ith day.
+ * You want to maximize your profit by choosing a single day
+ * to buy one stock and choosing a different day in the future to sell that stock.
+ * Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
  * <p>
  * Example 1:
- * Input: ["i", "love", "leetcode", "i", "love", "coding"], k = 2
- * Output: ["i", "love"]
- * Explanation: "i" and "love" are the two most frequent words.
- * Note that "i" comes before "love" due to a lower alphabetical order.
+ * Input: prices = [7,1,5,3,6,4]
+ * Output: 5
+ * Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+ * Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+ * <p>
  * Example 2:
- * Input: ["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"], k = 4
- * Output: ["the", "is", "sunny", "day"]
- * Explanation: "the", "is", "sunny" and "day" are the four most frequent words,
- * with the number of occurrence being 4, 3, 2 and 1 respectively.
+ * Input: prices = [7,6,4,3,1]
+ * Output: 0
+ * Explanation: In this case, no transactions are done and the max profit = 0.
  */
 public class Challenge {
 
-    public static List<String> frequentElements(List<String> words, int k) {
-        // Final list
-        List<String> list = new ArrayList<>();
+    public static int maxProfit(int[] prices) {
+        if (prices.length < 2) return 0;
 
-        // Map of words and the corresponding counter
-        Map<String, Integer> map = new HashMap<>();
+        int result = 0;
+        int maxValue = 0;
 
-        for (String word : words) {
-            if (map.containsKey(word)) map.put(word, map.get(word) + 1);
-            else map.put(word, 1);
+        for (int i = prices.length - 1; i >= 1; i--) {
+            for (int j = i - 1; j >= 0; j--) {
+                maxValue = prices[i] - prices[j];
+                result = Math.max(result, maxValue);
+            }
         }
 
-        PriorityQueue<String> heap = new PriorityQueue<>((a, b) -> map.get(a).equals(map.get(b)) ? a.compareTo(b) : map.get(b) - map.get(a));
-
-        for (Map.Entry<String, Integer> ent : map.entrySet()) {
-            heap.add(ent.getKey());
-        }
-
-        while (k > 0) {
-            list.add(heap.remove());
-            k--;
-        }
-
-        return list;
+        return result;
     }
-
+    
     public static void main(String[] args) {
-        System.out.println(frequentElements(List.of("i", "love", "leetcode", "i", "love", "coding"), 2));
-        System.out.println("Correct answer should be : [\"i\", \"love]");
-        System.out.println(frequentElements(List.of("the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"), 4));
-        System.out.println("Correct answer should be : [\"the\", \"is\", \"sunny\", \"day\"]");
-        System.out.println(frequentElements(List.of("i", "love", "leetcode", "i", "love", "coding"), 3));
-        System.out.println("Correct answer should be : [\"i\",\"love\",\"coding\"] ");
-
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+        System.out.println(maxProfit(new int[]{7, 6, 4, 3, 1}));
     }
 }
+/**
+ * When you do a coding challenge with an interviewer.
+ * 1. Take a moment to read the question. Make sure to read it out loud
+ * a. Take your notes while reading it. Writing down Input and Output
+ * b. Ask for edge cases. They might be vague on purpose. Ask the right questions.
+ * Example: for trapping water, will we ever consider the starting and ending to be walls.
+ * c. Make stories, What codes you are thinking and what would be the pros and cons
+ * d. Rundown - Give example with actual numbers. Real life examples.
+ * e. Ask interviewer if they want me to psuedo code or do the actual code
+ * f. Identify Time Complexity and Space Complexity.
+ */
+
