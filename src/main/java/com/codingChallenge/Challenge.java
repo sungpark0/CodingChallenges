@@ -32,7 +32,7 @@ public class Challenge {
                 maxValue = prices[i] - prices[j];
                 result = Math.max(result, maxValue);
             }
-        } 
+        }
 
         return result;
     }
