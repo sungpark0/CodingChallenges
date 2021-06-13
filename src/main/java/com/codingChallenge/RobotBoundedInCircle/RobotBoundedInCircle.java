@@ -2,19 +2,31 @@ package com.codingChallenge.RobotBoundedInCircle;
 
 public class RobotBoundedInCircle {
     public static boolean isRobotBounded(String instructions) {
-        int[][] paths = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
-        int[] origin = new int[]{0, 0};
-        int direction = 0;
+        int x = 0;
+        int y = 0;
+
+        char direction = 'N';
 
         for (char ch : instructions.toCharArray()) {
             if (ch == 'G') {
-                origin[0] += paths[direction][0];
-                origin[1] += paths[direction][1];
-            } else if (ch == 'L') direction = (direction + 3) % 4;
-            else if (ch == 'R') direction = (direction + 1) % 4;
+                if (direction == 'N') y++;
+                else if (direction == 'W') x--;
+                else if (direction == 'S') y--;
+                else x++;
+            } else if (ch == 'L') {
+                if (direction == 'N') direction = 'W';
+                else if (direction == 'W') direction = 'S';
+                else if (direction == 'S') direction = 'E';
+                else direction = 'N';
+            } else {
+                if (direction == 'N') direction = 'E';
+                else if (direction == 'W') direction = 'N';
+                else if (direction == 'S') direction = 'W';
+                else direction = 'S';
+            }
         }
 
-        return ((origin[0] == 0 && origin[1] == 0) || direction != 0);
+        return (x == 0 && y == 0) || direction != 'N';
     }
 
     public static void main(String[] args) {

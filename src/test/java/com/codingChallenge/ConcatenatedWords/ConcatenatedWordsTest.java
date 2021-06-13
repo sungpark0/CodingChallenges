@@ -9,8 +9,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class ConcatenatedWordsTest {
 
     @Test
-    void positiveTest(){
-        assertArrayEquals(List.of("catsdogcats","dogcatsdog","ratcatdogcat"), ConcatenatedWords.findAllConcatenatedWordsInADict(List.of("cat","cats","catsdogcats","dog","dogcatsdog","hippopotamuses","rat","ratcatdogcat")));
+    void positiveTest() {
+        assertEquals(List.of("catsdogcats", "dogcatsdog", "ratcatdogcat"), ConcatenatedWords.findAllConcatenatedWordsInADict(new String[]{"cat", "cats", "catsdogcats", "dog", "dogcatsdog", "hippopotamuses", "rat", "ratcatdogcat"}));
+    }
+
+    @Test
+    void negativeTest() {
+        assertNotEquals(List.of("cat", "dog"), ConcatenatedWords.findAllConcatenatedWordsInADict(new String[]{"cat", "dog", "catdog"}));
     }
 
 }
