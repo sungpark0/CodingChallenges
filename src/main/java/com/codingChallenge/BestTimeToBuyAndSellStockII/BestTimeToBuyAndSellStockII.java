@@ -26,8 +26,8 @@ public class BestTimeToBuyAndSellStockII {
             int currentPrice = prices[i];
             int potPrice = prices[i + 1];
 
-            if ((potPrice < currentPrice) || (prices.length - 1 == i + 1 && potPrice >= currentPrice)) {
-                int price = potPrice >= currentPrice ? potPrice : currentPrice;
+            if (potPrice < currentPrice || prices.length - 1 == i + 1) {
+                int price = Math.max(potPrice, currentPrice);
                 totProfit += (price - lowestPrice);
                 lowestPrice = potPrice;
             }

@@ -56,7 +56,6 @@ public class BestTimeToBuyAndSellStock {
 
         return maxProfit;
     }
-
 }
 
 //    int buy = Integer.MAX_VALUE;
