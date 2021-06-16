@@ -27,34 +27,39 @@ public class ValidPalindrome {
 
     static String original = "A man, a plan, a canal: Panama";
 
-
     public static void main(String[] args) {
 
-        isPalindrome( original );
-        isPalindromeRecursion( original );
+        isPalindrome(original);
+        isPalindromeRecursion(original);
     }
 
     public static boolean isPalindrome(String s) {
-        original = s.replaceAll( "[^a-zA-Z0-9]", "" ).toLowerCase(); //erasing whitespace
-
         int start = 0;
-        int end = original.length() - 1;
+        int end = s.length() - 1;
         while (start < end) {
-            if (original.charAt( start++ ) != original.charAt( end-- )) { // check palindrome
-                return false;
+            if (!Character.isLetterOrDigit(s.charAt(start))) {
+                start++;
+            } else if (!Character.isLetterOrDigit(s.charAt(end))) {
+                end--;
+            } else {
+                if (Character.toLowerCase(s.charAt(start)) != Character.toLowerCase(s.charAt(end))) return false;
+                start++;
+                end--;
             }
         }
+
         return true;
     }
 
     public static boolean isPalindromeRecursion(String s) {
-        String noSpace = s.replaceAll( "[^a-zA-Z0-9]", "" ).toLowerCase();
+        String noSpace = s.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
 
         if (noSpace.length() == 0 || noSpace.length() == 1) {
             return true;
         }
-        if (noSpace.charAt( 0 ) == noSpace.charAt( s.length() - 1 )) {
-            return isPalindromeRecursion( noSpace.substring( 1, noSpace.length() - 1 ) );
+
+        if (noSpace.charAt(0) == noSpace.charAt(s.length() - 1)) {
+            return isPalindromeRecursion(noSpace.substring(1, noSpace.length() - 1));
         } else {
             return false;
         }
