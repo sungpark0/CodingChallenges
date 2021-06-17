@@ -10,7 +10,6 @@ public class AllNodesDistanceKInBinaryTree extends BinarySearchTree {
     public static List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         if(k == 0) return List.of(target.val);
         List<Integer> result = new ArrayList<>();
-
         //Mapping the parent nodes
         //Filling in the map with <CurrentNode, ParentNode>
         Map<TreeNode, TreeNode> parentsMap = new HashMap<>();

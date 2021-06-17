@@ -33,8 +33,8 @@ public class ValidAnagram {
         String s = "poop";
         String t = "oopp";
 
-        isAnagram( s, t );
-        isAnaramStream( s, t );
+        isAnagram(s, t);
+        isAnaramStream(s, t);
 
     }
 
@@ -45,18 +45,18 @@ public class ValidAnagram {
         char[] firstString = s.toCharArray();
         char[] secondString = t.toCharArray();
 
-        Arrays.sort( firstString );
-        Arrays.sort( secondString );
+        Arrays.sort(firstString);
+        Arrays.sort(secondString);
         System.out.println();
 
-        return Arrays.equals( firstString, secondString );
+        return Arrays.equals(firstString, secondString);
     }
 
     public static boolean isAnaramStream(String s, String t) {
         if (s.length() != t.length()) {
             return false;
         }
-        return Arrays.stream( s.split( "" ) ).sorted().collect( Collectors.joining() ).equals( Arrays.stream( t.split( "" ) ).sorted().collect( Collectors.joining() ) );
+        return Arrays.stream(s.split("")).sorted().collect(Collectors.joining()).equals(Arrays.stream(t.split("")).sorted().collect(Collectors.joining()));
     }
 
 //    public static String sortedLetters(String str) {
