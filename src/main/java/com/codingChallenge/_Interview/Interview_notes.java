@@ -13,4 +13,27 @@ public class Interview_notes {
      * f. Identify Time Complexity and Space Complexity.
      */
 
+    /**
+     *  1. Let me take a moment to read the question. (Read the question out loud)
+     *  2. To make sure I understand the question correctly, i will give examples with real life numbers.
+     *     Write down the examples. [Including the index numbers]
+     *  3. Ask the edge cases. Even the obvious ones. After all the edge cases, ask the interviewer what he/she think.
+     *     [These are the edge cases i am thinking of. What do you think?]
+     *  4. Talk about the code you will be using or direction you are thinking about to solve the problem.
+     *  5. Do you want me to psuedo code or get right into coding.
+     *  6. Explain time complexity and the Space complexity.
+     */
+
+    /**
+     * String edge cases: Empty strings, length 1 strings, odd/even length, all the same character,
+     *                    ridiculously long strings, upper/lower cases, spaces
+     *                    (like in a palindrome do we care if there is a space in the way)
+     *
+     * Numbers: 0, negatives, super huger numbers, biggest/lowest possible values
+     *
+     * Linked list/tree stuff: null values where head/root is supposed to be
+     *
+     * Generally: empty inputs, one element inputs, super long inputs, null values, trash in a collection
+     */
+
 }
