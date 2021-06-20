@@ -47,6 +47,46 @@ public class ReverseVowels {
         }
         return new String(vowels);
     }
+
+    public String reverseVowelsII(String s) {
+        StringBuilder builder = new StringBuilder(s);
+
+        int start = 0;
+        int end = builder.length() - 1;
+
+        while (start < end) {
+            while(!isVowel(builder.charAt(start)) && start < end) {
+                start++;
+            }
+
+            while (!isVowel(builder.charAt(end)) && start < end) {
+                end--;
+            }
+
+            if (start < end) {
+                char temp = builder.charAt(start);
+                builder.setCharAt(start, builder.charAt(end));
+                builder.setCharAt(end, temp);
+                start++;
+                end--;
+            }
+        }
+
+        return builder.toString();
+    }
+
+    private boolean isVowel(char ch) {
+        return (ch == 'a' ||
+                ch == 'e' ||
+                ch == 'i' ||
+                ch == 'o' ||
+                ch == 'u' ||
+                ch== 'A' ||
+                ch == 'E' ||
+                ch == 'I' ||
+                ch == 'O' ||
+                ch == 'U');
+    }
 }
 // List<Character> vowels = List.of('a', 'e', 'i', 'o', 'u');
 //        // placeholder for vowels
