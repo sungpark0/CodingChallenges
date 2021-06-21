@@ -8,9 +8,9 @@ public class FlippingAnImage {
         int[][] test = {{1, 1, 0}, {1, 0, 1}, {0, 0, 0}};
         int[][] testTwo = {{1, 1, 0, 0}, {1, 0, 0, 1}, {0, 0, 0, 1}, {1, 0, 1, 0}};
 
-        System.out.println( (Arrays.deepToString( flipAndInvertImage( test ) )) );
-        System.out.println( (Arrays.deepToString( flipAndInvertImage( testTwo ) )) );
-        System.out.println( Arrays.deepToString( flippingAnImage( test ) ) );
+        System.out.println((Arrays.deepToString(flipAndInvertImage(test))));
+        System.out.println((Arrays.deepToString(flipAndInvertImage(testTwo))));
+        System.out.println(Arrays.deepToString(flippingAnImage(test)));
     }
 
 
@@ -34,7 +34,7 @@ public class FlippingAnImage {
 //                }
             }
         }
-        System.out.println( Arrays.deepToString( A ) );
+        System.out.println(Arrays.deepToString(A));
         //Without Arrays.deepToString Java will automatically convert to string form and output
         //error message such as [[TO@3041a79c. In order to control this situation we can use deepToString method
         //to display object
@@ -54,7 +54,7 @@ public class FlippingAnImage {
             }
         }
 
-        System.out.println( Arrays.deepToString( B ) );
+        System.out.println(Arrays.deepToString(B));
         return B;
     }
 }
