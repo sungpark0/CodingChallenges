@@ -9,7 +9,6 @@ public class FindNumbersWithEvenNumberOfDigits {
 
         int[] numbs = {437, 315, 322, 431, 686, 264, 442}; // declaration
         findNumbers( numbs );
-
     }
 
 
