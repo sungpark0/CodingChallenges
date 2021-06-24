@@ -2,7 +2,6 @@ package com.codingChallenge.FibonacciNumber;
 
 public class FibonacciNumber {
     public static void main(String[] args) {
-
         System.out.println(fibRecursion(4));
         System.out.println(fib(4));
     }
