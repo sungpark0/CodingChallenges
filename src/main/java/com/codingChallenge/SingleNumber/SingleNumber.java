@@ -1,6 +1,8 @@
 package com.codingChallenge.SingleNumber;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SingleNumber {
 
@@ -12,14 +14,14 @@ public class SingleNumber {
 //        System.out.println( singleNumber( y ) + " " + " 1 " );
 
 //        System.out.println( singleNumberON( x ) + " : " + " 4 " );
-        System.out.println( singleNumberSecondWeek( x ) );
+        System.out.println(singleNumberSecondWeek(x));
 
 
     }
 
     public static int singleNumberSecondWeek(int[] nums) {
 
-        Arrays.sort( nums );
+        Arrays.sort(nums);
         for (int i = 0; i < nums.length - 1; i += 2) {
             if (nums[i] != nums[i + 1]) {
                 return nums[i];
@@ -33,7 +35,7 @@ public class SingleNumber {
     public static int singleNumberNoExtraMemory(int[] nums) {
         if (nums.length == 1) return nums[0];
 
-        Arrays.sort( nums );
+        Arrays.sort(nums);
 
 //        [1,1,2,2,4]
 //        [2,2,5,7,7,8,8]
@@ -77,6 +79,22 @@ public class SingleNumber {
             }
             counter = 0;
         }
+
+        return answer;
+    }
+
+    public int singleNumberIIII(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int answer = 0;
+
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        for (int num : nums) {
+            if (map.get(num) == 1) answer = num;
+        }
+
 
         return answer;
     }

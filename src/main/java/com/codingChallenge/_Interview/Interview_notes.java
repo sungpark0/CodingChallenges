@@ -15,10 +15,10 @@ public class Interview_notes {
 
     /**
      *  1. Let me take a moment to read the question. (Read the question out loud)
-     *  2. To make sure I understand the question correctly, i will give examples with real life numbers.
-     *     Write down the examples. [Including the index numbers]
-     *  3. Ask the edge cases. Even the obvious ones. After all the edge cases, ask the interviewer what he/she think.
+     *  2. Ask the edge cases. Even the obvious ones. After all the edge cases, ask the interviewer what he/she think.
      *     [These are the edge cases i am thinking of. What do you think?]
+     *  3. To make sure I understand the question correctly, i will give examples with real life numbers.
+     *     Write down the examples. [Including the index numbers]
      *  4. Talk about the code you will be using or direction you are thinking about to solve the problem.
      *  5. Do you want me to psuedo code or get right into coding.
      *  6. Explain time complexity and the Space complexity.
