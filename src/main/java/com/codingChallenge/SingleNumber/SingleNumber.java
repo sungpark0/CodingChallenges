@@ -95,7 +95,6 @@ public class SingleNumber {
             if (map.get(num) == 1) answer = num;
         }
 
-
         return answer;
     }
 
