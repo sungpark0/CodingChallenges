@@ -97,5 +97,4 @@ public class SingleNumber {
 
         return answer;
     }
-
 }
