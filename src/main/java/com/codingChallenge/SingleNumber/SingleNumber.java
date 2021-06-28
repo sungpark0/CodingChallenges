@@ -60,7 +60,6 @@ public class SingleNumber {
             return nums[0];
         }
 
-
         for (int i = 0; i < nums.length; i++) {
             for (int num : nums) { // 1    2    2    4   < i = 0 , i < nums.length, i++>
 //                         nums =    num  num  num  num
