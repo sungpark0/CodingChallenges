@@ -12,26 +12,6 @@ public class MoveZeroes {
 
     public static void moveZeroesII(int[] nums) {
         int counter = 0;
-        List<Integer> result = new ArrayList<>();
-
-        for (int num : nums) {
-            if (num == 0) {
-                counter++;
-            } else {
-                result.add(num);
-            }
-        }
-        for (int i = 0; i < counter; i++) {
-            result.add(0);
-        }
-        for (int i = 0; i < nums.length; i++) {
-            nums[i] = result.get(i);
-        }
-
-    }
-
-    public static void moveZeroes(int[] nums) {
-        int counter = 0;
         int index = 0;
 
         for (int i = 0; i < nums.length; i++) {
@@ -42,6 +22,29 @@ public class MoveZeroes {
         for (int i = nums.length - 1; i > nums.length - 1 - counter; i--) {
             nums[i] = 0;
         }
+    }
 
+    public static int[] moveZeroes(int[] nums) {
+        int counter = 0;
+        Queue<Integer> queue = new LinkedList<>();
+
+        for (int num : nums) {
+            if (num == 0) counter++;
+            else queue.add(num);
+        }
+
+        int j = 0;
+        while (!queue.isEmpty()) {
+            nums[j] = queue.remove();
+            j++;
+        }
+
+        j = nums.length - 1;
+        for (int i = 0; i < counter; i++) {
+            nums[j] = 0;
+            j--;
+        }
+
+        return nums;
     }
 }

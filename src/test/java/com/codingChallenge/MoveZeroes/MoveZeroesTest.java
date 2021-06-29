@@ -8,18 +8,12 @@ class MoveZeroesTest {
 
     @Test
     void positiveTest() {
-        int[] test = {1, 1, 0, 1};
-        int[] shouldBe = {1, 1, 1, 0};
-        MoveZeroes.moveZeroes( test );
-        assertArrayEquals( shouldBe, test );
+        assertArrayEquals(new int[]{1, 1, 1, 0}, MoveZeroes.moveZeroes(new int[]{1, 1, 0, 1}));
     }
 
     @Test
     void negative() {
-        int[] test = {1, 1, 0, 1};
-        int[] shouldBe = {1, 0, 0, 0};
-        MoveZeroes.moveZeroes( test );
-        assertNotEquals( shouldBe, test );
+        assertNotEquals(new int[]{1, 0, 0, 0}, MoveZeroes.moveZeroes(new int[]{1, 1, 0, 1}));
     }
 
 }
