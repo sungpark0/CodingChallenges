@@ -35,9 +35,8 @@ public class MergeTwoSortedLists extends SinglyLinkedList {
             }
             temp = temp.next;
         }
-        if (l1 == null) {
-            temp.next = l2;
-        } else {
+        if (l1 == null)  temp.next = l2;
+        else {
             temp.next = l1;
         }
 
