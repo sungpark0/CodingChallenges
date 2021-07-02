@@ -8,12 +8,12 @@ class CoinChangeTest {
 
     @Test
     void positiveTest() {
-        assertEquals(3, CoinChange.coinChange(new int[]{1, 2, 5}, 11));
+        assertEquals(4, CoinChange.coinChange(new int[]{1, 2, 3, 5}, 14));
     }
 
     @Test
     void negativeTest() {
-        assertNotEquals(1, CoinChange.coinChange(new int[]{2}, 3));
+        assertNotEquals(-1, CoinChange.coinChange(new int[]{1}, 3));
     }
 
 }
