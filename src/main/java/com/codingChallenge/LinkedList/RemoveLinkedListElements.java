@@ -2,24 +2,17 @@ package com.codingChallenge.LinkedList;
 
 public class RemoveLinkedListElements extends SinglyLinkedList {
 
-    public static SinglyNode removeElements(SinglyNode head, int value) {
+    public static SinglyNode removeElements(SinglyNode head, int val) {
         if (head == null) return null;
 
-        SinglyNode currNode = head;
+        SinglyNode node = head;
 
-        SinglyNode dummyNode = new SinglyNode();
-        SinglyNode prevNode = dummyNode;
-        prevNode.next = head;
-
-        while (currNode != null) {
-            if (currNode.val == value) {
-                prevNode.next = currNode.next;
-            } else {
-                prevNode = prevNode.next;
-            }
-            currNode = currNode.next;
+        while (head.next != null) {
+            if (head.next.val == val) head.next = head.next.next;
+            else head = head.next;
         }
-        return dummyNode.next;
+
+        return node.val == val ? node.next : node;
     }
 
     public static void main(String[] args) {
