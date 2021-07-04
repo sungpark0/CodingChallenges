@@ -1,5 +1,6 @@
 package com.codingChallenge.GreatestCommonDivisorOfStrings;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -19,4 +20,13 @@ class GreatestCommonDivisorOfStringsTest {
         assertNotEquals("CAT", GreatestCommonDivisorOfStrings.gcdOfStrings(str, "CAT"));
     }
 
+    @Test
+    void positiveTest() {
+        assertEquals("ABC", GreatestCommonDivisorOfStrings.gcdOfStrings("ABCABC", "ABC"));
+    }
+
+    @Test
+    void negativeTest() {
+        assertNotEquals("LEET", GreatestCommonDivisorOfStrings.gcdOfStrings("LEET", "CODE"));
+    }
 }
