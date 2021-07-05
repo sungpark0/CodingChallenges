@@ -16,4 +16,14 @@ class TopKFrequentElementTest {
         assertNotEquals(new int[]{1}, TopKFrequentElement.topKFrequent(new int[]{1, 2, 2}, 1));
     }
 
+    @Test
+    void positiveTestII() {
+        assertArrayEquals(new int[]{1}, TopKFrequentElement.topKFrequent(new int[]{1, 1, 2}, 1));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(new int[]{1, 2}, TopKFrequentElement.topKFrequent(new int[]{1, 1, 2, 3, 3}, 2));
+    }
+
 }

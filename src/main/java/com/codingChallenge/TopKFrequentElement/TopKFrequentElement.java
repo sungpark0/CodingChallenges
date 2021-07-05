@@ -31,6 +31,27 @@ public class TopKFrequentElement {
         return result;
     }
 
+    public static int[] topKFrequentII(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] arr = new int[k];
+
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> map.get(b) - map.get(a));
+
+        for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            minHeap.add(entry.getKey());
+        }
+
+        for (int i = 0; i < k; i++) {
+            arr[i] = minHeap.remove();
+        }
+
+        return arr;
+    }
+
     public static void main(String[] args) {
 
     }
