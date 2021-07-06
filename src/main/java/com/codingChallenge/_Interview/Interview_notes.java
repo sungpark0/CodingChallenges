@@ -9,7 +9,7 @@ public class Interview_notes {
      * Example: for trapping water, will we ever consider the starting and ending to be walls.
      * c. Make stories, What codes you are thinking and what would be the pros and cons
      * d. Rundown - Give example with actual numbers. Real life examples.
-     * e. Ask interviewer if they want me to psuedo code or do the actual code
+     * e. Ask interviewer if they want me to pseudo code or do the actual code
      * f. Identify Time Complexity and Space Complexity.
      */
 
@@ -20,7 +20,7 @@ public class Interview_notes {
      *  3. To make sure I understand the question correctly, i will give examples with real life numbers.
      *     Write down the examples. [Including the index numbers]
      *  4. Talk about the code you will be using or direction you are thinking about to solve the problem.
-     *  5. Do you want me to psuedo code or get right into coding.
+     *  5. Do you want me to pseudo code or get right into coding.
      *  6. Explain time complexity and the Space complexity.
      */
 
