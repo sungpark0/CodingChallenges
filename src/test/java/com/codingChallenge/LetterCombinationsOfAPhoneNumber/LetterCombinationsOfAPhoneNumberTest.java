@@ -22,4 +22,14 @@ class LetterCombinationsOfAPhoneNumberTest {
         assertNotEquals(List.of("w", "x", "y"), LetterCombinationsOfAPhoneNumber.letterCombinations(str));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(List.of("a", "b", "c"), LetterCombinationsOfAPhoneNumber.letterCombinations("2"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(List.of("d", "e", "f"), LetterCombinationsOfAPhoneNumber.letterCombinations("34"));
+    }
+
 }
