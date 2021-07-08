@@ -45,6 +45,36 @@ public class ThreeSum {
         }
         return result;
     }
+
+    public static List<List<Integer>> threeSum(int[] nums) {
+        if (nums.length < 3) return new ArrayList<>();
+
+        Arrays.sort(nums);
+        List<List<Integer>> triplets = new ArrayList<>();
+
+        for (int i = 0; i < nums.length - 2; i++){
+            int j = i + 1;
+            int k = nums.length - 1;
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+            while (j < k) {
+                if (j > i + 1 && nums[j - 1] == nums[j]) {
+                    j++;
+                    continue;
+                }
+                if (nums[i] + nums[j] + nums[k] == 0) {
+                    triplets.add(List.of(nums[i], nums[j], nums[k]));
+                    j++;
+                    k--;
+                } else if (0 < nums[i] + nums[j] + nums[k]) {
+                    k--;
+                } else if (0 > nums[i] + nums[j] + nums[k]) {
+                    j++;
+                }
+            }
+        }
+
+        return triplets;
+    }
 }
 //
 //

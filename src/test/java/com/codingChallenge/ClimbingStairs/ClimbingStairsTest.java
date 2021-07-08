@@ -1,5 +1,6 @@
 package com.codingChallenge.ClimbingStairs;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -19,4 +20,13 @@ class ClimbingStairsTest {
         assertNotEquals(4, ClimbingStairs.climbStairs(num));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(21, ClimbingStairs.climbStairs(7));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(2, ClimbingStairs.climbStairs(3));
+    }
 }

@@ -13,8 +13,6 @@ class PalindromeLinkedListTest {
         test.insertAtHead(1);
         test.insertAtTail(2);
         test.insertAtTail(3);
-        test.insertAtTail(7);
-        test.insertAtTail(3);
         test.insertAtTail(2);
         test.insertAtTail(1);
         assertTrue(PalindromeLinkedList.isPalindrome(test.head));

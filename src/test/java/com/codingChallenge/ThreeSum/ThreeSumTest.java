@@ -22,4 +22,14 @@ class ThreeSumTest {
         List<List<Integer>> shouldnBe = Collections.singletonList(asList(0, 0, 0));
 //        assertNotEquals(shouldnBe, ThreeSum.threeSum(test));
     }
+
+    @Test
+    void positiveTestII() {
+        assertEquals(List.of(List.of(-1, -1, 2), List.of(-1, 0, 1)), ThreeSum.threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(List.of(List.of(1, 2)), ThreeSum.threeSum(new int[]{-1, 1, 0}));
+    }
 }
