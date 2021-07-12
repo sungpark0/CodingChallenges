@@ -59,6 +59,22 @@ public class ValidAnagram {
         return Arrays.stream(s.split("")).sorted().collect(Collectors.joining()).equals(Arrays.stream(t.split("")).sorted().collect(Collectors.joining()));
     }
 
+    public static boolean isAnagramII(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        char[] sArr = s.toCharArray();
+        char[] tArr = t.toCharArray();
+
+        Arrays.sort(sArr);
+        Arrays.sort(tArr);
+
+        for (int i = 0; i < sArr.length; i++) {
+            if (sArr[i] != tArr[i]) return false;
+        }
+
+        return true;
+    }
+
 //    public static String sortedLetters(String str) {
 //        return Arrays.stream( str.split( "" ) ).sorted().collect( Collectors.joining() );
 //    }
