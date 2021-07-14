@@ -9,14 +9,12 @@ SearchInRotatedSortedArrayTest {
 
     @Test
     void positiveTest() {
-        int[] test = {4, 5, 1, 2, 3};
-        assertEquals(2, SearchInRotatedSortedArray.search(test, 1));
+        assertEquals(2, SearchInRotatedSortedArray.searchII(new int[]{4, 5, 1, 2, 3}, 1));
     }
 
     @Test
     void negativeTest() {
-        int[] test = {5, 6, 7, 8, 1, 2, 3};
-        assertNotEquals(1, SearchInRotatedSortedArray.search(test, 7));
+        assertNotEquals(1, SearchInRotatedSortedArray.searchII(new int[]{5, 6, 7, 8, 1, 2, 3}, 7));
     }
 
 }
