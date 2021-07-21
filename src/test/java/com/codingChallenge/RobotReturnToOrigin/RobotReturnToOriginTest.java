@@ -8,12 +8,12 @@ class RobotReturnToOriginTest {
 
     @Test
     void positiveTest() {
-        assertTrue(RobotReturnToOrigin.judgeCircle("UD"));
+        assertTrue(RobotReturnToOrigin.judgeCircleII("UD"));
     }
 
     @Test
     void negativeTest() {
-        assertFalse(RobotReturnToOrigin.judgeCircle("UL"));
+        assertFalse(RobotReturnToOrigin.judgeCircleII("UL"));
     }
 
 }

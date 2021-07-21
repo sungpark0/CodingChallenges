@@ -41,6 +41,34 @@ public class PalindromeLinkedList extends SinglyLinkedList {
         return length;
     }
 
+    public boolean isPalindromeII(SinglyNode head) {
+        Stack<Integer> stack = new Stack<>();
+        int length = 0;
+
+        SinglyNode currNode = head;
+        while (currNode != null) {
+            length++;
+            currNode = currNode.next;
+        }
+
+        for (int i = 0; i < length / 2; i++) {
+            stack.add(head.val);
+            head = head.next;
+        }
+
+        if (length % 2 != 0) head = head.next;
+
+        while (head != null) {
+            if (stack.peek() != head.val) return false;
+            else {
+                head = head.next;
+                stack.pop();
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
 
         PalindromeLinkedList list = new PalindromeLinkedList();
