@@ -1,6 +1,7 @@
 package com.codingChallenge.PascalsTriangleII;
 
 import com.codingChallenge.PascalsTriangle.PascalsTriangle;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -32,6 +33,16 @@ class PascalsTriangleIITest {
     @ValueSource(ints = 3)
     void negativeTestPascalTriangleI(int num) {
         assertNotEquals(List.of(List.of(1), List.of(1, 1), List.of(1, 1, 1)), PascalsTriangle.generate(num));
+    }
+
+    @Test
+    void positiveTest() {
+        assertEquals(List.of(1, 3, 3, 1), PascalsTriangleII.getRow(3));
+    }
+
+    @Test
+    void negativeTest() {
+        assertNotEquals(List.of(1, 1, 1), PascalsTriangleII.getRow(2));
     }
 
 
