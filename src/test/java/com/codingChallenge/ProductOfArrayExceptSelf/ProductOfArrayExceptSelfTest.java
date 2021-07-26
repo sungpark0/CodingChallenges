@@ -16,4 +16,14 @@ class ProductOfArrayExceptSelfTest {
         assertNotEquals(new int[]{-1, -1, 0, -3, 3}, ProductOfArrayExceptSelf.productExceptSelf(new int[]{0, 0, 0, 0, 0}));
     }
 
+    @Test
+    void positiveTestII() {
+        assertArrayEquals(new int[]{6, 3, 2}, ProductOfArrayExceptSelf.productExceptSelfII(new int[]{1, 2, 3}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(new int[]{1, 1, 0, 1}, ProductOfArrayExceptSelf.productExceptSelfII(new int[]{0, 0, 1, 0}));
+    }
+
 }

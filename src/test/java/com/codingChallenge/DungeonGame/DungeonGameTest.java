@@ -15,4 +15,14 @@ class DungeonGameTest {
     void negativeTest() {
         assertNotEquals(41, DungeonGame.calculateMinimumHP(new int[][]{{-10, 20, 30}, {-11, -17, -16}, {5, 1, -4}}));
     }
+
+    @Test
+    void positiveTestII() {
+        assertEquals(7, DungeonGame.calculateMinimumHPII(new int[][]{{-2, -3, 3}, {-5, -10, 1}, {10, 30, -5}}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(0, DungeonGame.calculateMinimumHPII(new int[][]{{0}}));
+    }
 }

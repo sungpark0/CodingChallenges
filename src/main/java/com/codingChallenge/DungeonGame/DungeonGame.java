@@ -1,7 +1,5 @@
 package com.codingChallenge.DungeonGame;
 
-import java.util.Arrays;
-
 public class DungeonGame {
 
     public static int calculateMinimumHP(int[][] dungeon) {
@@ -23,6 +21,30 @@ public class DungeonGame {
         for (int i = col - 2; i >= 0; i--) {
             for (int j = row - 2; j >= 0; j--) {
                 dp[i][j] = Math.min(Math.max(dp[i][j + 1] - dungeon[i][j], 1), Math.max(dp[i + 1][j] - dungeon[i][j], 1));
+            }
+        }
+
+        return dp[0][0];
+    }
+
+    public static int calculateMinimumHPII(int[][] dungeon) {
+        int col = dungeon.length - 1;
+        int row = dungeon[0].length - 1;
+        int[][] dp = new int[col + 1][row + 1];
+        dp[col][row] = dungeon[col][row] < 0 ? Math.abs(dungeon[col][row]) + 1 : 1;
+
+        for (int i = col - 1; i >= 0; i--) {
+            dp[i][row] = Math.max(dp[i + 1][row] - dungeon[i][row], 1);
+        }
+
+        for (int i = row - 1; i >= 0; i--) {
+            dp[col][i] = Math.max(dp[col][i + 1] - dungeon[col][i] , 1);
+        }
+
+        for (int i = col - 1; i >= 0; i--) {
+            for (int j = row - 1; j >= 0; j--) {
+                int temp = Math.min(dp[i + 1][j] - dungeon[i][j], dp[i][j + 1] - dungeon[i][j]);
+                dp[i][j] = Math.max(temp, 1);
             }
         }
 
