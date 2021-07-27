@@ -96,44 +96,37 @@ public class SpiralMatrix {
     }
 
     public static List<Integer> spiralOrderII(int[][] matrix) {
-        List<Integer> result = new ArrayList<>();
-        int totalSize = matrix.length * matrix[0].length;
-        int leftToRight = 0;
-        int nextColumn = 0;
-        int row = matrix[0].length - 1;
-        int column = matrix.length - 1;
+        List<Integer> list = new ArrayList<>();
 
-        while (result.size() != totalSize) {
-            for (int i = leftToRight; i <= row; i++) {
-                result.add(matrix[nextColumn][i]);
+        int leftToRight = 0;
+        int rightToLeft = matrix[0].length - 1;
+        int topToBottom = 0;
+        int bottomToTop = matrix.length - 1;
+
+        while (leftToRight <= rightToLeft && topToBottom <= bottomToTop) {
+            for (int i = leftToRight; i <= rightToLeft; i++) {
+                list.add(matrix[topToBottom][i]);
             }
-            nextColumn++;
-            if (nextColumn > column) {
-                break;
+            topToBottom++;
+            if (topToBottom > bottomToTop) break;
+
+            for (int i = topToBottom; i <= bottomToTop; i++) {
+                list.add(matrix[i][rightToLeft]);
             }
-            for (int i = nextColumn; i <= column; i++) { // top to bottom
-                result.add(matrix[i][row]);
+            rightToLeft--;
+            if (rightToLeft < leftToRight) break;
+
+            for (int i = rightToLeft; i >= leftToRight; i--) {
+                list.add(matrix[bottomToTop][i]);
             }
-            row--;
-            if (row < leftToRight) {
-                break;
-            }
-            for (int i = row; i >= leftToRight; i--) { // right to left
-                result.add(matrix[column][i]);
-            }
-            column--;
-            if (nextColumn > column) {
-                break;
-            }
-            for (int i = column; i >= nextColumn; i--) { // bottom to top
-                result.add(matrix[i][leftToRight]);
+            bottomToTop--;
+            for (int i = bottomToTop; i >= topToBottom; i--) {
+                list.add(matrix[i][leftToRight]);
             }
             leftToRight++;
-            if (leftToRight > row) {
-                break;
-            }
         }
-        return result;
+
+        return list;
     }
 }
 

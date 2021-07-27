@@ -30,6 +30,28 @@ public class LinkedListCycleII extends SinglyLinkedList {
         return null;
     }
 
+    public static SinglyNode detectCycle(SinglyNode head) {
+        if(head == null || head.next == null) return null;
+
+        SinglyNode temp = head;
+        SinglyNode slow = head;
+        SinglyNode fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                while (slow != temp) {
+                    slow = slow.next;
+                    temp = temp.next;
+                }
+                return temp;
+            }
+        }
+
+        return null;
+    }
+
     public static void main(String[] args) {
         LinkedListCycleII list = new LinkedListCycleII();
 

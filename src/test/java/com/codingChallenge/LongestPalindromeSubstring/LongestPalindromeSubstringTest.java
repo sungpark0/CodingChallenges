@@ -7,13 +7,23 @@ import static org.junit.jupiter.api.Assertions.*;
 class LongestPalindromeSubstringTest {
 
     @Test
-    void positiveTest(){
+    void positiveTest() {
         assertEquals("bab", LongestPalindromeSubstring.longestPalindrome("babas"));
     }
 
     @Test
-    void negativeTest(){
+    void negativeTest() {
         assertNotEquals("a", LongestPalindromeSubstring.longestPalindrome("aa"));
+    }
+
+    @Test
+    void positiveTestII() {
+        assertEquals("bb", LongestPalindromeSubstring.longestPalindrome("cbbd"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals("a", LongestPalindromeSubstring.longestPalindrome("baa"));
     }
 
 }

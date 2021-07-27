@@ -36,4 +36,30 @@ class LinkedListCycleIITest {
         assertNull(LinkedListCycleII.detectCycleII(list.head));
     }
 
+    @Test
+    void positiveTestII() {
+        list.insertAtHead(1);
+        list.insertAtTail(2);
+        list.insertAtTail(3);
+        SinglyNode temp = list.head;
+        SinglyNode cycle = list.head.next;
+        SinglyNode test = list.head;
+        while (true) {
+            if (temp.next == null) {
+                temp.next = cycle;
+                break;
+            }
+            temp = temp.next;
+        }
+        assertEquals(2, (LinkedListCycleII.detectCycle(test)).val);
+    }
+
+    @Test
+    void negativeTestII() {
+        list.insertAtHead(3);
+        list.insertAtTail(2);
+        list.insertAtTail(1);
+        assertNull(LinkedListCycleII.detectCycle(list.head));
+    }
+
 }
