@@ -38,7 +38,7 @@ class ReverseLinkedListIITest {
             test.add(temp.val);
             temp = temp.next;
         }
-        assertNotEquals(List.of(1,2,3), test);
+        assertNotEquals(List.of(1, 2, 3), test);
     }
 
 }
