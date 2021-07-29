@@ -57,6 +57,30 @@ public class RomanToInteger {
         return sum;
     }
 
+    public static int romanToIntIII(String s) {
+        Map<Character, Integer> map = new HashMap<>(
+                Map.of(
+                        'I', 1,
+                        'V', 5,
+                        'X', 10,
+                        'L', 50,
+                        'C', 100,
+                        'D', 500,
+                        'M', 1000
+                ));
+
+        int intValue = map.get(s.charAt(0));
+
+        for (int i = 1; i < s.length(); i++) {
+            intValue += map.get(s.charAt(i));
+            if (map.get(s.charAt(i - 1)) < map.get(s.charAt(i)) && (s.charAt(i - 1) == 'I' || s.charAt(i - 1) == 'X' || s.charAt(i - 1) == 'C')) {
+                intValue -= (map.get(s.charAt(i - 1)) * 2);
+            }
+        }
+
+        return intValue;
+    }
+
 
 }
 

@@ -18,4 +18,14 @@ class RomanToIntegerTest {
         assertNotEquals(100, RomanToInteger.romanToInt("III"));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(1994, RomanToInteger.romanToIntIII("MCMXCIV"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(5, RomanToInteger.romanToIntIII("VI"));
+    }
+
 }

@@ -21,5 +21,17 @@ class TriangleTest {
         assertNotEquals(7, Triangle.minimumTotal(negTest));
     }
 
+    @Test
+    void positiveTestII() {
+        List<List<Integer>> test = List.of(List.of(2), List.of(3, 4), List.of(6, 5, 7));
+        assertEquals(10, Triangle.minimumTotalII(test));
+    }
+
+    @Test
+    void negativeTestII() {
+        List<List<Integer>> negTest = List.of(List.of(1), List.of(2, 3), List.of(4, 5, 6));
+        assertNotEquals(10, Triangle.minimumTotalII(negTest));
+    }
+
 }
 

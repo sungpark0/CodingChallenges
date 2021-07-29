@@ -21,29 +21,26 @@ class MiddleOfTheLinkedListTest {
 
         SinglyNode temp = MiddleOfTheLinkedList.middleNode(list.head);
         List<Integer> test = new ArrayList<>();
-        while(temp!=null){
+        while (temp != null) {
             test.add(temp.val);
-            temp= temp.next;
+            temp = temp.next;
         }
-        assertEquals(List.of(3,4,5),test);
+        assertEquals(List.of(3, 4, 5), test);
     }
 
     @Test
     void negativeTest() {
-        list.insertAtHead(10);
-        list.insertAtTail(9);
-        list.insertAtTail(8);
-        list.insertAtTail(7);
-        list.insertAtTail(6);
-        list.insertAtTail(5);
-
+        list.insertAtHead(1);
+        list.insertAtTail(2);
+        list.insertAtTail(3);
+        list.insertAtTail(4);
         SinglyNode temp = MiddleOfTheLinkedList.middleNode(list.head);
         List<Integer> test = new ArrayList<>();
-        while(temp!=null){
+        while (temp != null) {
             test.add(temp.val);
-            temp= temp.next;
+            temp = temp.next;
         }
-        assertNotEquals(List.of(8,7,6,5),test);
+        assertNotEquals(List.of(2, 3, 4), test);
     }
 
 }
