@@ -32,4 +32,14 @@ class LetterCombinationsOfAPhoneNumberTest {
         assertNotEquals(List.of("d", "e", "f"), LetterCombinationsOfAPhoneNumber.letterCombinations("34"));
     }
 
+    @Test
+    void positiveTestBackTrack() {
+        assertEquals(List.of("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"), LetterCombinationsOfAPhoneNumber.letterCombinationsII("23"));
+    }
+
+    @Test
+    void negativeTestBackTrack() {
+        assertNotEquals(List.of("g", "e", "f"), LetterCombinationsOfAPhoneNumber.letterCombinations("3"));
+    }
+
 }

@@ -37,6 +37,33 @@ public class LetterCombinationsOfAPhoneNumber {
         return result;
     }
 
+    public static List<String> letterCombinationsII(String digits) {
+        List<String> combinations = new ArrayList<>();
+        if (digits.length() == 0) return combinations;
+
+        StringBuilder sb = new StringBuilder();
+
+
+        helperII(combinations, digits, sb, 0);
+
+        return combinations;
+    }
+
+    public static void helperII(List<String> list, String digits, StringBuilder sb, int index) {
+        if (digits.length() == index) {
+            list.add(sb.toString());
+            return;
+        }
+
+        String curr = map.get(digits.charAt(index));
+
+        for (int i = 0; i < curr.length(); i++) {
+            sb.append(curr.charAt(i));
+            helperII(list, digits, sb, index + 1);
+            sb.deleteCharAt(sb.length() - 1);
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println(letterCombinations(""));
     }

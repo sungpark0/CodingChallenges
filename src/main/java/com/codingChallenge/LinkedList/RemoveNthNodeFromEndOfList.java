@@ -25,11 +25,33 @@ public class RemoveNthNodeFromEndOfList extends SinglyLinkedList {
         for (int i = 0; i < position; i++) {
             currNode = currNode.next;
         }
-        if(currNode == head){
+        if (currNode == head) {
             head = currNode.next;
         } else {
             currNode.next = currNode.next.next;
         }
+
+        return head;
+    }
+
+    public static SinglyNode removeNthFromEndII(SinglyNode head, int n) {
+        SinglyNode removed = head;
+        SinglyNode len = head;
+        int length = 0;
+
+        while (len != null) {
+            length++;
+            len = len.next;
+        }
+        if (length == n) return head.next;
+
+        length = length - n;
+
+        for (int i = 0; i < length - 1; i++) {
+            removed = removed.next;
+        }
+
+        removed.next = removed.next.next;
 
         return head;
     }
