@@ -10,7 +10,7 @@ public class MoveZeroes {
         moveZeroesII(test);
     }
 
-    public void moveZeroesIII(int[] nums) {
+    public static int[] moveZeroesIII(int[] nums) {
         int left = 0;
         int right = 0;
 
@@ -24,6 +24,7 @@ public class MoveZeroes {
             right++;
         }
 
+        return nums;
     }
 
     public static void moveZeroesII(int[] nums) {
