@@ -29,4 +29,15 @@ class ClimbingStairsTest {
     void negativeTestII() {
         assertNotEquals(2, ClimbingStairs.climbStairs(3));
     }
+
+    @Test
+    void positiveTestIII() {
+        assertEquals(8, ClimbingStairs.climbStairs(5));
+    }
+
+    @Test
+    void negativeTestIII() {
+        assertNotEquals(5, ClimbingStairs.climbStairs(11));
+    }
+
 }
