@@ -23,7 +23,8 @@ public class Interview_notes {
      *  5. Do you want me to pseudo code or get right into coding.
      *  6. Explain time complexity and the Space complexity.
      */
-
+//    initial implementation im thinking of
+//looks like im stuck on this part, im going to use the example to vocalize my thought process
     /**
      * String edge cases: Empty strings, length 1 strings, odd/even length, all the same character,
      *                    ridiculously long strings, upper/lower cases, spaces

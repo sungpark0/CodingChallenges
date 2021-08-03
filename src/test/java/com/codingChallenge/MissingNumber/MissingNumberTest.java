@@ -16,4 +16,14 @@ class MissingNumberTest {
         assertNotEquals(5, MissingNumber.missingNumber(new int[]{1, 2}));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(8, MissingNumber.missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(0, MissingNumber.missingNumber(new int[]{0, 1}));
+    }
+
 }

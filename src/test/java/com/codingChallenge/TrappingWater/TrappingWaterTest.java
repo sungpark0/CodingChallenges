@@ -26,5 +26,15 @@ class TrappingWaterTest {
         assertNotEquals(6, TrappingWater.trapII(new int[]{4, 2, 0, 3, 2, 5}));
     }
 
+    @Test
+    void positiveTestIII() {
+        assertEquals(6, TrappingWater.trapII(new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}));
+    }
+
+    @Test
+    void negativeTestIII() {
+        assertNotEquals(3, TrappingWater.trapII(new int[]{4, 1, 3, 4, 5}));
+    }
+
 
 }
