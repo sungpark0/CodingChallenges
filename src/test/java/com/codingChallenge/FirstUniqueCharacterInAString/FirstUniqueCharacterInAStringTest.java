@@ -16,4 +16,14 @@ class FirstUniqueCharacterInAStringTest {
         assertNotEquals(0, FirstUniqueCharacterInAString.firstUniqChar("aabb"));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(0, FirstUniqueCharacterInAString.firstUniqCharII("leetcode"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(0, FirstUniqueCharacterInAString.firstUniqCharII("aab"));
+    }
+
 }

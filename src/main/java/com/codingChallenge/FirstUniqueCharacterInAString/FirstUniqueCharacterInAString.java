@@ -19,6 +19,24 @@ public class FirstUniqueCharacterInAString {
         return -1;
     }
 
+    public static int firstUniqCharII(String s) {
+        int index = -1;
+        int[] letters = new int[26];
+
+        for (char ch : s.toCharArray()) {
+            letters[ch - 'a']++;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (letters[s.charAt(i) - 'a'] == 1) {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
     public static void main(String[] args) {
 
     }
