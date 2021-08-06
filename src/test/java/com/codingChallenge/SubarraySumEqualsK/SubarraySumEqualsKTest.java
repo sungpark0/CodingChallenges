@@ -16,4 +16,14 @@ class SubarraySumEqualsKTest {
         assertNotEquals(5, SubarraySumEqualsK.subarraySum(new int[]{1, 1, 1}, 2));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(1, SubarraySumEqualsK.subarraySum(new int[]{1, 4, 5}, 9));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(1, SubarraySumEqualsK.subarraySum(new int[]{1, 2, 3}, 3));
+    }
+
 }

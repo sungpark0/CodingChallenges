@@ -16,4 +16,14 @@ class ContainerWithMostWaterTest {
         assertNotEquals(4, ContainerWithMostWater.maxArea(new int[]{1, 2, 1}));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(16, ContainerWithMostWater.maxArea(new int[]{4, 3, 2, 1, 4}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(2, ContainerWithMostWater.maxArea(new int[]{1, 1}));
+    }
+
 }
