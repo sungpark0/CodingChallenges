@@ -20,6 +20,28 @@ public class CountPrimes {
         return primeNums;
     }
 
+    public static int countPrimesII(int n) {
+        if (n == 0 || n == 1 || n == 2) return 0;
+
+        boolean[] nums = new boolean[n];
+
+        for (int i = 2; i < Math.sqrt(n); i++) {
+            if (!nums[i]) {
+                for (int j = i * i; j < nums.length; j += i) {
+                    nums[j] = true;
+                }
+            }
+        }
+
+        int primeNums = 0;
+
+        for (int i = 2; i < nums.length; i++) {
+            if (!nums[i]) primeNums++;
+        }
+
+        return primeNums;
+    }
+
     public static void main(String[] args) {
 
     }
