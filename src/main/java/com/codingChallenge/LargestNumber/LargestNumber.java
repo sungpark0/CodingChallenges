@@ -15,13 +15,13 @@ public class LargestNumber {
 
         if (str[0].equals("0")) return "0";
 
-        String largest = "";
+        StringBuilder largest = new StringBuilder();
 
         for (String s : str) {
-            largest += s;
+            largest.append(s);
         }
 
-        return largest;
+        return largest.toString();
     }
 
     public static void main(String[] args) {

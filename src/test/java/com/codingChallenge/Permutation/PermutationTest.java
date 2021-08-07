@@ -20,4 +20,16 @@ class PermutationTest {
         assertNotEquals(List.of(List.of(1, 2)), Permutation.permute(test));
     }
 
+    @Test
+    void positiveTestII() {
+        int[] test = new int[]{0, 1};
+        assertEquals(List.of(List.of(0, 1), List.of(1, 0)), Permutation.permute(test));
+    }
+
+    @Test
+    void negativeTestII() {
+        int[] test = new int[]{0};
+        assertNotEquals(List.of(List.of(1)), Permutation.permute(test));
+    }
+
 }

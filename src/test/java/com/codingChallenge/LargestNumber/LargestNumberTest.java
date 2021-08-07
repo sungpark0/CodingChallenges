@@ -16,4 +16,14 @@ class LargestNumberTest {
         assertNotEquals("1", LargestNumber.largestNumber(new int[]{10, 0}));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals("9534330", LargestNumber.largestNumber(new int[]{3, 30, 34, 5, 9}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals("100", LargestNumber.largestNumber(new int[]{10, 1}));
+    }
+
 }
