@@ -13,4 +13,11 @@ class SetMatrixZeroesTest {
         assertArrayEquals(new int[][]{{1, 0, 1}, {0, 0, 0}, {1, 0, 1}}, test);
     }
 
+    @Test
+    void negativeTest() {
+        int[][] test = new int[][]{{1, 1}, {1, 0}};
+        SetMatrixZeroes.setZeroes(test);
+        assertNotEquals(new int[][]{{1, 1}, {1, 1}}, test);
+    }
+
 }
