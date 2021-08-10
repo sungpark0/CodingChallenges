@@ -7,8 +7,7 @@ public class DetermineColorOfAChessboardSquare {
 
         if (sChar[0] == 'a' || sChar[0] == 'c' || sChar[0] == 'e' || sChar[0] == 'g') {
             if (sChar[1] == '1') return false;
-            else if (sChar[1] % 2 != 0) return false;
-            else return true;
+            else return sChar[1] % 2 == 0;
         } else {
             if (sChar[1] == '1') return true;
             else if (sChar[1] % 2 != 0) return true;

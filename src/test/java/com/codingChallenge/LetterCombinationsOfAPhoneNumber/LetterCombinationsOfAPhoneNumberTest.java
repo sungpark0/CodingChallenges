@@ -33,13 +33,13 @@ class LetterCombinationsOfAPhoneNumberTest {
     }
 
     @Test
-    void positiveTestBackTrack() {
-        assertEquals(List.of("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"), LetterCombinationsOfAPhoneNumber.letterCombinationsII("23"));
+    void positiveTestIII() {
+        assertEquals(List.of("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"), LetterCombinationsOfAPhoneNumber.letterCombinationsIII("23"));
     }
 
     @Test
-    void negativeTestBackTrack() {
-        assertNotEquals(List.of("g", "e", "f"), LetterCombinationsOfAPhoneNumber.letterCombinations("3"));
+    void negativeTestIII() {
+        assertNotEquals(List.of("g", "e", "f"), LetterCombinationsOfAPhoneNumber.letterCombinationsIII("3"));
     }
 
 }

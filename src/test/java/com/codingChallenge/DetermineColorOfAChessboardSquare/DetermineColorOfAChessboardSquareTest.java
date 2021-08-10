@@ -15,4 +15,14 @@ class DetermineColorOfAChessboardSquareTest {
     void negativeTest() {
         assertFalse(DetermineColorOfAChessboardSquare.squareIsWhite("a1"));
     }
+
+    @Test
+    void positiveTestII() {
+        assertTrue(DetermineColorOfAChessboardSquare.squareIsWhite("f1"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertFalse(DetermineColorOfAChessboardSquare.squareIsWhite("a5"));
+    }
 }

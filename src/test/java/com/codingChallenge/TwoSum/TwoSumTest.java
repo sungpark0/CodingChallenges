@@ -14,31 +14,41 @@ class TwoSumTest {
     @Test
     void positiveTestOne() {
         int[] numbs = {2, 7, 11, 15};
-        int[] actual = twoSumHash( numbs, 9 );
-        assertEquals( 0, actual[0] );
-        assertEquals( 1, actual[1] );
+        int[] actual = twoSumHash(numbs, 9);
+        assertEquals(0, actual[0]);
+        assertEquals(1, actual[1]);
     }
 
     @Test
     void positiveTestTwo() {
         int[] numbs = {2, 7, 11, 15};
-        List<Integer> actual = Arrays.stream( twoSumHash( numbs, 9 ) ).boxed().collect( Collectors.toList() );
-        assertEquals( List.of( 0, 1 ), actual );
+        List<Integer> actual = Arrays.stream(twoSumHash(numbs, 9)).boxed().collect(Collectors.toList());
+        assertEquals(List.of(0, 1), actual);
     }
 
     @Test
     void negativeTestOne() {
         int[] numbs = {2, 7, 11, 15};
-        int[] actual = twoSumHash( numbs, 9 );
-        assertNotEquals( 0, actual[1] );
-        assertNotEquals( 1, actual[0] );
+        int[] actual = twoSumHash(numbs, 9);
+        assertNotEquals(0, actual[1]);
+        assertNotEquals(1, actual[0]);
     }
 
     @Test
     void negativeTestTwo() {
         int[] numbs = {2, 7, 11, 15};
-        List<Integer> actual = Arrays.stream( twoSumHash( numbs, 9 ) ).boxed().collect( Collectors.toList() );
-        assertNotEquals( List.of( 1, 0 ), actual );
+        List<Integer> actual = Arrays.stream(twoSumHash(numbs, 9)).boxed().collect(Collectors.toList());
+        assertNotEquals(List.of(1, 0), actual);
+    }
+
+    @Test
+    void positiveTest() {
+        assertArrayEquals(new int[]{0, 1}, TwoSum.twoSumII(new int[]{2, 7, 11}, 9));
+    }
+
+    @Test
+    void negativeTest() {
+        assertNotEquals(new int[]{0, 0}, TwoSum.twoSumII(new int[]{3, 6, 9}, 6));
     }
 
 //    @TestFactory USED FOR LIST AND STACKS stuff
