@@ -18,4 +18,14 @@ class BestTimeToBuyAndSellStockTest {
         assertNotEquals(0, BestTimeToBuyAndSellStock.maxProfitMath(test));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(5, BestTimeToBuyAndSellStock.maxProfitII(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(1, BestTimeToBuyAndSellStock.maxProfitII(new int[]{7, 6, 4, 3, 1}));
+    }
+
 }

@@ -56,6 +56,21 @@ public class BestTimeToBuyAndSellStock {
 
         return maxProfit;
     }
+
+    public static int maxProfitII(int[] prices) {
+        if (prices.length < 2) return 0;
+
+        int max = 0;
+        int low = Integer.MAX_VALUE;
+
+        for (int price : prices) {
+            low = Math.min(low, price);
+            max = Math.max(max, price - low);
+        }
+
+
+        return max;
+    }
 }
 
 //    int buy = Integer.MAX_VALUE;
