@@ -16,4 +16,14 @@ class MinimumMovesToEqualArrayElementsTest {
         assertNotEquals(1, MinimumMovesToEqualArrayElements.minMoves(new int[]{1, 2, 2, 1}));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(10, MinimumMovesToEqualArrayElements.minMoves(new int[]{1, 2, 3, 4, 5}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(10, MinimumMovesToEqualArrayElements.minMoves(new int[]{1, 2, 7}));
+    }
+
 }

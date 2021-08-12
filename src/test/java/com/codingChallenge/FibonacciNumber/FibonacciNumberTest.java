@@ -1,5 +1,6 @@
 package com.codingChallenge.FibonacciNumber;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -41,5 +42,15 @@ class FibonacciNumberTest {
     @ValueSource(ints = 5)
     void negativeTestMemoization(int num) {
         assertNotEquals(2, FibonacciNumber.fibMemoization(num));
+    }
+
+    @Test
+    void positiveTest() {
+        assertEquals(3, FibonacciNumber.fibIII(4));
+    }
+
+    @Test
+    void negativeTest() {
+        assertNotEquals(1, FibonacciNumber.fibIII(3));
     }
 }
