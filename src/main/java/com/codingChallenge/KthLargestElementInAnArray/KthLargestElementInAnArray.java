@@ -17,6 +17,20 @@ public class KthLargestElementInAnArray {
         return minHeap.peek();
     }
 
+    public static int findKthLargestII(int[] nums, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((a, b) -> b - a);
+
+        for (int num : nums) {
+            maxHeap.add(num);
+        }
+
+        for (int i = 1; i < k; i++) {
+            maxHeap.remove();
+        }
+
+        return maxHeap.remove();
+    }
+
     public static void main(String[] args) {
 
     }

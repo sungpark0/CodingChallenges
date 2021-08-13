@@ -16,4 +16,14 @@ class KthLargestElementInAnArrayTest {
         assertNotEquals(10, KthLargestElementInAnArray.findKthLargest(new int[]{1, 5, 10, 20}, 3));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(10, KthLargestElementInAnArray.findKthLargest(new int[]{1, 5, 10, 15, 20}, 3));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(1, KthLargestElementInAnArray.findKthLargest(new int[]{1, 54, 4, 7}, 2));
+    }
+
 }

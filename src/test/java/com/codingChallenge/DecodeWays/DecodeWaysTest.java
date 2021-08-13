@@ -16,4 +16,14 @@ class DecodeWaysTest {
         assertNotEquals(3, DecodeWays.numDecodings("11106"));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(3, DecodeWays.numDecodings("226"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(5, DecodeWays.numDecodings("12344"));
+    }
+
 }

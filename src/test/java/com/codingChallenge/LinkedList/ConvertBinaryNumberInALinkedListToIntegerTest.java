@@ -25,4 +25,20 @@ class ConvertBinaryNumberInALinkedListToIntegerTest {
         assertNotEquals(2, ConvertBinaryNumberInALinkedListToInteger.getDecimalValue(test.head));
     }
 
+    @Test
+    void positiveTestII() {
+        test.insertAtHead(1);
+
+        assertEquals(1, ConvertBinaryNumberInALinkedListToInteger.getDecimalValue(test.head));
+    }
+
+    @Test
+    void negativeTestII() {
+        test.insertAtHead(0);
+
+        assertNotEquals(1, ConvertBinaryNumberInALinkedListToInteger.getDecimalValue(test.head));
+    }
+
+
+
 }
