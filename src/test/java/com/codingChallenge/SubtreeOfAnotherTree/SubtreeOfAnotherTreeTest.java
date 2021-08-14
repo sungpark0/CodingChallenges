@@ -23,4 +23,18 @@ class SubtreeOfAnotherTreeTest {
         assertTrue(SubtreeOfAnotherTree.isSubtree(root, subRoot));
     }
 
+    @Test
+    void positiveTestII(){
+        root.insertIteration(5);
+        root.insertIteration(10);
+        root.insertIteration(15);
+        root.insertIteration(12);
+        root.insertIteration(20);
+
+        subRoot.insertIteration(15);
+        subRoot.insertIteration(12);
+        subRoot.insertIteration(20);
+        assertTrue(SubtreeOfAnotherTree.isSubtree(root, subRoot));
+    }
+
 }
