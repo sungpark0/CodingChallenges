@@ -20,4 +20,18 @@ class ReverseStringTest {
         assertNotEquals(new char[]{'h', 'e', 'l', 'l', 'o'}, negTest);
     }
 
+    @Test
+    void positiveTestII() {
+        char[] test = new char[]{'c', 'a', 'r'};
+        ReverseString.reverseString(test);
+        assertArrayEquals((new char[]{'r', 'a', 'c'}), test);
+    }
+
+    @Test
+    void negativeTestII() {
+        char[] test = new char[]{'l', 'e', 'e', 't'};
+        ReverseString.reverseString(test);
+        assertNotEquals(new char[]{'l', 'e', 'e', 't'}, test);
+    }
+
 }

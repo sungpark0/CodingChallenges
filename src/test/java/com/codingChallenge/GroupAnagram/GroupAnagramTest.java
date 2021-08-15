@@ -20,4 +20,16 @@ class GroupAnagramTest {
         assertNotEquals(List.of(List.of(" ")), GroupAnagram.groupAnagrams(new String[]{"a", "b"}));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(List.of(List.of("abc", "cba"), List.of("cde", "edc"), List.of("fig")),
+                GroupAnagram.groupAnagrams(new String[]{"abc", "cde", "cba", "edc", "fig"})
+        );
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(List.of(List.of(" ")), GroupAnagram.groupAnagrams(new String[]{"a"}));
+    }
+
 }
