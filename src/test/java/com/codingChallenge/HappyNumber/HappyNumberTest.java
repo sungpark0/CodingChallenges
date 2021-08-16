@@ -16,4 +16,14 @@ class HappyNumberTest {
         assertFalse(HappyNumber.isHappy(2));
     }
 
+    @Test
+    void positiveTestII() {
+        assertTrue(HappyNumber.isHappy(82));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertFalse(HappyNumber.isHappy(4));
+    }
+
 }

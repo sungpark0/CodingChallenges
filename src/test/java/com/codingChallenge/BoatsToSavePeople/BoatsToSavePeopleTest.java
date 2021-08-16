@@ -15,4 +15,15 @@ class BoatsToSavePeopleTest {
     void negativeTest() {
         assertNotEquals(5, BoatsToSavePeople.numRescueBoats(new int[]{3, 5, 2, 4, 3}, 5));
     }
+
+    @Test
+    void positiveTestII() {
+        assertEquals(3, BoatsToSavePeople.numRescueBoatsII(new int[]{3,2,2,1}, 3));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(2, BoatsToSavePeople.numRescueBoatsII(new int[]{3, 5, 7, 10}, 4));
+    }
+
 }
