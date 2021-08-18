@@ -14,6 +14,15 @@ public class MaximumDepthOfBinaryTree extends BinarySearchTree {
         return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
     }
 
+    public static int maxDepthII(TreeNode root) {
+        if (root == null) return 0;
+
+        int left = maxDepthII(root.left);
+        int right = maxDepthII(root.right);
+
+        return Math.max(left, right) + 1;
+    }
+
     public static void main(String[] args) {
 
     }

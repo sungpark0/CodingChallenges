@@ -22,5 +22,21 @@ class MaximumDepthOfBinaryTreeTest {
         test.insertIteration(2);
         assertNotEquals(0, MaximumDepthOfBinaryTree.maxDepth(test.root));
     }
+    
+    @Test
+    void positiveTestII() {
+        test.insertIteration(7);
+        test.insertIteration(1);
+        test.insertIteration(4);
+
+        assertEquals(3, MaximumDepthOfBinaryTree.maxDepth(test.root));
+    }
+
+    @Test
+    void negativeTestII() {
+        test.insertIteration(2);
+        test.insertIteration(3);
+        assertNotEquals(1, MaximumDepthOfBinaryTree.maxDepth(test.root));
+    }
 
 }

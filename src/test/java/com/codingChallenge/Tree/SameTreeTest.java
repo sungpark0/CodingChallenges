@@ -38,4 +38,33 @@ class SameTreeTest {
         assertFalse(SameTree.isSameTree(treeOne.root, treeTwo.root));
     }
 
+    SameTree testOne = new SameTree();
+    SameTree testTwo = new SameTree();
+
+    @Test
+    void positiveTestII(){
+        testOne.insertRecursion(10);
+        testOne.insertRecursion(15);
+        testOne.insertRecursion(5);
+
+        testTwo.insertRecursion(10);
+        testTwo.insertRecursion(15);
+        testTwo.insertRecursion(5);
+
+        assertTrue(SameTree.isSameTree(testOne.root, testTwo.root));
+    }
+
+    @Test
+    void negativeTestII(){
+        testOne.insertRecursion(5);
+        testOne.insertRecursion(10);
+
+        testTwo.insertRecursion(5);
+        testTwo.insertRecursion(1);
+        testTwo.insertRecursion(7);
+
+        assertFalse(SameTree.isSameTree(testOne.root, testTwo.root));
+    }
+
+
 }
