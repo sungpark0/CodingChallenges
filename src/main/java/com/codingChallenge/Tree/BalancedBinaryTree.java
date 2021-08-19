@@ -51,6 +51,26 @@ public class BalancedBinaryTree extends BinarySearchTree {
         return 1 + Math.max(LengthII(node.left), LengthII(node.right));
     }
 
+    public static boolean isBalancedIII(TreeNode root) {
+        if (root == null) return true;
+
+        int leftTree = lengthIII(root.left);
+        int rightTree = lengthIII(root.right);
+
+        if (Math.abs(leftTree - rightTree) > 1) return false;
+
+        return isBalancedIII(root.left) && isBalancedIII(root.right);
+    }
+
+    public static int lengthIII(TreeNode root) {
+        if (root == null) return 0;
+
+        int left = lengthIII(root.left) + 1;
+        int right = lengthIII(root.right) + 1;
+
+        return Math.max(left, right);
+    }
+
     public static void main(String[] args) {
 
     }

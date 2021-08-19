@@ -84,4 +84,27 @@ class BalancedBinaryTreeTest {
         assertFalse(BalancedBinaryTree.isBalanced(tree.root));
     }
 
+    @Test
+    void positiveTestIII() {
+        tree.insertIteration(10);
+        tree.insertIteration(5);
+        tree.insertIteration(120);
+        tree.insertIteration(155);
+
+        assertTrue(BalancedBinaryTree.isBalancedIII(tree.root));
+    }
+
+    @Test
+    void negativeTestIII() {
+        tree.insertIteration(10);
+        tree.insertIteration(5);
+        tree.insertIteration(15);
+        tree.insertIteration(20);
+        tree.insertIteration(25);
+        tree.insertIteration(30);
+
+        assertFalse(BalancedBinaryTree.isBalancedIII(tree.root));
+    }
+
+
 }

@@ -26,4 +26,21 @@ class MinimumDepthOfBinaryTreeTest {
         assertNotEquals(1, MinimumDepthOfBinaryTree.minDepth(test.root));
     }
 
+    @Test
+    void positiveTestII() {
+        test.insertIteration(10);
+        test.insertIteration(5);
+        test.insertIteration(15);
+        test.insertIteration(20);
+
+        assertEquals(2, MinimumDepthOfBinaryTree.minDepth(test.root));
+    }
+
+    @Test
+    void negativeTestII() {
+        test.insertIteration(10);
+
+        assertNotEquals(0, MinimumDepthOfBinaryTree.minDepth(test.root));
+    }
+
 }
