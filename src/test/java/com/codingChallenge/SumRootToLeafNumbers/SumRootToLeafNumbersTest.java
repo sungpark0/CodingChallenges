@@ -19,7 +19,7 @@ class SumRootToLeafNumbersTest {
 
         assertEquals(23885, SumRootToLeafNumbers.sumNumbers(test.root));
     }
-    
+
 
     @Test
     void negativeTest() {
