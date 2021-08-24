@@ -16,7 +16,8 @@ public class ValidPalindromeII {
             if (ch[left] == ch[right]) {
                 left++;
                 right--;
-            } else return validPalindromeRecursive(ch, left + 1, right) || validPalindromeRecursive(ch, left, right - 1);
+            } else
+                return validPalindromeRecursive(ch, left + 1, right) || validPalindromeRecursive(ch, left, right - 1);
         }
 
         return true;
@@ -31,4 +32,22 @@ public class ValidPalindromeII {
         }
         return true;
     }
+
+    public static boolean validPalindromeII(String s) {
+        return helper(s, 0, 0, s.length() - 1);
+    }
+
+    public static boolean helper(String s, int count, int start, int end) {
+        if (count > 1) return false;
+
+        while (start < end && s.charAt(start) == s.charAt(end)) {
+            start++;
+            end--;
+        }
+
+        if (start >= end) return true;
+
+        return helper(s, count + 1, start + 1, end) || helper(s, count + 1, start, end - 1);
+    }
+
 }

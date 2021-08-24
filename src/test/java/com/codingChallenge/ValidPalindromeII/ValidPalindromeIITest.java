@@ -1,5 +1,6 @@
 package com.codingChallenge.ValidPalindromeII;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -19,4 +20,13 @@ class ValidPalindromeIITest {
         assertFalse(ValidPalindromeII.validPalindrome(str));
     }
 
+    @Test
+    void positiveTest() {
+        assertTrue(ValidPalindromeII.validPalindromeII("aba"));
+    }
+
+    @Test
+    void negativeTest() {
+        assertFalse(ValidPalindromeII.validPalindromeII("abc"));
+    }
 }

@@ -13,6 +13,40 @@ public class MinimumRemoveToMakeValidParentheses {
 
     }
 
+    public static String minRemoveToMakeValidII(String s) {
+        int[] arr = new int[s.length()];
+        char[] chars = s.toCharArray();
+        int balance = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (chars[i] == '(') {
+                arr[balance] = i;
+                balance++;
+            } else if (chars[i] == ')') {
+                if (balance <= 0) {
+                    chars[i] = 0;
+                } else {
+                    balance--;
+                }
+            }
+        }
+
+        for (int i = 0; i < balance; i++) {
+            chars[arr[i]] = 0;
+        }
+
+        int index = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (chars[i] != 0) {
+                chars[index] = chars[i];
+                index++;
+            }
+        }
+
+        return new String(chars, 0, index);
+    }
+
     public static String minRemoveToMakeValid(String s) {
         List<Integer> possibleDelete = new ArrayList<>();
         StringBuilder result = new StringBuilder();
