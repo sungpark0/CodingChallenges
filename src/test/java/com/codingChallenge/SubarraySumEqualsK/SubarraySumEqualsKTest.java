@@ -28,12 +28,12 @@ class SubarraySumEqualsKTest {
 
     @Test
     void positiveTestIII() {
-        assertEquals(2, SubarraySumEqualsK.subarraySumII(new int[]{1, 1, 2, 3, 4, 5}, 5));
+        assertEquals(1, SubarraySumEqualsK.subarraySumII(new int[]{1, 2, 3, 4, 5}, 4));
     }
 
     @Test
     void negativeTestIII() {
-        assertNotEquals(1, SubarraySumEqualsK.subarraySumII(new int[]{1, 4, 2, 3}, 5));
+        assertNotEquals(2, SubarraySumEqualsK.subarraySumII(new int[]{1, 4, 2, 3}, 3));
     }
 
 }
