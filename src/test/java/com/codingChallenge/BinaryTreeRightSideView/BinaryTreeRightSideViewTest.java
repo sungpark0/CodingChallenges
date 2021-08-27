@@ -31,4 +31,24 @@ class BinaryTreeRightSideViewTest {
         assertNotEquals(List.of(1, 7, 15), BinaryTreeRightSideView.rightSideView(test.root));
     }
 
+    @Test
+    void positiveTestII() {
+        test.insertIteration(1);
+        test.insertIteration(4);
+        test.insertIteration(7);
+        test.insertIteration(11);
+        test.insertIteration(15);
+
+        assertEquals(List.of(1, 4, 7, 11, 15), BinaryTreeRightSideView.rightSideView(test.root));
+    }
+
+    @Test
+    void negativeTestII() {
+        test.insertIteration(1);
+        test.insertIteration(4);
+        test.insertIteration(7);
+
+        assertNotEquals(List.of(1, 7), BinaryTreeRightSideView.rightSideView(test.root));
+    }
+
 }
