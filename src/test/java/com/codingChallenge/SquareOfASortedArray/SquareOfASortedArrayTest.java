@@ -15,4 +15,14 @@ class SquareOfASortedArrayTest {
     void negativeTest() {
         assertNotEquals(new int[]{9, 1, 81}, SquareOfASortedArray.sortedSquares(new int[]{-3, 1, 9}));
     }
+
+    @Test
+    void positiveTestII() {
+        assertArrayEquals(new int[]{4, 9, 9, 49, 121}, SquareOfASortedArray.sortedSquares(new int[]{-7, -3, 2, 3, 11}));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(new int[]{100, 25, 175}, SquareOfASortedArray.sortedSquares(new int[]{10, 5, 15}));
+    }
 }
