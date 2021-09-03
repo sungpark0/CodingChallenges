@@ -42,4 +42,14 @@ class ThreeSumTest {
     void negativeTestIII() {
         assertNotEquals(List.of(List.of(0)), ThreeSum.threeSumIII(new int[]{0}));
     }
+
+    @Test
+    void positiveTestIIII() {
+        assertEquals(List.of(List.of(-1, -1, 2), List.of(-1, 0, 1)), ThreeSum.threeSumIIII(new int[]{-1, 0, 1, 2, -1, -4}));
+    }
+
+    @Test
+    void negativeTestIIII() {
+        assertNotEquals(List.of(List.of(0)), ThreeSum.threeSumIIII(new int[]{0, 1}));
+    }
 }
