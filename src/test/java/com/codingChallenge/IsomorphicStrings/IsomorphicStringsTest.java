@@ -16,4 +16,14 @@ class IsomorphicStringsTest {
         assertFalse(IsomorphicStrings.isIsomorphic("foo", "bar"));
     }
 
+    @Test
+    void positiveTestII() {
+        assertTrue(IsomorphicStrings.isIsomorphic("egg", "add"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertFalse(IsomorphicStrings.isIsomorphic("car", "bee"));
+    }
+
 }
