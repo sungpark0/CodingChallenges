@@ -5,34 +5,21 @@ import java.util.Map;
 
 public class CopyListWithRandomPointer extends SinglyLinkedList {
 
-    // Definition for a Node.
-    class Node {
-        int val;
-        Node next;
-        Node random;
-
-        public Node(int val) {
-            this.val = val;
-            this.next = null;
-            this.random = null;
-        }
-    }
-
-    public Node copyRandomList(Node head) {
+    public static SinglyNode copyRandomList(SinglyNode head) {
         if (head == null) return null;
 
-        Map<Node, Node> map = new HashMap<>();
+        Map<SinglyNode, SinglyNode> map = new HashMap<>();
 
-        Node node = head;
+        SinglyNode SinglyNode = head;
 
-        while (node != null) {
-            Node temp = new Node(node.val);
-            map.put(node, temp);
-            node = node.next;
+        while (SinglyNode != null) {
+            SinglyNode temp = new SinglyNode(SinglyNode.val);
+            map.put(SinglyNode, temp);
+            SinglyNode = SinglyNode.next;
         }
 
-        for (Map.Entry<Node, Node> entry : map.entrySet()) {
-            Node temp = entry.getValue();
+        for (Map.Entry<SinglyNode, SinglyNode> entry : map.entrySet()) {
+            SinglyNode temp = entry.getValue();
             temp.next = map.get(entry.getKey().next);
             temp.random = map.get(entry.getKey().random);
         }
