@@ -20,13 +20,13 @@ class IslandPerimeterTest {
 
     @Test
     void positiveTestII(){
-        int[][]test = {{1,0}};
-        assertEquals(4, IslandPerimeter.islandPerimeterIII(test));
+        int[][]test = {{1,0,1},{1,1,1}};
+        assertEquals(12, IslandPerimeter.islandPerimeterIII(test));
     }
 
     @Test
     void negativeTestII(){
-        int[][]test = {{1}};
-        assertNotEquals(0, IslandPerimeter.islandPerimeterIII(test));
+        int[][]test = {{1,0},{1,0}};
+        assertNotEquals(8, IslandPerimeter.islandPerimeterIII(test));
     }
 }

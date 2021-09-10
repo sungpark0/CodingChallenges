@@ -9,29 +9,23 @@ public class IslandPerimeter {
         System.out.println(islandPerimeterIII(test));
     }
 
+
     public static int islandPerimeterIII(int[][] grid) {
-        int result = 0;
+        int perimeter = 0;
 
-        for (int row = 0; row < grid.length; row++) {
-            for (int column = 0; column < grid[0].length; column++) {
-                if (grid[row][column] == 1) {
-                    result += 4;
-
-                    if (row - 1 >= 0 && grid[row - 1][column] == 1)
-                        result--;
-                    if (row + 1 < grid.length && grid[row + 1][column] == 1)
-                        result--;
-
-                    if (column - 1 >= 0 && grid[row][column - 1] == 1)
-                        result--;
-                    if (column + 1 < grid[0].length && grid[row][column + 1] == 1)
-                        result--;
-
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    perimeter += 4;
+                    if (i - 1 >= 0 && grid[i - 1][j] == 1) perimeter--;
+                    if (i + 1 < grid.length && grid[i + 1][j] == 1) perimeter--;
+                    if (j - 1 >= 0 && grid[i][j - 1] == 1) perimeter--;
+                    if (j + 1 < grid[0].length && grid[i][j + 1] == 1) perimeter--;
                 }
             }
         }
 
-        return result;
+        return perimeter;
     }
 
 
