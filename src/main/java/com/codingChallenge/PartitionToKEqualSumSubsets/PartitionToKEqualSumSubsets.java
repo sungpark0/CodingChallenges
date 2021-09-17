@@ -1,5 +1,7 @@
 package com.codingChallenge.PartitionToKEqualSumSubsets;
 
+import java.util.*;
+
 public class PartitionToKEqualSumSubsets {
 
     public static boolean canPartitionKSubsets(int[] nums, int k) {
