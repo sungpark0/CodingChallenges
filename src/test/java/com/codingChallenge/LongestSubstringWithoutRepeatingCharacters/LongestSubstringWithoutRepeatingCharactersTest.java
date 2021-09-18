@@ -16,4 +16,14 @@ class LongestSubstringWithoutRepeatingCharactersTest {
         assertNotEquals(5, LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring("aaaaa"));
     }
 
+    @Test
+    void positiveTestII() {
+        assertEquals(1, LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring("bbbb"));
+    }
+
+    @Test
+    void negativeTestII() {
+        assertNotEquals(4, LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring("pwwkew"));
+    }
+
 }
