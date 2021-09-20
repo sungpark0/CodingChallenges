@@ -20,14 +20,14 @@ class MaximumSubarrayTest {
 
     @Test
     void positiveTestII() {
-        int[] test = {5, 4, -1, 7, 8};
-        assertEquals(23, MaximumSubarray.maximumSubarray(test));
+        int[] test = {1};
+        assertEquals(1, MaximumSubarray.maximumSubarray(test));
     }
 
     @Test
     void negativeII() {
-        int[] test = {1, 2, 5};
-        assertNotEquals(5, MaximumSubarray.maximumSubarray(test));
+        int[] test = {1, 2, 4, -10, 20};
+        assertNotEquals(7, MaximumSubarray.maximumSubarray(test));
     }
 
 }
