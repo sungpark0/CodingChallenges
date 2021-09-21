@@ -7,16 +7,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ContainDuplicateIITest {
 
+//    @Test
+//    void positiveTest() {
+//        int[] test = {1, 2, 3, 1};
+//        assertEquals( true, ContainDuplicate.containDuplicate( test ) );
+//    }
+//
+//    @Test
+//    void negativeTest() {
+//        int[] test = {1, 2, 3, 1, 2, 3};
+//        assertNotEquals( false, ContainDuplicate.containDuplicate( test ) );
+//    }
+
     @Test
     void positiveTest() {
-        int[] test = {1, 2, 3, 1};
-        assertEquals( true, ContainDuplicate.containDuplicate( test ) );
+        assertTrue(ContainDuplicateII.containsNearbyDuplicate(new int[]{1, 2, 3, 1}, 3));
     }
 
     @Test
     void negativeTest() {
-        int[] test = {1, 2, 3, 1, 2, 3};
-        assertNotEquals( false, ContainDuplicate.containDuplicate( test ) );
+        assertFalse(ContainDuplicateII.containsNearbyDuplicate(new int[]{2, 0, 4}, 1));
     }
 
 }
