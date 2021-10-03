@@ -26,6 +26,17 @@ public class SumOfRootToLeafBinaryNumbers extends BinarySearchTree {
     }
 
     public static void main(String[] args) {
+        //256
+        int[] ee = new int[]{13, 9, 9, 13, 15, 3, 10, 16};
+        int cb = Integer.MIN_VALUE;
+
+        for (int i = 0; i < ee.length - 1; i++) {
+            if (ee[i] * ee[i + 1] > cb) {
+                cb = ee[i] * ee[i + 1];
+            }
+        }
+        //1 3 5 7
+        System.out.println((1 * 2 * 3 * 5 * 7) % 8);
 
     }
 }
