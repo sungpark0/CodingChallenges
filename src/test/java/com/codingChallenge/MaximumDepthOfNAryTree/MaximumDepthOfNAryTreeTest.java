@@ -11,7 +11,7 @@ class MaximumDepthOfNAryTreeTest {
 
     @Test
     void positiveTest() {
-        assertEquals(0, MaximumDepthOfNAryTree.maxDepth(MaximumDepthOfNAryTree.Node));
+    
     }
 
 }
