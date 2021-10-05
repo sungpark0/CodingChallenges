@@ -30,6 +30,38 @@ public class AverageOfLevelsInBinaryTree extends BinarySearchTree {
         return averages;
     }
 
+    public List<Double> averageOfLevelsDFS(TreeNode root) {
+        List<Double> averages = new ArrayList<>();
+
+        if (root == null) return averages;
+
+        List<List<Integer>> levelSum = new ArrayList<>();
+        dfs(root, levelSum, 0);
+
+        for (int i = 0; i < levelSum.size(); i++) {
+            double sum = 0;
+            for (int j = 0; j < levelSum.get(i).size(); j++) {
+                sum += levelSum.get(i).get(j);
+            }
+            averages.add(sum / levelSum.get(i).size());
+        }
+
+        return averages;
+    }
+
+    public void dfs(TreeNode root, List<List<Integer>> levelSum, int level) {
+        if (root == null) return;
+
+        if (levelSum.size() == level) {
+            levelSum.add(new ArrayList());
+        }
+
+        levelSum.get(level).add(root.val);
+
+        dfs(root.left, levelSum, level + 1);
+        dfs(root.right, levelSum, level + 1);
+    }
+
     public static void main(String[] args) {
 
     }
