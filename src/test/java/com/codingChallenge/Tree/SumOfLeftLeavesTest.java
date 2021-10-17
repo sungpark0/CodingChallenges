@@ -20,7 +20,6 @@ class SumOfLeftLeavesTest {
     @Test
     void negativeTest() {
         test.insertIteration(10);
-
         assertNotEquals(0, SumOfLeftLeaves.sumOfLeftLeaves(test.root));
     }
 
