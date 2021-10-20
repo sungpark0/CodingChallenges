@@ -51,7 +51,7 @@ class SameTreeTest {
         testTwo.insertRecursion(15);
         testTwo.insertRecursion(5);
 
-        assertTrue(SameTree.isSameTree(testOne.root, testTwo.root));
+        assertTrue(SameTree.isSameTreeBFS(testOne.root, testTwo.root));
     }
 
     @Test
@@ -63,7 +63,7 @@ class SameTreeTest {
         testTwo.insertRecursion(1);
         testTwo.insertRecursion(7);
 
-        assertFalse(SameTree.isSameTree(testOne.root, testTwo.root));
+        assertFalse(SameTree.isSameTreeBFS(testOne.root, testTwo.root));
     }
 
 
