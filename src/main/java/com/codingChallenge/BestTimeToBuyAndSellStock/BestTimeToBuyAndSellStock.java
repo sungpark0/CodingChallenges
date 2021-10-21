@@ -1,5 +1,7 @@
 package com.codingChallenge.BestTimeToBuyAndSellStock;
 
+import java.util.*;
+
 public class BestTimeToBuyAndSellStock {
 
     public static void main(String[] args) {
@@ -7,30 +9,14 @@ public class BestTimeToBuyAndSellStock {
         int[] testOne = {7, 1, 5, 3, 6, 4};
         int[] testTwo = {7, 6, 4, 3, 2};
 
-        System.out.println( maxProfit( testOne ) );
-        System.out.println( maxProfitMath( testTwo ) );
-
+        System.out.println(maxProfit(testOne));
+        System.out.println(maxProfitMath(testTwo));
     }
 
     public static int maxProfit(int[] prices) {
-        int potentialProfit;
-        int maxProfit = 0;
+//        return bottomTop(prices);
 
-        if (prices.length == 2 && prices[0] < prices[1]) {
-            return prices[1] - prices[0];
-        }
-
-
-        for (int i = 0; i < prices.length - 1; i++) {
-            for (int j = i + 1; j < prices.length; j++) {
-                potentialProfit = prices[j] - prices[i];
-                if (potentialProfit > maxProfit) {
-                    maxProfit = potentialProfit;
-                }
-            }
-        }
-        return maxProfit;
-
+        return recursion(prices, Integer.MAX_VALUE, 0, 0);
     }
 
     public static int maxProfitMath(int[] prices) {
@@ -48,9 +34,9 @@ public class BestTimeToBuyAndSellStock {
             // 7 1 5 3 6 4
             int potentialProfit = potentialVal - lowestVal;
 
-            maxProfit = Math.max( maxProfit, potentialProfit );
+            maxProfit = Math.max(maxProfit, potentialProfit);
             // returns the larger number between maxProfit and potentialProfit
-            lowestVal = Math.min( lowestVal, potentialVal );
+            lowestVal = Math.min(lowestVal, potentialVal);
             // returns the smaller number between lowestVal and potentialVal
         }
 
@@ -58,18 +44,66 @@ public class BestTimeToBuyAndSellStock {
     }
 
     public static int maxProfitII(int[] prices) {
+//        if (prices.length < 2) return 0;
+//
+//        int max = 0;
+//        int low = Integer.MAX_VALUE;
+//
+//        for (int price : prices) {
+//            low = Math.min(low, price);
+//            max = Math.max(max, price - low);
+//        }
+//
+//
+//        return max;
+        Map<int[], Integer> map = new HashMap<>();
+        return topBottom(prices, Integer.MAX_VALUE, 0, 0, map);
+    }
+
+    public static int bottomTop(int[] prices) {
         if (prices.length < 2) return 0;
 
-        int max = 0;
-        int low = Integer.MAX_VALUE;
+        int[] dp = new int[prices.length];
+        int minValue = prices[0];
 
-        for (int price : prices) {
-            low = Math.min(low, price);
-            max = Math.max(max, price - low);
+        for (int i = 1; i < prices.length; i++) {
+            minValue = Math.min(minValue, prices[i]);
+            dp[i] = Math.max(dp[i - 1], prices[i] - minValue);
+
         }
 
+        return dp[dp.length - 1];
+    }
 
-        return max;
+    public static int recursion(int[] prices, int min, int max, int index) {
+        if (index == prices.length) {
+            return max;
+        }
+
+        max = Math.max(max, prices[index] - min);
+        min = Math.min(min, prices[index]);
+
+        return recursion(prices, min, max, index + 1);
+    }
+
+    public static int topBottom(int[] prices, int min, int max, int index, Map<int[], Integer> map) {
+        if (index == prices.length) {
+            return max;
+        }
+        int[] arr = new int[2];
+        arr[0] = prices[index];
+        arr[1] = min;
+
+        if (map.containsKey(arr)) {
+            return map.get(arr);
+        }
+
+        min = Math.min(min, prices[index]);
+        max = Math.max(max, prices[index] - min);
+
+        map.put(arr, max);
+
+        return topBottom(prices, min, max, index + 1, map);
     }
 }
 

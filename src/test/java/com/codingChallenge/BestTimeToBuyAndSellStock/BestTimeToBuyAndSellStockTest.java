@@ -28,4 +28,33 @@ class BestTimeToBuyAndSellStockTest {
         assertNotEquals(1, BestTimeToBuyAndSellStock.maxProfitII(new int[]{7, 6, 4, 3, 1}));
     }
 
+    @Test
+    void positiveTestBottomTop() {
+        assertEquals(5, BestTimeToBuyAndSellStock.bottomTop(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+
+    @Test
+    void negativeTestBottomTop() {
+        assertNotEquals(0, BestTimeToBuyAndSellStock.bottomTop(new int[]{7, 6, 4, 3, 4}));
+    }
+
+    @Test
+    void positiveTestRecursion() {
+        assertEquals(5, BestTimeToBuyAndSellStock.maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+
+    @Test
+    void negativeTestRecursion() {
+        assertNotEquals(0, BestTimeToBuyAndSellStock.maxProfit(new int[]{7, 6, 4, 3, 4}));
+    }
+
+    @Test
+    void positiveTestTopBottom() {
+        assertEquals(5, BestTimeToBuyAndSellStock.maxProfitII(new int[]{7, 1, 5, 3, 6, 4}));
+    }
+
+    @Test
+    void negativeTestTopBottom() {
+        assertNotEquals(0, BestTimeToBuyAndSellStock.maxProfitII(new int[]{7, 6, 4, 3, 4}));
+    }
 }
