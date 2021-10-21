@@ -66,5 +66,4 @@ class SameTreeTest {
         assertFalse(SameTree.isSameTreeBFS(testOne.root, testTwo.root));
     }
 
-
 }
