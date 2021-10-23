@@ -37,7 +37,7 @@ class MinimumDepthOfBinaryTreeTest {
     }
 
     @Test
-    void negativeTestII() {
+    void negativeTestII() { 
         test.insertIteration(10);
         test.insertIteration(5);
 
