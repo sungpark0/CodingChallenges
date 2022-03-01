@@ -28,5 +28,4 @@ class TripletsTest {
 
         assertNotEquals(3, Triplets.triplets(3, list));
     }
-
 }

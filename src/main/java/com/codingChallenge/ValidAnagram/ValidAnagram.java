@@ -1,7 +1,5 @@
 package com.codingChallenge.ValidAnagram;
 
-import org.apache.tomcat.util.http.fileupload.IOUtils;
-
 import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.*;
@@ -30,11 +28,12 @@ import java.util.stream.Stream;
 public class ValidAnagram {
 
     public static void main(String[] args) {
-        String s = "poop";
-        String t = "oopp";
+//        String s = "poop";
+//        String t = "oopp";
 
-        isAnagram(s, t);
-        isAnaramStream(s, t);
+//        isAnagram(s, t);
+//        isAnaramStream(s, t);
+        System.out.println("Hello");
 
     }
 
